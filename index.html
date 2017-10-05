@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+  
+  <!-- load counties list from a separate js file -->
+    <script src="seat-list.js"></script>
+
+  </head>
+
+<style>
+body {
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
+  font-size: 150%;
+  line-height: 1.5em;
+  color: #565656;
+      }  
+
+.ui-widget, .ui-widget input {
+    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
+}
+
+.wrapper {
+    max-width: 480px; /*INPUT: set the width of the chart*/
+    margin: 0 auto;
+}
+
+.panel {
+    display: none;
+    border:1px solid #D3D3D3;
+    padding:10px;
+}
+
+.title {
+    font-size: 45px;
+    font-weight: 600;
+    padding:20px 10px 10px 10px;
+    text-align: center;
+    line-height: 26px;
+}
+
+.headline {
+    font-size: 25px;
+    font-weight: normal;
+    padding:20px 10px 10px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.text {
+    font-size: 20px;
+    font-weight: normal;
+    padding:20px 10px 10px;
+    line-height: 24px;
+}
+
+#menubox {
+    text-align: center;
+    padding-top:30px;
+    padding-bottom:20px;
+}
+
+#dropdown {
+    width:300px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.note {
+    font-size: 12px;
+    color: #808080;
+    line-height: 14px;
+    padding:10px;
+}
+
+#credit {
+    color: #808080;
+    font-size: 10px;
+    padding:20px 10px 0px;
+    text-align: right;
+    font-style: italic;
+}
+
+.btn {
+    margin-top: 20px;
+
+}
+
+.opponent {
+    padding:0px;
+    border:0.5px solid #ffffff;
+}
+
+.opponent:hover{
+    border:1px solid #d3401e;
+}
+
+.row {
+    margin:0px;
+}
+
+.profileOpp {
+    font-size: 25px;
+    font-weight: normal;
+    padding:5px;
+    line-height: 24px;
+    text-align: center;   
+}
+
+</style>
+
+<body>
+<div class="wrapper">      
+    <div id="pageOpen" class="panel">
+        <div class="title" id="countyName">Game title</div>
+        <div class="imgOpen"><img class="img-responsive" src="placeholder.jpg"></div>
+        <div class="text">Introduction</div>
+        <button type="button" class="btn btn-primary btn-lg center-block" id="btnStart">Bring it on!</button>
+        <div id="credit">Kuang Keng Kuek Ser</div>
+    </div>
+    <div id="pageSelect" class="panel">
+        <div class="headline">Select your parliamentary seat</div>
+        <div class="imgSelect"><img class="img-responsive" src="placeholder.jpg"></div>
+        <div class="ui-widget" id="menubox">
+            <input id="dropdown" class="formfont" placeholder="Pick a seat">
+        </div>
+        <button type="button" class="btn btn-primary btn-lg center-block" id="btnReady" disabled>I'm ready!</button>
+        <div class="note">
+            Some note here.
+        </div>
+    </div>
+    <div id="pageSeat" class="panel">
+        <div class="headline">Pick your opponent</div>
+        <div class="row">
+            <div class="col-md-4 opponent" id="1"><img class="img-responsive" src="placeholder.jpg"></div>
+            <div class="col-md-4 opponent" id="2"><img class="img-responsive" src="placeholder.jpg"></div>
+            <div class="col-md-4 opponent" id="3"><img class="img-responsive" src="placeholder.jpg"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 opponent" id="4"><img class="img-responsive" src="placeholder.jpg"></div>
+            <div class="col-md-4 opponent" id="5"><img class="img-responsive" src="placeholder.jpg"></div>
+            <div class="col-md-4 opponent" id="6"><img class="img-responsive" src="placeholder.jpg"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 opponent" id="7"><img class="img-responsive" src="placeholder.jpg"></div>
+            <div class="col-md-4 opponent" id="8"><img class="img-responsive" src="placeholder.jpg"></div>
+            <div class="col-md-4 opponent" id="9"><img class="img-responsive" src="placeholder.jpg"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 opponent" id="10"><img class="img-responsive" src="placeholder.jpg"></div>
+            <div class="col-md-4 opponent" id="11"><img class="img-responsive" src="placeholder.jpg"></div>
+            <div class="col-md-4 opponent" id="12"><img class="img-responsive" src="placeholder.jpg"></div>
+        </div>
+        <div class="profileOpp">
+            <div class="seatOpp"></div>
+            <div class="nameOpp"></div>
+            <div class="posOpp"></div>
+            <div class="levelOpp"></div>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg center-block" id="btnFight" disabled>Let's fight!</button>
+    </div>
+    <div id="pageFight" class="panel">
+        <div class="imgFight"><img class="img-responsive" src="fighting.gif"></div>
+        <div class="text" id="animationText">Animation starts...</div>
+        <button type="button" class="btn btn-primary btn-lg center-block" id="btnWhy" disabled>Find out why</button>
+    </div>
+    <div id="pageAnalysis" class="panel">  
+        <div class="headline">Analysis of your seat</div>
+        <div class="imgAnalysis"><img class="img-responsive" src="placeholder.jpg"></div>
+        <button type="button" class="btn btn-primary btn-lg center-block" id="btnShare">Share your results</button>
+        <button type="button" class="btn btn-primary btn-lg center-block" id="btnRepeat">Fight again!</button>
+    </div>    
+</div>
+</body>
+
+<script>
+
+var opponents =  [
+    ["Seat00","Name00","Position00", 44],
+    ["Seat01","Name01","Position01", 44],
+    ["Seat02","Name02","Position02", 44],
+    ["Seat03","Name03","Position03", 44],
+    ["Seat04","Name04","Position04", 44],
+    ["Seat05","Name05","Position05", 44],
+    ["Seat06","Name06","Position06", 44],
+    ["Seat07","Name07","Position07", 44],
+    ["Seat08","Name08","Position08", 44],
+    ["Seat09","Name09","Position09", 44],
+    ["Seat10","Name10","Position10", 44],
+    ["Seat11","Name11","Position11", 44],
+    ["Seat12","Name12","Position12", 44],
+];
+
+var selectedSeat;
+
+//load json files into variables
+    // $.getJSON("https://cdn2.pri.org/test/counties-data-income.json", function(data) {
+    //     dataCountiesInc = data;
+    // });
+    // $.getJSON("https://cdn2.pri.org/test/states-data-income.json", function(data) {
+    //     dataStatesInc = data;
+    // });    
+
+//
+    $('#dropdown').focus(function() {
+        $(this).attr('placeholder', 'Type the seat name')
+    }).blur(function() {
+        $(this).attr('placeholder', 'Pick a seat')
+    })
+
+//launch Jquery UI autocomplete
+    $( "#dropdown" ).autocomplete({
+        source: seats,
+        select: function(e,ui) {
+            selectedSeat = ui.item.value;
+            $('#btnReady').attr('disabled',false);
+            // findIncome(selectedSeat);
+            // sendData();
+        }
+    });
+
+    function init() {         
+        panel('pageOpen');
+        //Events for each button clicked
+        $('#btnStart').click(function () {
+            panel('pageSelect');
+        });
+        $('#btnReady').click(function () {
+            panel('pageSeat');
+        });
+        $('#btnFight').click(function () {
+            panel('pageFight');
+            setTimeout(function(){
+                $('#animationText').text("Animation finished. Show results.");
+                $('#btnWhy').attr('disabled',false);
+            }, 2000);
+        });
+        $('#btnWhy').click(function () {
+            panel('pageAnalysis');
+        });
+        $('.opponent').click(function () {
+            $('#btnFight').attr('disabled',false);
+            var idOpp = $(this).attr('id');
+            $('.seatOpp').text(opponents[idOpp][0]);
+            $('.nameOpp').text(opponents[idOpp][1]);
+            $('.posOpp').text(opponents[idOpp][2]);
+            $('.levelOpp').text("Level " + opponents[idOpp][3]);
+        });
+    }
+
+    //Function to slide up and down the panel
+    function panel(id) {
+        $('.panel').slideUp(500);
+        $('#' + id).slideDown(500);
+    }
+
+    
+    function findIncome(xx){
+        selDataCountyInc = jQuery.grep(dataCountiesInc, function (n, i) {
+            return (n.county_state == xx);
+        },false);
+        FIPS = selDataCountyInc[0].FIPS;
+        shortState = selDataCountyInc[0].state;
+        countyName = selDataCountyInc[0].county;
+        
+        dataIncC = [selDataCountyInc[0].income_1989,selDataCountyInc[0].income_2015];
+        cDiff = selDataCountyInc[0].changes;
+        
+        selDataStateInc = jQuery.grep(dataStatesInc, function (n, i) {
+            return (n.short == shortState);
+        },false);
+        dataIncS = [selDataStateInc[0].income_1989,selDataStateInc[0].income_2015];
+        sDiff = selDataStateInc[0].changes;
+        categoriesA2 = [countyName, shortState, "US"];
+        dataIncDiff = [cDiff, sDiff, usDiff];
+        
+        $("#countyName").text(xx);
+    }
+
+
+$(document).ready(function(){
+  init();
+}); 
+
+
+
+// function sendData() {
+//   $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
+//     function(json) {
+//       $.ajax({
+//         type: 'POST',
+//         url: 'https://docs.google.com/forms/d/e/1FAIpQLSezn9Ag2Fo5Jsss1mkERwxAPlK7aOpcQK5GU5v9zPcMz8xmfg/formResponse',
+//         data: { 
+//           "entry.225955305": selectedSeat,
+//           "entry.1489940444": json.ip,
+//           "entry.283757303": document.referrer,
+//         }
+//       }); 
+//     }
+//   );   
+// }
+
+</script>
