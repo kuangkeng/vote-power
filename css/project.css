@@ -1,0 +1,318 @@
+body {
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
+  font-size: 150%;
+  line-height: 1.5em;
+  color: #565656;
+      }  
+
+.ui-widget, .ui-widget input {
+    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
+}
+
+.wrapper {
+    max-width: 480px; /*INPUT: set the width of the chart*/
+    margin: 0 auto;
+}
+
+.panel {
+    position: relative;
+    display: none;
+    border:1px solid #D3D3D3;
+    padding:10px;
+}
+
+.title {
+    font-size: 45px;
+    font-weight: 600;
+    padding:20px 10px 10px 10px;
+    text-align: center;
+    line-height: 26px;
+}
+
+.headline {
+    font-size: 25px;
+    font-weight: normal;
+    padding:20px 10px 10px;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.text {
+    font-size: 20px;
+    font-weight: normal;
+    padding:10px;
+    line-height: 28px;
+}
+
+/*CSS for dropdown menu starts*/
+.dropdownbox {
+  margin-left: 80px;
+}
+
+.chosen-container-single .chosen-single {
+  color:#333333;
+  text-align: center;
+  background: #fff;
+  border:1px solid #D3D3D3;
+  width:100%;
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single, .chosen-container-single .chosen-search input[type=text], .chosen-container .chosen-drop {
+  background: #fff;
+  border:1px solid #D3D3D3;
+}
+
+.chosen-container .chosen-results li.highlighted {
+  background: #D34127;
+}
+
+.dropdownbox .chosen-container-single .chosen-single {
+  height:40px;
+  font-size: 25px;
+  line-height: 40px;
+}
+
+.dropdownbox .chosen-container .chosen-results li, .chosen-container-single .chosen-search input[type=text] {
+  font-size: 22px;
+  padding:7px 6px;
+}
+
+.dropdownbox .chosen-container .chosen-results li.group-option {
+  padding-left:20px; 
+}
+
+.dropdownbox .chosen-container-single .chosen-single div b {
+  background-position: 0 10px; 
+}
+/*CSS for dropdown menu ends*/
+
+/*CSS for mobile dropdown menu starts*/
+
+.mobileMenuBox {
+  margin: 0 5%;
+  overflow-y:scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.optGroup {
+  margin-top: 10px;
+  font-size: 22px;
+  line-height: 25px;
+  font-weight: bold;
+  padding:8px 0px;
+}
+
+.optSeat {
+  font-size: 22px;
+  line-height: 25px;
+  padding:8px 0px 8px 15px; 
+}
+
+.color1 {
+  background-color: #f9f9f9;
+}
+
+/*CSS for mobile dropdown menu ends*/
+
+.mobileAvatar {
+  position: absolute;
+  top: 0;
+  left:0;
+  padding: 10px;
+  display: none;
+  background-color: #ffffff;
+}
+
+.userLevel {
+  font-size:25px;
+  line-height: 24px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.note {
+    font-size: 13px;
+    color: #808080;
+    line-height: 15px;
+    padding:10px;
+}
+
+.noteM{
+    position: absolute;
+    bottom:0;
+    left:0;
+    font-size: 13px;
+    color: #808080;
+    line-height: 15px;
+    padding:10px;
+    background-color: #ffffff;
+}
+
+#credit {
+    color: #808080;
+    font-size: 10px;
+    padding:20px 10px 0px;
+    text-align: right;
+    font-style: italic;
+}
+
+.btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#imgAvatar {
+  opacity: 0;
+}
+
+.opponent {
+    position: relative;
+    padding:0px;
+    border:0.5px solid #ffffff;
+}
+
+.oppProfile {
+  font-size: 25px;
+  line-height: 25px;
+  text-align: center;
+  background-color: rgba(255,255,255,0.8);
+  position:absolute;
+  bottom:5px;
+  width: 100%;
+  padding:10px;
+}
+
+.vote {
+    padding:0px;
+    border:0.5px solid #ffffff;
+}
+
+.oppHover:hover{
+    border:1px solid #d3401e;
+}
+
+.row {
+    margin:0px;
+}
+
+#vsVote {
+  text-align: center;
+  font-size: 25px;
+}
+
+#result01 {
+  font-weight: bold;
+}
+
+.profileSeat, .profileVoter, .profileName, .profileParty {
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/*SCROLLSTORY CSS*/ 
+.scroller-wrapper {
+  position:relative;
+  margin-top:200px;
+}
+
+.chart-wrapper {
+  display:none;
+  position: fixed;
+  bottom:20px;
+  left:50%;
+  margin-left: -240px;
+  width:480px;
+  z-index: 0;
+}
+
+.text-wrapper {
+  position:relative;
+  width:100%;
+  text-align: center;
+  padding-bottom: 1px;
+  z-index: 1;
+}
+
+.trigger {
+  font-size: 20px;
+  line-height: 28px;
+  width:65%;
+  padding:5px 5px;
+  margin-left:35%;
+  margin-bottom: 500px;
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity:0.1;
+  text-align: left;
+}
+
+#errorBox {
+  color:#939393;
+  text-align: center;
+  display:none;
+}
+
+.chart-wrapper.is-bottom {
+  position:absolute;
+  top: auto;
+  bottom:50px;
+  z-index: 2;
+}
+
+#instruct {
+  width: 50%;
+  z-index: 5;
+  display: none;
+  position: absolute;
+  top:30%;
+  right:1%;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.background {
+  display: inline-block;
+  padding:0px 5px;
+  background: #E01518;
+  /* Old browsers */
+  background: linear-gradient(to left, white 50%, #E01518 50%);
+  background-size: 200% 100%;
+  background-position:right bottom;
+  transition: all 2s ease;
+}
+
+.changeBackground {
+  color:white;
+  background-position:left bottom;
+}
+
+.font, .font2, .font3 {
+  display: inline-block;
+  color: #333;
+  text-decoration: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #E01518, #E01518 50%, #333 50%);
+  background-size: 200% 100%;
+  background-position: 100%;
+}
+
+.changeFont {
+  transition: all 2s ease;
+  background-position: 0%;
+}
+
+.changeFont2 {
+  transition: all 1s ease-out;
+  background-position: 0%;
+}
+
+.changeFont3 {
+  transition: all 1s ease-in;
+  background-position: 0%;
+}
+
+.noBreak {
+  display: inline-block;
+}

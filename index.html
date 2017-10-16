@@ -5,170 +5,614 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-  
-  <!-- load counties list from a separate js file -->
-    <script src="seat-list.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="library/chosen_v1.8.2/chosen.min.css">
+    <link rel="stylesheet" type="text/css" href="css/project.css">
   </head>
-
-<style>
-body {
-  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
-  font-size: 150%;
-  line-height: 1.5em;
-  color: #565656;
-      }  
-
-.ui-widget, .ui-widget input {
-    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
-}
-
-.wrapper {
-    max-width: 480px; /*INPUT: set the width of the chart*/
-    margin: 0 auto;
-}
-
-.panel {
-    display: none;
-    border:1px solid #D3D3D3;
-    padding:10px;
-}
-
-.title {
-    font-size: 45px;
-    font-weight: 600;
-    padding:20px 10px 10px 10px;
-    text-align: center;
-    line-height: 26px;
-}
-
-.headline {
-    font-size: 25px;
-    font-weight: normal;
-    padding:20px 10px 10px;
-    line-height: 24px;
-    text-align: center;
-}
-
-.text {
-    font-size: 20px;
-    font-weight: normal;
-    padding:20px 10px 10px;
-    line-height: 24px;
-}
-
-#menubox {
-    text-align: center;
-    padding-top:30px;
-    padding-bottom:20px;
-}
-
-#dropdown {
-    width:300px;
-    font-size: 20px;
-    line-height: 30px;
-    text-align: center;
-}
-
-.note {
-    font-size: 12px;
-    color: #808080;
-    line-height: 14px;
-    padding:10px;
-}
-
-#credit {
-    color: #808080;
-    font-size: 10px;
-    padding:20px 10px 0px;
-    text-align: right;
-    font-style: italic;
-}
-
-.btn {
-    margin-top: 20px;
-
-}
-
-.opponent {
-    padding:0px;
-    border:0.5px solid #ffffff;
-}
-
-.opponent:hover{
-    border:1px solid #d3401e;
-}
-
-.row {
-    margin:0px;
-}
-
-.profileOpp {
-    font-size: 25px;
-    font-weight: normal;
-    padding:5px;
-    line-height: 24px;
-    text-align: center;   
-}
-
-</style>
-
 <body>
-<div class="wrapper">      
+<div class="wrapper">    
     <div id="pageOpen" class="panel">
-        <div class="title" id="countyName">Game title</div>
+        <div class="title" id="countyName">Undi Battle</div>
         <div class="imgOpen"><img class="img-responsive" src="placeholder.jpg"></div>
-        <div class="text">Introduction</div>
+        <div class="text"><p>The 14th general election will be called within the next 10 months but do you know how powerful is your vote compared to the votes of other Malaysians? Use your vote to challenge political leaders including Prime Minister Najib Razak and Lim Kit Siang now!</p></div>
         <button type="button" class="btn btn-primary btn-lg center-block" id="btnStart">Bring it on!</button>
+        <button type="button" class="btn btn-default btn-lg center-block" id="btnMobile">Mobile menu</button>
         <div id="credit">Kuang Keng Kuek Ser</div>
     </div>
     <div id="pageSelect" class="panel">
         <div class="headline">Select your parliamentary seat</div>
-        <div class="imgSelect"><img class="img-responsive" src="placeholder.jpg"></div>
-        <div class="ui-widget" id="menubox">
-            <input id="dropdown" class="formfont" placeholder="Pick a seat">
+        <div class="dropdownbox">
+            <select data-placeholder="Select seat" class="stateMenu">
+                  <option value="" id="option01"></option>
+              <optgroup label="Perlis">           
+                  <option value="Padang Besar">Padang Besar</option>
+                  <option value="Kangar">Kangar</option>
+                  <option value="Arau">Arau</option>
+              </optgroup>
+              <optgroup label="Kedah">
+                  <option value="Langkawi">Langkawi</option>
+                  <option value="Jerlun">Jerlun</option>
+                  <option value="Kubang Pasu">Kubang Pasu</option>
+                  <option value="Padang Terap">Padang Terap</option>
+                  <option value="Pokok Sena">Pokok Sena</option>
+                  <option value="Alor Star">Alor Star</option>
+                  <option value="Kuala Kedah">Kuala Kedah</option>
+                  <option value="Pendang">Pendang</option>
+                  <option value="Jerai">Jerai</option>
+                  <option value="Sik">Sik</option>
+                  <option value="Merbok">Merbok</option>
+                  <option value="Sungai Petani">Sungai Petani</option>
+                  <option value="Baling">Baling</option>
+                  <option value="Padang Serai">Padang Serai</option>
+                  <option value="Kulim-Bandar Baharu">Kulim-Bandar Baharu</option>
+              </optgroup>
+              <optgroup label="Kelantan">
+                  <option value="Tumpat">Tumpat</option>
+                  <option value="Pengkalan Chepa">Pengkalan Chepa</option>
+                  <option value="Kota Bharu">Kota Bharu</option>
+                  <option value="Pasir Mas">Pasir Mas</option>
+                  <option value="Rantau Panjang">Rantau Panjang</option>
+                  <option value="Kubang Kerian">Kubang Kerian</option>
+                  <option value="Bachok">Bachok</option>
+                  <option value="Ketereh">Ketereh</option>
+                  <option value="Tanah Merah">Tanah Merah</option>
+                  <option value="Pasir Puteh">Pasir Puteh</option>
+                  <option value="Machang">Machang</option>
+                  <option value="Jeli">Jeli</option>
+                  <option value="Kuala Krai">Kuala Krai</option>
+                  <option value="Gua Musang">Gua Musang</option>
+              </optgroup>
+              <optgroup label="Terengganu">
+                  <option value="Besut">Besut</option>
+                  <option value="Setiu">Setiu</option>
+                  <option value="Kuala Nerus">Kuala Nerus</option>
+                  <option value="Kuala Terengganu">Kuala Terengganu</option>
+                  <option value="Marang">Marang</option>
+                  <option value="Hulu Terengganu">Hulu Terengganu</option>
+                  <option value="Dungun">Dungun</option>
+                  <option value="Kemaman">Kemaman</option>
+              </optgroup>
+              <optgroup label="Pulau Pinang">
+                  <option value="Kepala Batas">Kepala Batas</option>
+                  <option value="Tasek Gelugor">Tasek Gelugor</option>
+                  <option value="Bagan">Bagan</option>
+                  <option value="Permatang Pauh">Permatang Pauh</option>
+                  <option value="Bukit Mertajam">Bukit Mertajam</option>
+                  <option value="Batu Kawan">Batu Kawan</option>
+                  <option value="Nibong Tebal">Nibong Tebal</option>
+                  <option value="Bukit Bendera">Bukit Bendera</option>
+                  <option value="Tanjong">Tanjong</option>
+                  <option value="Jelutong">Jelutong</option>
+                  <option value="Bukit Gelugor">Bukit Gelugor</option>
+                  <option value="Bayan Baru">Bayan Baru</option>
+                  <option value="Balik Pulau">Balik Pulau</option>
+              </optgroup>
+              <optgroup label="Perak">
+                  <option value="Gerik">Gerik</option>
+                  <option value="Lenggong">Lenggong</option>
+                  <option value="Larut">Larut</option>
+                  <option value="Parit Buntar">Parit Buntar</option>
+                  <option value="Bagan Serai">Bagan Serai</option>
+                  <option value="Bukit Gantang">Bukit Gantang</option>
+                  <option value="Taiping">Taiping</option>
+                  <option value="Padang Rengas">Padang Rengas</option>
+                  <option value="Sungai Siput">Sungai Siput</option>
+                  <option value="Tambun">Tambun</option>
+                  <option value="Ipoh Timor">Ipoh Timor</option>
+                  <option value="Ipoh Barat">Ipoh Barat</option>
+                  <option value="Batu Gajah">Batu Gajah</option>
+                  <option value="Kuala Kangsar">Kuala Kangsar</option>
+                  <option value="Beruas">Beruas</option>
+                  <option value="Parit">Parit</option>
+                  <option value="Kampar">Kampar</option>
+                  <option value="Gopeng">Gopeng</option>
+                  <option value="Tapah">Tapah</option>
+                  <option value="Pasir Salak">Pasir Salak</option>
+                  <option value="Lumut">Lumut</option>
+                  <option value="Bagan Datok">Bagan Datok</option>
+                  <option value="Telok Intan">Telok Intan</option>
+                  <option value="Tanjong Malim">Tanjong Malim</option>
+              </optgroup>
+              <optgroup label="Pahang">
+                  <option value="Cameron Highlands">Cameron Highlands</option>
+                  <option value="Lipis">Lipis</option>
+                  <option value="Raub">Raub</option>
+                  <option value="Jerantut">Jerantut</option>
+                  <option value="Indera Mahkota">Indera Mahkota</option>
+                  <option value="Kuantan">Kuantan</option>
+                  <option value="Paya Besar">Paya Besar</option>
+                  <option value="Pekan">Pekan</option>
+                  <option value="Maran">Maran</option>
+                  <option value="Kuala Krau">Kuala Krau</option>
+                  <option value="Temerloh">Temerloh</option>
+                  <option value="Bentong">Bentong</option>
+                  <option value="Bera">Bera</option>
+                  <option value="Rompin">Rompin</option>
+              </optgroup>
+              <optgroup label="Selangor">
+                  <option value="Sabak Bernam">Sabak Bernam</option>
+                  <option value="Sungai Besar">Sungai Besar</option>
+                  <option value="Hulu Selangor">Hulu Selangor</option>
+                  <option value="Tanjong Karang">Tanjong Karang</option>
+                  <option value="Kuala Selangor">Kuala Selangor</option>
+                  <option value="Selayang">Selayang</option>
+                  <option value="Gombak">Gombak</option>
+                  <option value="Ampang">Ampang</option>
+                  <option value="Pandan">Pandan</option>
+                  <option value="Hulu Langat">Hulu Langat</option>
+                  <option value="Serdang">Serdang</option>
+                  <option value="Puchong">Puchong</option>
+                  <option value="Kelana Jaya">Kelana Jaya</option>
+                  <option value="Petaling Jaya Selatan">Petaling Jaya Selatan</option>
+                  <option value="Petaling Jaya Utara">Petaling Jaya Utara</option>
+                  <option value="Subang">Subang</option>
+                  <option value="Shah Alam">Shah Alam</option>
+                  <option value="Kapar">Kapar</option>
+                  <option value="Klang">Klang</option>
+                  <option value="Kota Raja">Kota Raja</option>
+                  <option value="Kuala Langat">Kuala Langat</option>
+                  <option value="Sepang">Sepang</option>
+              </optgroup>
+              <optgroup label="Kuala Lumpur">
+                  <option value="Kepong">Kepong</option>
+                  <option value="Batu">Batu</option>
+                  <option value="Wangsa Maju">Wangsa Maju</option>
+                  <option value="Segambut">Segambut</option>
+                  <option value="Setiawangsa">Setiawangsa</option>
+                  <option value="Titiwangsa">Titiwangsa</option>
+                  <option value="Bukit Bintang">Bukit Bintang</option>
+                  <option value="Lembah Pantai">Lembah Pantai</option>
+                  <option value="Seputeh">Seputeh</option>
+                  <option value="Cheras">Cheras</option>
+                  <option value="Bandar Tun Razak">Bandar Tun Razak</option>
+              </optgroup>
+              <optgroup label="Putrajaya">
+                  <option value="Putrajaya">Putrajaya</option>
+              </optgroup>
+              <optgroup label="Negeri Sembilan">
+                  <option value="Jelebu">Jelebu</option>
+                  <option value="Jempol">Jempol</option>
+                  <option value="Seremban">Seremban</option>
+                  <option value="Kuala Pilah">Kuala Pilah</option>
+                  <option value="Rasah">Rasah</option>
+                  <option value="Rembau">Rembau</option>
+                  <option value="Telok Kemang">Telok Kemang</option>
+                  <option value="Tampin">Tampin</option>
+              </optgroup>
+              <optgroup label="Melaka">
+                  <option value="Masjid Tanah">Masjid Tanah</option>
+                  <option value="Alor Gajah">Alor Gajah</option>
+                  <option value="Tangga Batu">Tangga Batu</option>
+                  <option value="Bukit Katil">Bukit Katil</option>
+                  <option value="Kota Melaka">Kota Melaka</option>
+                  <option value="Jasin">Jasin</option>
+              </optgroup>
+              <optgroup label="Johor">
+                  <option value="Segamat">Segamat</option>
+                  <option value="Sekijang">Sekijang</option>
+                  <option value="Labis">Labis</option>
+                  <option value="Pagoh">Pagoh</option>
+                  <option value="Ledang">Ledang</option>
+                  <option value="Bakri">Bakri</option>
+                  <option value="Muar">Muar</option>
+                  <option value="Parit Sulong">Parit Sulong</option>
+                  <option value="Ayer Hitam">Ayer Hitam</option>
+                  <option value="Sri Gading">Sri Gading</option>
+                  <option value="Batu Pahat">Batu Pahat</option>
+                  <option value="Simpang Renggam">Simpang Renggam</option>
+                  <option value="Kluang">Kluang</option>
+                  <option value="Sembrong">Sembrong</option>
+                  <option value="Mersing">Mersing</option>
+                  <option value="Tenggara">Tenggara</option>
+                  <option value="Kota Tinggi">Kota Tinggi</option>
+                  <option value="Pengerang">Pengerang</option>
+                  <option value="Tebrau">Tebrau</option>
+                  <option value="Pasir Gudang">Pasir Gudang</option>
+                  <option value="Johor Bahru">Johor Bahru</option>
+                  <option value="Pulai">Pulai</option>
+                  <option value="Gelang Patah">Gelang Patah</option>
+                  <option value="Kulai">Kulai</option>
+                  <option value="Pontian">Pontian</option>
+                  <option value="Tanjong Piai">Tanjong Piai</option>
+              </optgroup>
+              <optgroup label="Labuan">
+                  <option value="Labuan">Labuan</option>
+              </optgroup>
+              <optgroup label="Sabah">
+                  <option value="Kudat">Kudat</option>
+                  <option value="Kota Marudu">Kota Marudu</option>
+                  <option value="Kota Belud">Kota Belud</option>
+                  <option value="Tuaran">Tuaran</option>
+                  <option value="Sepanggar">Sepanggar</option>
+                  <option value="Kota Kinabalu">Kota Kinabalu</option>
+                  <option value="Putatan">Putatan</option>
+                  <option value="Penampang">Penampang</option>
+                  <option value="Papar">Papar</option>
+                  <option value="Kimanis">Kimanis</option>
+                  <option value="Beaufort">Beaufort</option>
+                  <option value="Sipitang">Sipitang</option>
+                  <option value="Ranau">Ranau</option>
+                  <option value="Keningau">Keningau</option>
+                  <option value="Tenom">Tenom</option>
+                  <option value="Pensiangan">Pensiangan</option>
+                  <option value="Beluran">Beluran</option>
+                  <option value="Libaran">Libaran</option>
+                  <option value="Batu Sapi">Batu Sapi</option>
+                  <option value="Sandakan">Sandakan</option>
+                  <option value="Kinabatangan">Kinabatangan</option>
+                  <option value="Silam">Silam</option>
+                  <option value="Semporna">Semporna</option>
+                  <option value="Tawau">Tawau</option>
+                  <option value="Kalabakan">Kalabakan</option>
+              </optgroup>
+              <optgroup label="Sarawak">
+                  <option value="Mas Gading">Mas Gading</option>
+                  <option value="Santubong">Santubong</option>
+                  <option value="Petra Jaya">Petra Jaya</option>
+                  <option value="Bandar Kuching">Bandar Kuching</option>
+                  <option value="Stampin">Stampin</option>
+                  <option value="Kota Samarahan">Kota Samarahan</option>
+                  <option value="Puncak Borneo (previously Mambong)">Puncak Borneo (previously Mambong)</option>
+                  <option value="Serian">Serian</option>
+                  <option value="Batang Sadong">Batang Sadong</option>
+                  <option value="Batang Lupar">Batang Lupar</option>
+                  <option value="Sri Aman">Sri Aman</option>
+                  <option value="Lubok Antu">Lubok Antu</option>
+                  <option value="Betong">Betong</option>
+                  <option value="Saratok">Saratok</option>
+                  <option value="Tanjong Manis">Tanjong Manis</option>
+                  <option value="Igan">Igan</option>
+                  <option value="Sarikei">Sarikei</option>
+                  <option value="Julau">Julau</option>
+                  <option value="Kanowit">Kanowit</option>
+                  <option value="Lanang">Lanang</option>
+                  <option value="Sibu">Sibu</option>
+                  <option value="Mukah">Mukah</option>
+                  <option value="Selangau">Selangau</option>
+                  <option value="Kapit">Kapit</option>
+                  <option value="Hulu Rajang">Hulu Rajang</option>
+                  <option value="Bintulu">Bintulu</option>
+                  <option value="Sibuti">Sibuti</option>
+                  <option value="Miri">Miri</option>
+                  <option value="Baram">Baram</option>
+                  <option value="Limbang">Limbang</option>
+                  <option value="Lawas">Lawas</option>
+            </select>
         </div>
+        <div class="userAvatar"><img class="img-responsive" id= "imgAvatar" src="candidate.png"></div>  
+        <div class="userLevel"></div>
         <button type="button" class="btn btn-primary btn-lg center-block" id="btnReady" disabled>I'm ready!</button>
         <div class="note">
-            Some note here.
+            *The parliamentary seats listed in the menu are based on the seats contested in General Election 2013, not the new list proposed by the Election Commission that has yet to be passed.
         </div>
     </div>
+    <div id="pageMobileMenu" class="panel">  
+      <div class="headline">Select your parliamentary seat</div>                             
+      <div class="mobileMenuBox">
+              <div class="optGroup">Perlis</div>
+                <div class="optSeat color1">Padang Besar</div>
+                <div class="optSeat color2">Kangar</div>
+                <div class="optSeat color1">Arau</div>
+              <div class="optGroup">Kedah</div>
+                <div class="optSeat color1">Langkawi</div>
+                <div class="optSeat color2">Jerlun</div>
+                <div class="optSeat color1">Kubang Pasu</div>
+                <div class="optSeat color2">Padang Terap</div>
+                <div class="optSeat color1">Pokok Sena</div>
+                <div class="optSeat color2">Alor Star</div>
+                <div class="optSeat color1">Kuala Kedah</div>
+                <div class="optSeat color2">Pendang</div>
+                <div class="optSeat color1">Jerai</div>
+                <div class="optSeat color2">Sik</div>
+                <div class="optSeat color1">Merbok</div>
+                <div class="optSeat color2">Sungai Petani</div>
+                <div class="optSeat color1">Baling</div>
+                <div class="optSeat color2">Padang Serai</div>
+                <div class="optSeat color1">Kulim-Bandar Baharu</div>
+              <div class="optGroup">Kelantan</div>
+                <div class="optSeat color1">Tumpat</div>
+                <div class="optSeat color2">Pengkalan Chepa</div>
+                <div class="optSeat color1">Kota Bharu</div>
+                <div class="optSeat color2">Pasir Mas</div>
+                <div class="optSeat color1">Rantau Panjang</div>
+                <div class="optSeat color2">Kubang Kerian</div>
+                <div class="optSeat color1">Bachok</div>
+                <div class="optSeat color2">Ketereh</div>
+                <div class="optSeat color1">Tanah Merah</div>
+                <div class="optSeat color2">Pasir Puteh</div>
+                <div class="optSeat color1">Machang</div>
+                <div class="optSeat color2">Jeli</div>
+                <div class="optSeat color1">Kuala Krai</div>
+                <div class="optSeat color2">Gua Musang</div>
+              <div class="optGroup">Terengganu</div>
+                <div class="optSeat color1">Besut</div>
+                <div class="optSeat color2">Setiu</div>
+                <div class="optSeat color1">Kuala Nerus</div>
+                <div class="optSeat color2">Kuala Terengganu</div>
+                <div class="optSeat color1">Marang</div>
+                <div class="optSeat color2">Hulu Terengganu</div>
+                <div class="optSeat color1">Dungun</div>
+                <div class="optSeat color2">Kemaman</div>
+              <div class="optGroup">Pulau Pinang</div>
+                <div class="optSeat color1">Kepala Batas</div>
+                <div class="optSeat color2">Tasek Gelugor</div>
+                <div class="optSeat color1">Bagan</div>
+                <div class="optSeat color2">Permatang Pauh</div>
+                <div class="optSeat color1">Bukit Mertajam</div>
+                <div class="optSeat color2">Batu Kawan</div>
+                <div class="optSeat color1">Nibong Tebal</div>
+                <div class="optSeat color2">Bukit Bendera</div>
+                <div class="optSeat color1">Tanjong</div>
+                <div class="optSeat color2">Jelutong</div>
+                <div class="optSeat color1">Bukit Gelugor</div>
+                <div class="optSeat color2">Bayan Baru</div>
+                <div class="optSeat color1">Balik Pulau</div>
+              <div class="optGroup">Perak</div>
+                <div class="optSeat color1">Gerik</div>
+                <div class="optSeat color2">Lenggong</div>
+                <div class="optSeat color1">Larut</div>
+                <div class="optSeat color2">Parit Buntar</div>
+                <div class="optSeat color1">Bagan Serai</div>
+                <div class="optSeat color2">Bukit Gantang</div>
+                <div class="optSeat color1">Taiping</div>
+                <div class="optSeat color2">Padang Rengas</div>
+                <div class="optSeat color1">Sungai Siput</div>
+                <div class="optSeat color2">Tambun</div>
+                <div class="optSeat color1">Ipoh Timor</div>
+                <div class="optSeat color2">Ipoh Barat</div>
+                <div class="optSeat color1">Batu Gajah</div>
+                <div class="optSeat color2">Kuala Kangsar</div>
+                <div class="optSeat color1">Beruas</div>
+                <div class="optSeat color2">Parit</div>
+                <div class="optSeat color1">Kampar</div>
+                <div class="optSeat color2">Gopeng</div>
+                <div class="optSeat color1">Tapah</div>
+                <div class="optSeat color2">Pasir Salak</div>
+                <div class="optSeat color1">Lumut</div>
+                <div class="optSeat color2">Bagan Datok</div>
+                <div class="optSeat color1">Telok Intan</div>
+                <div class="optSeat color2">Tanjong Malim</div>
+              <div class="optGroup">Pahang</div>
+                <div class="optSeat color1">Cameron Highlands</div>
+                <div class="optSeat color2">Lipis</div>
+                <div class="optSeat color1">Raub</div>
+                <div class="optSeat color2">Jerantut</div>
+                <div class="optSeat color1">Indera Mahkota</div>
+                <div class="optSeat color2">Kuantan</div>
+                <div class="optSeat color1">Paya Besar</div>
+                <div class="optSeat color2">Pekan</div>
+                <div class="optSeat color1">Maran</div>
+                <div class="optSeat color2">Kuala Krau</div>
+                <div class="optSeat color1">Temerloh</div>
+                <div class="optSeat color2">Bentong</div>
+                <div class="optSeat color1">Bera</div>
+                <div class="optSeat color2">Rompin</div>
+              <div class="optGroup">Selangor</div>
+                <div class="optSeat color1">Sabak Bernam</div>
+                <div class="optSeat color2">Sungai Besar</div>
+                <div class="optSeat color1">Hulu Selangor</div>
+                <div class="optSeat color2">Tanjong Karang</div>
+                <div class="optSeat color1">Kuala Selangor</div>
+                <div class="optSeat color2">Selayang</div>
+                <div class="optSeat color1">Gombak</div>
+                <div class="optSeat color2">Ampang</div>
+                <div class="optSeat color1">Pandan</div>
+                <div class="optSeat color2">Hulu Langat</div>
+                <div class="optSeat color1">Serdang</div>
+                <div class="optSeat color2">Puchong</div>
+                <div class="optSeat color1">Kelana Jaya</div>
+                <div class="optSeat color2">Petaling Jaya Selatan</div>
+                <div class="optSeat color1">Petaling Jaya Utara</div>
+                <div class="optSeat color2">Subang</div>
+                <div class="optSeat color1">Shah Alam</div>
+                <div class="optSeat color2">Kapar</div>
+                <div class="optSeat color1">Klang</div>
+                <div class="optSeat color2">Kota Raja</div>
+                <div class="optSeat color1">Kuala Langat</div>
+                <div class="optSeat color2">Sepang</div>
+              <div class="optGroup">Kuala Lumpur</div>
+                <div class="optSeat color1">Kepong</div>
+                <div class="optSeat color2">Batu</div>
+                <div class="optSeat color1">Wangsa Maju</div>
+                <div class="optSeat color2">Segambut</div>
+                <div class="optSeat color1">Setiawangsa</div>
+                <div class="optSeat color2">Titiwangsa</div>
+                <div class="optSeat color1">Bukit Bintang</div>
+                <div class="optSeat color2">Lembah Pantai</div>
+                <div class="optSeat color1">Seputeh</div>
+                <div class="optSeat color2">Cheras</div>
+                <div class="optSeat color1">Bandar Tun Razak</div>
+              <div class="optGroup">Putrajaya</div>
+                <div class="optSeat color2">Putrajaya</div>
+              <div class="optGroup">Negeri Sembilan</div>
+                <div class="optSeat color1">Jelebu</div>
+                <div class="optSeat color2">Jempol</div>
+                <div class="optSeat color1">Seremban</div>
+                <div class="optSeat color2">Kuala Pilah</div>
+                <div class="optSeat color1">Rasah</div>
+                <div class="optSeat color2">Rembau</div>
+                <div class="optSeat color1">Telok Kemang</div>
+                <div class="optSeat color2">Tampin</div>
+              <div class="optGroup">Melaka</div>
+                <div class="optSeat color1">Masjid Tanah</div>
+                <div class="optSeat color2">Alor Gajah</div>
+                <div class="optSeat color1">Tangga Batu</div>
+                <div class="optSeat color2">Bukit Katil</div>
+                <div class="optSeat color1">Kota Melaka</div>
+                <div class="optSeat color2">Jasin</div>
+              <div class="optGroup">Johor</div>
+                <div class="optSeat color1">Segamat</div>
+                <div class="optSeat color2">Sekijang</div>
+                <div class="optSeat color1">Labis</div>
+                <div class="optSeat color2">Pagoh</div>
+                <div class="optSeat color1">Ledang</div>
+                <div class="optSeat color2">Bakri</div>
+                <div class="optSeat color1">Muar</div>
+                <div class="optSeat color2">Parit Sulong</div>
+                <div class="optSeat color1">Ayer Hitam</div>
+                <div class="optSeat color2">Sri Gading</div>
+                <div class="optSeat color1">Batu Pahat</div>
+                <div class="optSeat color2">Simpang Renggam</div>
+                <div class="optSeat color1">Kluang</div>
+                <div class="optSeat color2">Sembrong</div>
+                <div class="optSeat color1">Mersing</div>
+                <div class="optSeat color2">Tenggara</div>
+                <div class="optSeat color1">Kota Tinggi</div>
+                <div class="optSeat color2">Pengerang</div>
+                <div class="optSeat color1">Tebrau</div>
+                <div class="optSeat color2">Pasir Gudang</div>
+                <div class="optSeat color1">Johor Bahru</div>
+                <div class="optSeat color2">Pulai</div>
+                <div class="optSeat color1">Gelang Patah</div>
+                <div class="optSeat color2">Kulai</div>
+                <div class="optSeat color1">Pontian</div>
+                <div class="optSeat color2">Tanjong Piai</div>
+              <div class="optGroup">Labuan</div>
+                <div class="optSeat color1">Labuan</div>
+              <div class="optGroup">Sabah</div>
+                <div class="optSeat color1">Kudat</div>
+                <div class="optSeat color2">Kota Marudu</div>
+                <div class="optSeat color1">Kota Belud</div>
+                <div class="optSeat color2">Tuaran</div>
+                <div class="optSeat color1">Sepanggar</div>
+                <div class="optSeat color2">Kota Kinabalu</div>
+                <div class="optSeat color1">Putatan</div>
+                <div class="optSeat color2">Penampang</div>
+                <div class="optSeat color1">Papar</div>
+                <div class="optSeat color2">Kimanis</div>
+                <div class="optSeat color1">Beaufort</div>
+                <div class="optSeat color2">Sipitang</div>
+                <div class="optSeat color1">Ranau</div>
+                <div class="optSeat color2">Keningau</div>
+                <div class="optSeat color1">Tenom</div>
+                <div class="optSeat color2">Pensiangan</div>
+                <div class="optSeat color1">Beluran</div>
+                <div class="optSeat color2">Libaran</div>
+                <div class="optSeat color1">Batu Sapi</div>
+                <div class="optSeat color2">Sandakan</div>
+                <div class="optSeat color1">Kinabatangan</div>
+                <div class="optSeat color2">Silam</div>
+                <div class="optSeat color1">Semporna</div>
+                <div class="optSeat color2">Tawau</div>
+                <div class="optSeat color1">Kalabakan</div>
+              <div class="optGroup">Sarawak</div>
+                <div class="optSeat color1">Mas Gading</div>
+                <div class="optSeat color2">Santubong</div>
+                <div class="optSeat color1">Petra Jaya</div>
+                <div class="optSeat color2">Bandar Kuching</div>
+                <div class="optSeat color1">Stampin</div>
+                <div class="optSeat color2">Kota Samarahan</div>
+                <div class="optSeat color1">Puncak Borneo (previously Mambong)</div>
+                <div class="optSeat color2">Serian</div>
+                <div class="optSeat color1">Batang Sadong</div>
+                <div class="optSeat color2">Batang Lupar</div>
+                <div class="optSeat color1">Sri Aman</div>
+                <div class="optSeat color2">Lubok Antu</div>
+                <div class="optSeat color1">Betong</div>
+                <div class="optSeat color2">Saratok</div>
+                <div class="optSeat color1">Tanjong Manis</div>
+                <div class="optSeat color2">Igan</div>
+                <div class="optSeat color1">Sarikei</div>
+                <div class="optSeat color2">Julau</div>
+                <div class="optSeat color1">Kanowit</div>
+                <div class="optSeat color2">Lanang</div>
+                <div class="optSeat color1">Sibu</div>
+                <div class="optSeat color2">Mukah</div>
+                <div class="optSeat color1">Selangau</div>
+                <div class="optSeat color2">Kapit</div>
+                <div class="optSeat color1">Hulu Rajang</div>
+                <div class="optSeat color2">Bintulu</div>
+                <div class="optSeat color1">Sibuti</div>
+                <div class="optSeat color2">Miri</div>
+                <div class="optSeat color1">Baram</div>
+                <div class="optSeat color2">Limbang</div>
+                <div class="optSeat color1">Lawas</div>
+      </div> 
+      <div class="noteM">
+            *The parliamentary seats listed in the menu are based on the seats contested in General Election 2013, not the new list proposed by the Election Commission that has yet to be passed.
+      </div>
+      <div class="mobileAvatar">
+        <div class="headline" id="userSeat"></div>
+        <div id="mAvatar"><img class="img-responsive" src="placeholder.jpg"></div>
+        <div class="userLevel"></div>
+        <div class="row" id="mButton">
+          <div class="col-md-6">
+            <button type="button" class="btn btn-primary btn-lg center-block" id="btnReadyM">I'm ready!</button>
+          </div>
+          <div class="col-md-6">
+            <button type="button" class="btn btn-default btn-lg center-block" id="btnBackM">Back</button>
+          </div>
+        </div>
+      </div>    
+    </div> 
     <div id="pageSeat" class="panel">
         <div class="headline">Pick your opponent</div>
         <div class="row">
-            <div class="col-md-4 opponent" id="1"><img class="img-responsive" src="placeholder.jpg"></div>
-            <div class="col-md-4 opponent" id="2"><img class="img-responsive" src="placeholder.jpg"></div>
-            <div class="col-md-4 opponent" id="3"><img class="img-responsive" src="placeholder.jpg"></div>
+            <div class="col-md-6 opponent oppHover" id="1">
+              <img class="img-responsive" src="candidate.png">
+              <div class="oppProfile">
+                <div class="oppName">Mohd. Najib Abdul Razak</div>
+                <div class="oppLevel">Level 51</div>
+              </div>
+            </div>
+            <div class="col-md-6 opponent oppHover" id="2">
+              <img class="img-responsive" src="candidate.png">
+              <div class="oppProfile">
+                <div class="oppName">Wan Azizah Wan Ismail</div>
+                <div class="oppLevel">Level 57</div>
+              </div>
+            </div>
         </div>
         <div class="row">
-            <div class="col-md-4 opponent" id="4"><img class="img-responsive" src="placeholder.jpg"></div>
-            <div class="col-md-4 opponent" id="5"><img class="img-responsive" src="placeholder.jpg"></div>
-            <div class="col-md-4 opponent" id="6"><img class="img-responsive" src="placeholder.jpg"></div>
+            <div class="col-md-6 opponent oppHover" id="3">
+              <img class="img-responsive" src="candidate.png">
+              <div class="oppProfile">
+                <div class="oppName">Tengku Adnan Tengku Mansor</div>
+                <div class="oppLevel">Level 100</div>
+              </div>
+            </div>
+            <div class="col-md-6 opponent oppHover" id="4">
+              <img class="img-responsive" src="candidate.png">
+              <div class="oppProfile">
+                <div class="oppName">Lim Kit Siang</div>
+                <div class="oppLevel">Level 26</div>
+              </div>
+            </div>
         </div>
         <div class="row">
-            <div class="col-md-4 opponent" id="7"><img class="img-responsive" src="placeholder.jpg"></div>
-            <div class="col-md-4 opponent" id="8"><img class="img-responsive" src="placeholder.jpg"></div>
-            <div class="col-md-4 opponent" id="9"><img class="img-responsive" src="placeholder.jpg"></div>
+            <div class="col-md-6 opponent oppHover" id="5">
+              <img class="img-responsive" src="candidate.png">
+              <div class="oppProfile">
+                <div class="oppName">Abdul Hadi Awang</div>
+                <div class="oppLevel">Level 40</div>
+              </div>
+            </div>
+            <div class="col-md-6 opponent oppHover" id="6">
+              <img class="img-responsive" src="candidate.png">
+              <div class="oppProfile">
+                <div class="oppName">Ahmad Zahid Hamidi</div>
+                <div class="oppLevel">Level 84</div>
+              </div>
+            </div>
         </div>
         <div class="row">
-            <div class="col-md-4 opponent" id="10"><img class="img-responsive" src="placeholder.jpg"></div>
-            <div class="col-md-4 opponent" id="11"><img class="img-responsive" src="placeholder.jpg"></div>
-            <div class="col-md-4 opponent" id="12"><img class="img-responsive" src="placeholder.jpg"></div>
+            <div class="col-md-6 opponent oppHover" id="7">
+              <img class="img-responsive" src="candidate.png">
+              <div class="oppProfile">
+                <div class="oppName">Ong Kian Ming</div>
+                <div class="oppLevel">Level 8</div>
+              </div>
+            </div>
+            <div class="col-md-6 opponent oppHover" id="8">
+              <img class="img-responsive" src="candidate.png">
+              <div class="oppProfile">
+                <div class="oppName">Bung Moktar Radin</div>
+                <div class="oppLevel">Level 94</div>
+              </div>
+            </div>
         </div>
-        <div class="profileOpp">
-            <div class="seatOpp"></div>
-            <div class="nameOpp"></div>
-            <div class="posOpp"></div>
-            <div class="levelOpp"></div>
-        </div>
-        <button type="button" class="btn btn-primary btn-lg center-block" id="btnFight" disabled>Let's fight!</button>
     </div>
     <div id="pageFight" class="panel">
         <div class="imgFight"><img class="img-responsive" src="fighting.gif"></div>
@@ -176,139 +620,119 @@ body {
         <button type="button" class="btn btn-primary btn-lg center-block" id="btnWhy" disabled>Find out why</button>
     </div>
     <div id="pageAnalysis" class="panel">  
-        <div class="headline">Analysis of your seat</div>
-        <div class="imgAnalysis"><img class="img-responsive" src="placeholder.jpg"></div>
+        <div class="headline" id="resultHead"></div>    
+        <div class="text" id="resultIntro">
+          <p>Each Malaysian voter can only casts one vote to elect one Member of Parliament (MP) but under the current electoral system, not every vote has the same power. For example, in a thinly-populated constituency like Putrajaya, the 17,925 voters there vote to elect one MP while in a over-crowded constituency like Subang, 130,211 voters - seven times the number of voters in Putrajaya - also elect one MP.</p> 
+          <p>In other words, one Putrajaya vote is equal to seven Subang vote. Subang voters are under-represented while Putrajaya voter is over-represented. This malpractice is called malapportionment, a violation of the “one person, one vote, one value” principle in a democratic political system.</p>
+          <p><span id="result01"></span></p>
+        </div>
+        <div class="row" id="voteChart">
+            <div class="col-md-5 vote" id="winnerVote"><img class="img-responsive" src="ballot-icon.png"></div>
+            <div class="col-md-2 vote" id="vsVote">=</div>
+            <div class="col-md-5 vote" id="loserVote">
+                <div class="row">
+                    <div class="col-md-4 vote voteBox" id="voteBox0"></div>
+                    <div class="col-md-4 vote voteBox" id="voteBox1"></div>
+                    <div class="col-md-4 vote voteBox" id="voteBox2"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 vote voteBox" id="voteBox3"></div>
+                    <div class="col-md-4 vote voteBox" id="voteBox4"></div>
+                    <div class="col-md-4 vote voteBox" id="voteBox5"></div>
+                </div>
+            </div>
+        </div> 
+        <div class="row" id="profileChart">
+            <div class="col-md-6 vote" id="winnerAvatar">
+              <img class="img-responsive" src="candidate.png">
+              <div>
+                <div class="profileSeat" id="leftSeat"></div>
+                <div class="profileVoter" id="leftVoter"></div>
+                <div class="profileName" id="leftName"></div>
+                <div class="profileParty" id="leftParty"></div>
+              </div>
+            </div>
+            <div class="col-md-6 vote" id="loserAvatar">
+              <img class="img-responsive" src="candidate.png">
+              <div>
+                <div class="profileSeat" id="rightSeat"></div>
+                <div class="profileVoter" id="rightVoter"></div>
+                <div class="profileName" id="rightName"></div>
+                <div class="profileParty" id="rightParty"></div>
+              </div>
+            </div>
+        </div>
+        <div class="text">Let's look deeper into malapportionment at the national level. </div>
+
+<!-- Scroller content starts here -->
+        <div class="scroller-wrapper">
+          <div class="text-wrapper">
+            <div class="trigger" data-step="none" data-marker="0">
+              There are <div class="background">222</div> parliamentary seats in the whole country.
+            </div>
+            <div class="trigger" data-step="1" data-marker="1">
+              Each of them is represented by one line. The length of the line represents the number of voters in that seat.
+            </div>
+            <div class="trigger" data-step="2" data-marker="2">
+              The voter size of seats range from <div class="background">17,925</div> (Putrajaya) to <div class="background">146,625</div> (Kapar in Selangor). The national average size is <div class="background">61,103.</div>
+            </div>
+    <!--         <div class="trigger" data-step="none" data-marker="2.1">
+              There, public health officials are working to control the transmission of the disease in a new population of young people.
+            </div> -->
+            <div class="trigger" data-step="3" data-marker="3">
+              BN won most of the seats with <span class="font">fewer voters.</span> The average size of a BN seat is <div class="background">48,273.</div>
+            </div>   
+            <div class="trigger" data-step="4" data-marker="4">
+              The rest were won by the opposition. The average size of an opposition seat is <div class="background">79,921.</div>
+            </div>  
+            <div class="trigger" data-step="5" data-marker="5">
+              If we only look at <span class="font">rural seats</span>, the voter size difference among them is still <span class="font">big</span>.
+            </div>  
+            <div class="trigger" data-step="6" data-marker="5">
+              It is <span class="font">even bigger</span> among urban seats.
+            </div> 
+            <div class="trigger" data-step="7" data-marker="5">
+              Malapportionment is part of the reason why in the 2013 general election, BN retained its power by winning <div class="background">60%</div> of parliamentary seats with a mere <div class="background">47%</div> of total votes while the opposition coalition could only win <div class="background">40%</div> of seats with <div class="background">51%</div> of votes.
+            </div>              
+          </div>
+          <div class="chart-wrapper">
+            <div id="instruct">Mouse over or tap each bar to see the details of each seat.</div>
+            <div id="chart-container"></div>
+            <div id="errorBox"><p>Please refresh this page to see the animated charts.</p></div>
+          </div> 
+        </div>
+        <!-- Scroller content ends here -->
+        <div class="text">Need a conclusion here and links to other stories if necessary.</div>
         <button type="button" class="btn btn-primary btn-lg center-block" id="btnShare">Share your results</button>
-        <button type="button" class="btn btn-primary btn-lg center-block" id="btnRepeat">Fight again!</button>
+        <div class="row" id="repeat">
+            <div class="col-md-6 vote">
+              <button type="button" class="btn btn-primary btn-lg center-block" id="btnRepeatSeat">Pick another seat</button>
+            </div>
+            <div class="col-md-6 vote">
+              <button type="button" class="btn btn-primary btn-lg center-block" id="btnRepeatOpp">Pick another opponent</button>
+            </div>
+        </div>      
+        <div class="note">
+            The number of votes in each parliamentary seat is based on the electoral roll for the first quarter of 2016 published by the Election Commission.
+            The classification of parliamentary seats into urban, semi-rural and rural is based on the study done by research firm Politweet.org as the Election Commission does not classify each seat. You can read the methodology <a href="https://politweet.wordpress.com/about/" target="_blank">here</a>.
+      </div>
     </div>    
 </div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="jquery.scrollstory.js"></script>
+<script src="library/chosen_v1.8.2/chosen.jquery.min.js"></script>
+<!-- load counties list from a separate js file -->
+<script src="js/seat-list.js"></script>
+<script src="js/data.js"></script>
+<script src="js/project.js"></script>
+
 </body>
 
 <script>
 
-var opponents =  [
-    ["Seat00","Name00","Position00", 44],
-    ["Seat01","Name01","Position01", 44],
-    ["Seat02","Name02","Position02", 44],
-    ["Seat03","Name03","Position03", 44],
-    ["Seat04","Name04","Position04", 44],
-    ["Seat05","Name05","Position05", 44],
-    ["Seat06","Name06","Position06", 44],
-    ["Seat07","Name07","Position07", 44],
-    ["Seat08","Name08","Position08", 44],
-    ["Seat09","Name09","Position09", 44],
-    ["Seat10","Name10","Position10", 44],
-    ["Seat11","Name11","Position11", 44],
-    ["Seat12","Name12","Position12", 44],
-];
-
-var selectedSeat;
-
-//load json files into variables
-    // $.getJSON("https://cdn2.pri.org/test/counties-data-income.json", function(data) {
-    //     dataCountiesInc = data;
-    // });
-    // $.getJSON("https://cdn2.pri.org/test/states-data-income.json", function(data) {
-    //     dataStatesInc = data;
-    // });    
-
-//
-    $('#dropdown').focus(function() {
-        $(this).attr('placeholder', 'Type the seat name')
-    }).blur(function() {
-        $(this).attr('placeholder', 'Pick a seat')
-    })
-
-//launch Jquery UI autocomplete
-    $( "#dropdown" ).autocomplete({
-        source: seats,
-        select: function(e,ui) {
-            selectedSeat = ui.item.value;
-            $('#btnReady').attr('disabled',false);
-            // findIncome(selectedSeat);
-            // sendData();
-        }
-    });
-
-    function init() {         
-        panel('pageOpen');
-        //Events for each button clicked
-        $('#btnStart').click(function () {
-            panel('pageSelect');
-        });
-        $('#btnReady').click(function () {
-            panel('pageSeat');
-        });
-        $('#btnFight').click(function () {
-            panel('pageFight');
-            setTimeout(function(){
-                $('#animationText').text("Animation finished. Show results.");
-                $('#btnWhy').attr('disabled',false);
-            }, 2000);
-        });
-        $('#btnWhy').click(function () {
-            panel('pageAnalysis');
-        });
-        $('.opponent').click(function () {
-            $('#btnFight').attr('disabled',false);
-            var idOpp = $(this).attr('id');
-            $('.seatOpp').text(opponents[idOpp][0]);
-            $('.nameOpp').text(opponents[idOpp][1]);
-            $('.posOpp').text(opponents[idOpp][2]);
-            $('.levelOpp').text("Level " + opponents[idOpp][3]);
-        });
-    }
-
-    //Function to slide up and down the panel
-    function panel(id) {
-        $('.panel').slideUp(500);
-        $('#' + id).slideDown(500);
-    }
-
-    
-    function findIncome(xx){
-        selDataCountyInc = jQuery.grep(dataCountiesInc, function (n, i) {
-            return (n.county_state == xx);
-        },false);
-        FIPS = selDataCountyInc[0].FIPS;
-        shortState = selDataCountyInc[0].state;
-        countyName = selDataCountyInc[0].county;
-        
-        dataIncC = [selDataCountyInc[0].income_1989,selDataCountyInc[0].income_2015];
-        cDiff = selDataCountyInc[0].changes;
-        
-        selDataStateInc = jQuery.grep(dataStatesInc, function (n, i) {
-            return (n.short == shortState);
-        },false);
-        dataIncS = [selDataStateInc[0].income_1989,selDataStateInc[0].income_2015];
-        sDiff = selDataStateInc[0].changes;
-        categoriesA2 = [countyName, shortState, "US"];
-        dataIncDiff = [cDiff, sDiff, usDiff];
-        
-        $("#countyName").text(xx);
-    }
-
-
-$(document).ready(function(){
-  init();
-}); 
-
-
-
-// function sendData() {
-//   $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
-//     function(json) {
-//       $.ajax({
-//         type: 'POST',
-//         url: 'https://docs.google.com/forms/d/e/1FAIpQLSezn9Ag2Fo5Jsss1mkERwxAPlK7aOpcQK5GU5v9zPcMz8xmfg/formResponse',
-//         data: { 
-//           "entry.225955305": selectedSeat,
-//           "entry.1489940444": json.ip,
-//           "entry.283757303": document.referrer,
-//         }
-//       }); 
-//     }
-//   );   
-// }
 
 </script>
