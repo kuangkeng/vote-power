@@ -1,3 +1,5 @@
+console.log("start2!");
+
 //CODE FOR SCROLLSTORY STARTS HERE
 // check viewport dimensions and use them to set the text box margin and chart height and width
 var $scrollerWrapper = $('.scroller-wrapper'),
@@ -33,6 +35,8 @@ var dataAll2 = JSON.parse(JSON.stringify(dataAll));
 
 var selectedData,
     selectedSeat, 
+    selectedSeats, 
+    selectedState,
     selectedVoter, 
     selectedKod, 
     selectedParty, 
@@ -52,6 +56,7 @@ var selectedData,
     voteWeight,
     voteWeight2,
     result,
+    result_text,
     indexUser,
     indexOpp;
 
@@ -119,27 +124,73 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
         //Events for each button clicked
         $('#btnStart').click(function () {
             $(window).scrollTop(0);
-            panel('pageSelect');
+            panel('pageState');
         });
         $('#btnMobile').click(function () {
-            panel('pageMobileMenu');
+            panel('pageMobileMenuState');
         });
         $('.stateMenu').on('change', function() {
-            selectedSeat = $(".stateMenu").val();
+            selectedStateIndex = $(".stateMenu").val();
+            selectedSeats = seatByState[selectedStateIndex];   
+            if (selectedStateIndex == 9 || selectedStateIndex == 13){
+              $(".seatMenu").append('<option value="' + selectedSeats[0] + '" selected>' + selectedSeats[0] + '</option>');
+              $(".seatMenu").chosen({width: "70%"});
+              selectedSeat = selectedSeats[0];
+              matchSeat();
+              $('#btnReady').attr('disabled',false);
+              $('#imgAvatar').animate({opacity:1},1000);
+            } else {
+              for (i = 0; i < selectedSeats.length; i++) { 
+                $(".seatMenu").append('<option value="' + selectedSeats[i] + '">' + selectedSeats[i] + '</option>');
+              }
+              $(".seatMenu").chosen({width: "70%"});
+            }
+            panel('pageSelect');
+        });
+        $('.seatMenu').on('change', function() {
+            selectedSeat = $(".seatMenu").val();
             matchSeat();
             $('#btnReady').attr('disabled',false);
             $('#imgAvatar').animate({opacity:1},1000);
         });
-        $('.optSeat').click(function () {
+        $('.optState').click(function () {
+            selectedStateIndex = $(this).index();
+            selectedSeats = seatByState[selectedStateIndex];
+            if (selectedStateIndex == 9 || selectedStateIndex == 13){
+              panel('pageMobileMenu');
+              selectedSeat = selectedSeats[0];
+              matchSeat();
+              $('#userSeat').text(selectedSeat);
+              $('.userLevel').text("Level " + selectedLevel);
+              $("#mobileSeatList").hide();
+              $('#btnReadyM').attr('disabled',false);
+              $('.mobileAvatar').fadeIn(500);
+            } else {
+              for (i = 0; i < selectedSeats.length; i++) { 
+                //check if i is even or odd to give alternate background color
+                if(i & 1)
+                {
+                  //is odd
+                  $("#mobileSeatList").append('<div class="optSeat color2">' + selectedSeats[i] + '</div>');
+                }
+                else
+                {
+                  //is even
+                  $("#mobileSeatList").append('<div class="optSeat color1">' + selectedSeats[i] + '</div>');
+                }
+              }
+              panel('pageMobileMenu');
+            }   
+        }); 
+        $('#mobileSeatList').on('click', '.optSeat', function(){
             selectedSeat = $(this).text();
             matchSeat();
             $('#userSeat').text(selectedSeat);
             $('.userLevel').text("Level " + selectedLevel);
+            $("#mobileSeatList").hide();
+            $('#btnReadyM').attr('disabled',false);
             $('.mobileAvatar').fadeIn(500);
         });    
-        $('#btnBackM').click(function () {
-            $('.mobileAvatar').fadeOut(500);
-        });
         $("#btnReady, #btnReadyM").click(function () {
             $(window).scrollTop(0);
             panel('pageSeat');
@@ -236,10 +287,14 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
         voteWeight2 = Math.round(voteWeight*2)/2;
         if (difVoter > 0) {
           result = 1;
+          result_text = "lost";
         }  else {
-          result = 2;}
+          result = 2;
+          result_text = "won";
+        }
       } else {
         result = 0;
+        result_text = "draw";
         voteWeight2 = 1;
       }
       console.log("result = " + result);
@@ -778,6 +833,8 @@ $(document).ready(function(){
 //         url: 'https://docs.google.com/forms/d/e/1FAIpQLSezn9Ag2Fo5Jsss1mkERwxAPlK7aOpcQK5GU5v9zPcMz8xmfg/formResponse',
 //         data: { 
 //           "entry.225955305": selectedSeat,
+//           "entry.225955305": oppSeat,
+//           "entry.225955305": result_text,
 //           "entry.1489940444": json.ip,
 //           "entry.283757303": document.referrer,
 //         }

@@ -103,7 +103,7 @@ body {
   padding:8px 0px;
 }
 
-.optSeat {
+.optSeat, .optState {
   font-size: 22px;
   line-height: 25px;
   padding:8px 0px 8px 15px; 
@@ -170,6 +170,11 @@ body {
     position: relative;
     padding:0px;
     border:0.5px solid #ffffff;
+}
+
+#profileChart {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .oppProfile {

@@ -245,3 +245,22 @@ var opponents =  [
     {kod:"P121", seat:"Lembah Pantai", name:"Nurul Izzah Anwar", voter:72675, pos:"MP", level:59, party:"PKR"}, 
     {kod:"P115", seat:"Batu", name:"Tian Chua", voter:85092, pos:"MP", level:49, party:"PKR"}, 
 ];
+
+var seatByState = [
+  ["Padang Besar","Kangar","Arau"],
+  ["Langkawi","Jerlun","Kubang Pasu","Padang Terap","Pokok Sena","Alor Star","Kuala Kedah","Pendang","Jerai","Sik","Merbok","Sungai Petani","Baling","Padang Serai","Kulim-Bandar Baharu"],
+  ["Tumpat","Pengkalan Chepa","Kota Bharu","Pasir Mas","Rantau Panjang","Kubang Kerian","Bachok","Ketereh","Tanah Merah","Pasir Puteh","Machang","Jeli","Kuala Krai","Gua Musang"],
+  ["Besut","Setiu","Kuala Nerus","Kuala Terengganu","Marang","Hulu Terengganu","Dungun","Kemaman"],
+  ["Kepala Batas","Tasek Gelugor","Bagan","Permatang Pauh","Bukit Mertajam","Batu Kawan","Nibong Tebal","Bukit Bendera","Tanjong","Jelutong","Bukit Gelugor","Bayan Baru","Balik Pulau"],
+  ["Gerik","Lenggong","Larut","Parit Buntar","Bagan Serai","Bukit Gantang","Taiping","Padang Rengas","Sungai Siput","Tambun","Ipoh Timor","Ipoh Barat","Batu Gajah","Kuala Kangsar","Beruas","Parit","Kampar","Gopeng","Tapah","Pasir Salak","Lumut","Bagan Datok","Telok Intan","Tanjong Malim"],
+  ["Cameron Highlands","Lipis","Raub","Jerantut","Indera Mahkota","Kuantan","Paya Besar","Pekan","Maran","Kuala Krau","Temerloh","Bentong","Bera","Rompin"],
+  ["Sabak Bernam","Sungai Besar","Hulu Selangor","Tanjong Karang","Kuala Selangor","Selayang","Gombak","Ampang","Pandan","Hulu Langat","Serdang","Puchong","Kelana Jaya","Petaling Jaya Selatan","Petaling Jaya Utara","Subang","Shah Alam","Kapar","Klang","Kota Raja","Kuala Langat","Sepang"],
+  ["Kepong","Batu","Wangsa Maju","Segambut","Setiawangsa","Titiwangsa","Bukit Bintang","Lembah Pantai","Seputeh","Cheras","Bandar Tun Razak"],
+  ["Putrajaya"],
+  ["Jelebu","Jempol","Seremban","Kuala Pilah","Rasah","Rembau","Telok Kemang","Tampin"],
+  ["Masjid Tanah","Alor Gajah","Tangga Batu","Bukit Katil","Kota Melaka","Jasin"],
+  ["Segamat","Sekijang","Labis","Pagoh","Ledang","Bakri","Muar","Parit Sulong","Ayer Hitam","Sri Gading","Batu Pahat","Simpang Renggam","Kluang","Sembrong","Mersing","Tenggara","Kota Tinggi","Pengerang","Tebrau","Pasir Gudang","Johor Bahru","Pulai","Gelang Patah","Kulai","Pontian","Tanjong Piai"],
+  ["Labuan"],
+  ["Kudat","Kota Marudu","Kota Belud","Tuaran","Sepanggar","Kota Kinabalu","Putatan","Penampang","Papar","Kimanis","Beaufort","Sipitang","Ranau","Keningau","Tenom","Pensiangan","Beluran","Libaran","Batu Sapi","Sandakan","Kinabatangan","Silam","Semporna","Tawau","Kalabakan"],
+  ["Mas Gading","Santubong","Petra Jaya","Bandar Kuching","Stampin","Kota Samarahan","Puncak Borneo (previously Mambong)","Serian","Batang Sadong","Batang Lupar","Sri Aman","Lubok Antu","Betong","Saratok","Tanjong Manis","Igan","Sarikei","Julau","Kanowit","Lanang","Sibu","Mukah","Selangau","Kapit","Hulu Rajang","Bintulu","Sibuti","Miri","Baram","Limbang","Lawas"],
+];
