@@ -240,10 +240,10 @@ var opponents =  [
     {kod:"P075", seat:"Bagan Datok", name:"Ahmad Zahid Hamidi", voter:39426, pos:"Deputy Prime Minister", level:84, party:"BN-UMNO"}, 
     {kod:"P102", seat:"Serdang", name:"Ong Kian Ming", voter:139604, pos:"MP", level:8, party:"DAP"}, 
     {kod:"P187", seat:"Kinabatangan", name:"Bung Moktar Radin", voter:25315, pos:"MP", level:94, party:"BN-UMNO"}, 
-    {kod:"P131", seat:"Rembau", name:"Khairy Jamaluddin", voter:79154, pos:"Federal Minister", level:54, party:"BN-UMNO"}, 
-    {kod:"P089", seat:"Bentong", name:"Liow Tiong Lai", voter:62460, pos:"Federal Minister", level:66, party:"BN-MCA"},    
-    {kod:"P121", seat:"Lembah Pantai", name:"Nurul Izzah Anwar", voter:72675, pos:"MP", level:59, party:"PKR"}, 
-    {kod:"P115", seat:"Batu", name:"Tian Chua", voter:85092, pos:"MP", level:49, party:"PKR"}, 
+    // {kod:"P131", seat:"Rembau", name:"Khairy Jamaluddin", voter:79154, pos:"Federal Minister", level:54, party:"BN-UMNO"}, 
+    // {kod:"P089", seat:"Bentong", name:"Liow Tiong Lai", voter:62460, pos:"Federal Minister", level:66, party:"BN-MCA"},    
+    // {kod:"P121", seat:"Lembah Pantai", name:"Nurul Izzah Anwar", voter:72675, pos:"MP", level:59, party:"PKR"}, 
+    // {kod:"P115", seat:"Batu", name:"Tian Chua", voter:85092, pos:"MP", level:49, party:"PKR"}, 
 ];
 
 var seatByState = [

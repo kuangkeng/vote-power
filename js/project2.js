@@ -1,4 +1,4 @@
-console.log("start7!");
+console.log("project2!");
 
 //CODE FOR SCROLLSTORY STARTS HERE
 // check viewport dimensions and use them to set the text box margin and chart height and width
@@ -35,21 +35,12 @@ var dataAll2 = JSON.parse(JSON.stringify(dataAll));
 
 var selectedData,
     selectedSeat, 
-    selectedSeats, 
-    selectedState,
     selectedVoter, 
     selectedKod, 
-    selectedParty, 
-    selectedName,
-    selectedLevel,
     oppData,
     oppSeat, 
     oppVoter, 
     oppKod, 
-    oppParty, 
-    oppName,
-    oppPos,
-    oppLevel,
     difVoter,
     perVoter,
     halfround,
@@ -60,18 +51,6 @@ var selectedData,
     indexUser,
     indexOpp;
 
-var resultText = [
-    "It's a draw!",
-    "You lose!",
-    "You win!",
-];    
-
-var resultHeads = [
-    "Why was it a draw?",
-    "You've lost. Here's why",
-    "You've won. There's a reason",
-];
-
 var dataSeat = [],
     dataVoter = [],
     dataVoter2 = [],
@@ -81,7 +60,8 @@ var dataSeat = [],
     dataRural = [],
     dataRural2 = [],
     dataUrban = [],
-    dataUrban2 = [];
+    dataUrban2 = [],
+    dataPassed =[];
 
 for (i = 0; i < dataAll.length; i++) { 
     dataSeat.push(dataAll[i].seat);
@@ -113,138 +93,24 @@ dataRural2 = JSON.parse(JSON.stringify(dataRural));
 dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
 
     function init() {      
-        panel('pageOpen');
-
-        //Run Chosen plugin to make the dropdown table
-        $(".stateMenu").chosen({width: "70%"});
-        var wrapperWidth = $('.wrapper').width()
-        var dropdownMargin = (wrapperWidth-(wrapperWidth*0.55))/2;
-        $(".dropdownbox").css({'margin-left':dropdownMargin});
-
-        //Events for each button clicked
-        $('#btnStart').click(function () {
-            $(window).scrollTop(0);
-            panel('pageState');
-        });
-        $('#btnMobile').click(function () {
-            panel('pageMobileMenuState');
-        });
-        $('.stateMenu').on('change', function() {
-            selectedStateIndex = $(".stateMenu").val();
-            selectedSeats = seatByState[selectedStateIndex];   
-            if (selectedStateIndex == 9 || selectedStateIndex == 13){
-              $(".seatMenu").append('<option value="' + selectedSeats[0] + '" selected>' + selectedSeats[0] + '</option>');
-              $(".seatMenu").chosen({width: "70%"});
-              selectedSeat = selectedSeats[0];
-              matchSeat();
-              $('#btnReady').attr('disabled',false);
-              $('#imgAvatar').animate({opacity:1},1000);
-            } else {
-              for (i = 0; i < selectedSeats.length; i++) { 
-                $(".seatMenu").append('<option value="' + selectedSeats[i] + '">' + selectedSeats[i] + '</option>');
-              }
-              $(".seatMenu").chosen({width: "70%"});
-            }
-            panel('pageSelect');
-        });
-        $('.seatMenu').on('change', function() {
-            selectedSeat = $(".seatMenu").val();
-            matchSeat();
-            $('#btnReady').attr('disabled',false);
-            $('#imgAvatar').animate({opacity:1},1000);
-        });
-        $('.optState').click(function () {
-            selectedStateIndex = $(this).index();
-            selectedSeats = seatByState[selectedStateIndex];
-            if (selectedStateIndex == 9 || selectedStateIndex == 13){
-              panel('pageMobileMenu');
-              selectedSeat = selectedSeats[0];
-              matchSeat();
-              $('#userSeat').text(selectedSeat);
-              $('.userLevel').text("Level " + selectedLevel);
-              $("#mobileSeatList").hide();
-              $('#btnReadyM').attr('disabled',false);
-              $('.mobileAvatar').fadeIn(500);
-            } else {
-              for (i = 0; i < selectedSeats.length; i++) { 
-                //check if i is even or odd to give alternate background color
-                if(i & 1)
-                {
-                  //is odd
-                  $("#mobileSeatList").append('<div class="optSeat color2">' + selectedSeats[i] + '</div>');
-                }
-                else
-                {
-                  //is even
-                  $("#mobileSeatList").append('<div class="optSeat color1">' + selectedSeats[i] + '</div>');
-                }
-              }
-              panel('pageMobileMenu');
-            }   
-        }); 
-        $('#mobileSeatList').on('click', '.optSeat', function(){
-            selectedSeat = $(this).text();
-            matchSeat();
-            
-            $('#userSeat').text(selectedSeat);
-            $('.userLevel').text("Level " + selectedLevel);
-            $("#mobileSeatList").hide();
-            $('#btnReadyM').attr('disabled',false);
-            $('.mobileAvatar').fadeIn(500);
-        });    
-        $("#btnReady, #btnReadyM").click(function () {
-            $(window).scrollTop(0);
-            panel('pageSeat');
-        });
-        $('.opponent').click(function () {
-            var idOpp = $(this).attr('id')-1;
-            oppData = opponents[idOpp];
-            oppSeat = oppData.seat;
-            oppKod = oppData.kod;
-            oppName = oppData.name;
-            oppVoter = oppData.voter;
-            oppParty = oppData.party;
-            oppPos = oppData.pos;
-            oppLevel = oppData.level;
-            panel('pageFight');
-            compareSeat();
-            setTimeout(function(){
-                $('#animationText').text(resultText[result]);
-                $('#btnWhy').attr('disabled',false);
-            }, 2000);
-        });        
-        $('#btnWhy').click(function () {
-            panel('pageAnalysis');
-            //SCROLLSTORY CODE - launched when analysis page is shown
-            setTimeout(scrollstory,500);
-        });
-        $('#btnExplain').click(function () {
-            openExplain();
-        });
-        $('#btnRepeatSeat').click(function () {
-            $('#imgAvatar').animate({opacity:0},0);
-            $(window).scrollTop(0);
-            panel('pageSelect');
-            clearChart();
-        });
-        $('#btnRepeatOpp').click(function () {
-            $(window).scrollTop(0);
-            panel('pageSeat');
-            clearChart();
-        });
-        $('#btnShare').click(function () {
-
-        });
+      dataPassed = getUrl();
+      matchSeat();
+      compareSeat();
+      setTimeout(scrollstory,500);
     }
 
-    //Function to open index2.html and pass on the seats selected
-    function openExplain(){
-      var url = "index2.html?seat=" + selectedKod + "&opp=" + oppKod;
-      //to fix the issue of Safari on iOS can't open a new window in a new tab
-      if($(window).width()<500){
-        var win = window.open(url, '_self');  
-      } else {var win = window.open(url, '_blank');}
-      win.focus();
+    //Function to get country code from url
+    function getUrl(){
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for(var i = 0; i < hashes.length; i++)
+        {
+            hash = hashes[i].split('=');
+            vars.push(hash[1]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+        
     }
 
 
@@ -260,122 +126,21 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
       step = 0;   
       dataAll2 = JSON.parse(JSON.stringify(dataAll));
     }
-
-    //Function to slide up and down the panel
-    function panel(id) {
-        $('.panel').slideUp(500);
-        $('#' + id).slideDown(500);
-    }
   
     function matchSeat(){
       selectedData = jQuery.grep(dataAll, function (n, i) {
-        return (n.seat == selectedSeat);
+        return (n.kod == dataPassed[0]);
       },false);
       selectedVoter = selectedData[0].y;
-      selectedKod = selectedData[0].kod;
-      selectedParty = selectedData[0].party;
-      selectedName = selectedData[0].name;
-      selectedLevel = selectedData[0].level;
-      console.log(JSON.stringify(selectedData));
-      darkenOpp();
-    }
-
-    function darkenOpp(){
-      console.log("darken!");
-      var oppSeats = [];
-      for (i = 0; i < opponents.length; i++) { 
-        oppSeats.push(opponents[i].seat);
-      }  
-      console.log("oppSeats = " + JSON.stringify(oppSeats));
-      var darkenIndex = jQuery.inArray(selectedSeat, oppSeats);
-      console.log("inArray = " + darkenIndex);
-      if (darkenIndex == -1){} else {
-        $('#'+ (darkenIndex+1)).removeClass('oppHover').css({'background-color':'rgba(0,0,0,0.5)','pointer-events':'none'});
-        $('#'+ (darkenIndex+1) + "> img" ).css('opacity','0.8');
-      }
+      selectedSeat = selectedData[0].seat;
+      oppData = jQuery.grep(dataAll, function (n, i) {
+        return (n.kod == dataPassed[1]);
+      },false);
+      oppVoter = oppData[0].y;
+      oppSeat = oppData[0].seat;
     }
 
     function compareSeat(){
-      var bigNum, smallNum;
-      difVoter = selectedVoter - oppVoter;
-      if(difVoter>0){
-        bigNum = selectedVoter;
-        smallNum = oppVoter;
-      } else {
-          bigNum = oppVoter;
-          smallNum = selectedVoter;
-        }
-      
-      //Calculate percentage of difference
-      perVoter = Math.round(Math.abs(difVoter)/smallNum*100);
-      console.log("percentage of difference = " + perVoter);
-
-      //Calculate how many times bigger
-      voteWeight = (bigNum/smallNum).toFixed(2);
-
-      //Determine result
-      if(perVoter > 30){
-        voteWeight2 = Math.round(voteWeight*2)/2;
-        if (difVoter > 0) {
-          result = 1;
-          result_text = "lost";
-        }  else {
-          result = 2;
-          result_text = "won";
-        }
-      } else {
-        result = 0;
-        result_text = "draw";
-        voteWeight2 = 1;
-      }
-      console.log("result = " + result);
-      console.log("voteWeight = " + voteWeight);
-      console.log("voteWeight2 = " + voteWeight2);
-      var fullVote = Math.floor(voteWeight2);
-      var checkInt = isInt(voteWeight2);
-      console.log("checkInt = " + checkInt);
-      
-      for (i = 0; i < fullVote; i++) { 
-        $("#voteBox" + i).append('<img class="img-responsive" src="graphic/ballot-icon.png">');
-      }  
-
-      if (checkInt == true){} 
-        else {
-          $("#voteBox" + fullVote).append('<img class="img-responsive" src="graphic/ballot-icon-half.png">');
-        }
-
-      //Populate text for result page  
-      $('#resultHead').text(resultHeads[result])
-
-      var resultSummary = [
-          "You got a draw because your vote has equal power to the votes in " + oppSeat + ".",
-          "You lost because one vote in " + oppSeat + " is equal to " + voteWeight2 + " votes of yours.",
-          "You won because your one vote is equal to "+ voteWeight2 + " votes in " + oppSeat + "."          
-      ];
-
-      $('#result01').text(resultSummary[result]);
-
-      if(result>1){
-        //user avatar put on left, opp on right
-        $('#leftSeat').text(selectedKod + " " + selectedSeat);
-        $('#leftVoter').text(addThousandSeparator(selectedVoter) + " voters");
-        $('#leftName').text(selectedName);
-        $('#leftParty').text(selectedParty);
-        $('#rightSeat').text(oppKod + " " + oppSeat);
-        $('#rightVoter').text(addThousandSeparator(oppVoter) + " voters");
-        $('#rightName').text(oppName);
-        $('#rightParty').text(oppParty);
-      } else {
-        $('#leftSeat').text(oppKod + " " + oppSeat);
-        $('#leftVoter').text(addThousandSeparator(oppVoter) + " voters");
-        $('#leftName').text(oppName);
-        $('#leftParty').text(oppParty);
-        $('#rightSeat').text(selectedKod + " " + selectedSeat);
-        $('#rightVoter').text(addThousandSeparator(selectedVoter) + " voters");
-        $('#rightName').text(selectedName);
-        $('#rightParty').text(selectedParty);
-      }
-
       //Match the user's and opponent's seats in the small to big constituencies list
       var indexesUser = $.map(dataAll, function(obj, index) {
           if(obj.seat == selectedSeat) {
