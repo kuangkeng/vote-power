@@ -10,7 +10,7 @@ body {
 }
 
 .wrapper {
-    max-width: 480px; /*INPUT: set the width of the chart*/
+    max-width: 480px;
     margin: 0 auto;
 }
 
@@ -45,62 +45,10 @@ body {
     line-height: 28px;
 }
 
-/*CSS for dropdown menu starts*/
-.dropdownbox {
-  margin-left: 80px;
-}
-
-.chosen-container-single .chosen-single {
-  color:#333333;
-  text-align: center;
-  background: #fff;
-  border:1px solid #D3D3D3;
-  width:100%;
-}
-
-.chosen-container-active.chosen-with-drop .chosen-single, .chosen-container-single .chosen-search input[type=text], .chosen-container .chosen-drop {
-  background: #fff;
-  border:1px solid #D3D3D3;
-}
-
-.chosen-container .chosen-results li.highlighted {
-  background: #D34127;
-}
-
-.dropdownbox .chosen-container-single .chosen-single {
-  height:40px;
-  font-size: 25px;
-  line-height: 40px;
-}
-
-.dropdownbox .chosen-container .chosen-results li, .chosen-container-single .chosen-search input[type=text] {
-  font-size: 22px;
-  padding:7px 6px;
-}
-
-.dropdownbox .chosen-container .chosen-results li.group-option {
-  padding-left:20px; 
-}
-
-.dropdownbox .chosen-container-single .chosen-single div b {
-  background-position: 0 10px; 
-}
-/*CSS for dropdown menu ends*/
-
-/*CSS for mobile dropdown menu starts*/
-
 .mobileMenuBox {
   margin: 0 5%;
   overflow-y:scroll;
   -webkit-overflow-scrolling: touch;
-}
-
-.optGroup {
-  margin-top: 10px;
-  font-size: 22px;
-  line-height: 25px;
-  font-weight: bold;
-  padding:8px 0px;
 }
 
 .optSeat, .optState {
@@ -109,26 +57,16 @@ body {
   padding:8px 0px 8px 15px; 
 }
 
+.optState:hover {
+  background-color: #c7c7c7;
+}
+
+.optSeat:hover{
+  background-color: #c7c7c7;
+} 
+
 .color1 {
   background-color: #f9f9f9;
-}
-
-/*CSS for mobile dropdown menu ends*/
-
-.mobileAvatar {
-  position: absolute;
-  top: 0;
-  left:0;
-  padding: 10px;
-  display: none;
-  background-color: #ffffff;
-}
-
-.userLevel {
-  font-size:25px;
-  line-height: 24px;
-  text-align: center;
-  overflow: hidden;
 }
 
 .note {
@@ -162,22 +100,11 @@ body {
     margin-bottom: 20px;
 }
 
-#imgAvatar {
-  opacity: 0;
-}
-
 .opponent {
     position: relative;
     padding:0px;
     border:0.5px solid #ffffff;
 }
-
-/*.opponentDarken {
-    position: relative;
-    padding:0px;
-    border:0.5px solid #ffffff;
-    background-color: rgba(0,0,0,0.5);
-}*/
 
 #profileChart {
   margin-top: 30px;
@@ -185,14 +112,14 @@ body {
 }
 
 .oppProfile {
-  font-size: 25px;
-  line-height: 25px;
+  font-size: 16px;
+  line-height: 18px;
   text-align: center;
   background-color: rgba(255,255,255,0.8);
   position:absolute;
-  bottom:5px;
+  bottom:0px;
   width: 100%;
-  padding:10px;
+  padding:5px;
 }
 
 .vote {
