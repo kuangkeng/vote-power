@@ -19,7 +19,7 @@
 	</head>
 	<body style="background:url('img/bg_1920x1080.png');background-size:cover;background-attachment:fixed;">
 		<div id="pageOpen" class="panel">
-			<div class="container text-center" style="max-width:800px;margin-top:10%">
+			<div class="container text-center" style="max-width:800px;margin-top:5%">
 				<h1 style="font-size:50px">Undi Power</h1>
 				<p class="lead" style="line-height:1em;">How powerful is your vote?</p>
 				<hr>
@@ -27,7 +27,7 @@
 					<p>Put your to test against our line-up of mighty leaders!</p>
 					<button type="button" class="btn btn-danger btn-lg" id="btnMobile" style="padding:15px 30px;font-size:24px;border-radius:100px;letter-spacing:1px;">Bring it on!</button>
 				</div>
-				<div style="position:absolute;bottom:30px;left:30px;z-index:1">
+				<div style="position:absolute;bottom:30px;left:30px;z-index:-1">
 					<img src="img/avatar_me_480x480.png" width="240" height="240" alt="">
 				</div>
 			</div>
@@ -115,45 +115,50 @@
 				<div class="text">
 					<p id="result01"></p>
 				</div>
-				<div class="row no-gutters" id="voteChart" style="max-width:600px;margin:0 auto;">
-					<div class="col-md-5 align-middle text-right" id="winnerVote">
+				<div class="row no-gutters" id="voteChart" style="max-width:800px;margin:0 auto;">
+					<div class="col-md-4 align-middle text-right" id="winnerVote">
 						<img class="img-responsive" src="img/avatar_me_480x480.png" alt="">
 					</div>
-					<div class="col-md-2 align-middle text-center" id="vsVote" style="font-size:100px">=</div>
-					<div class="col-md-5 align-middle" id="loserVote">
+					<div class="col-md-1 align-middle text-center" id="vsVote" style="font-size:100px">=</div>
+					<div class="col-md-7 align-middle" id="loserVote">
 						<div class="row">
-							<div class="col-md-4 voteBox" id="voteBox0"></div>
-							<div class="col-md-4 voteBox" id="voteBox1"></div>
-							<div class="col-md-4 voteBox" id="voteBox2"></div>
-							<div class="col-md-4 voteBox" id="voteBox3"></div>
-							<div class="col-md-4 voteBox" id="voteBox4"></div>
-							<div class="col-md-4 voteBox" id="voteBox5"></div>
+							<div class="col-sm-6 col-md-4 voteBox" id="voteBox0"></div>
+							<div class="col-sm-6 col-md-4 voteBox" id="voteBox1"></div>
+							<div class="col-sm-6 col-md-4 voteBox" id="voteBox2"></div>
+							<div class="col-sm-6 col-md-4 voteBox" id="voteBox3"></div>
+							<div class="col-sm-6 col-md-4 voteBox" id="voteBox4"></div>
+							<div class="col-sm-6 col-md-4 voteBox" id="voteBox5"></div>
 						</div>
 					</div>
-				</div> 
-				<div class="row" id="profileChart">
-					<div class="col-md-5 vote" id="winnerAvatar">
+				</div>
+				<div class="row no-gutters" id="voteChart" style="max-width:800px;margin:0 auto;">
+					<div class="col-md-4" id="winnerAvatar">
 						<div>
-							<p>You are voting in <strong id="leftSeat"></strong> with <strong id="leftVoter"></strong>.</p>
+							<p>You are voting in <strong id="leftSeat"></strong> with <strong id="leftVoter"></strong></p>
 						</div>
 					</div>
-					<div class="col-md-2"></div>
-					<div class="col-md-5 vote" id="loserAvatar">
+					<div class="col-md-1"></div>
+					<div class="col-md-4" id="loserAvatar">
 						<div>
-							<p>Your opponent is voting in <strong id="rightSeat"></strong> with <strong id="rightVoter"></strong>.</p>
+							<p>Your opponent is voting in <strong id="rightSeat"></strong> with <strong id="rightVoter"></strong></p>
 							<!--div class="profileName" id="rightName"></div>
 							<div class="profileParty" id="rightParty"></div-->
 						</div>
 					</div>
+				</div> 
+				<div class="row" id="profileChart">
 					<div class="row" id="repeat" style="max-width:800px;margin:0 auto;">
-						<div class="col-md-4">
+						<div class="col-sm-12 col-md-4">
 							<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatSeat">Change your seat</button>
 						</div>
-						<div class="col-md-4">
+						<div class="col-sm-12 col-md-4">
 							<button type="button" class="btn btn-block btn-primary btn-lg center-block" id="btnShare">Share your results</button>
 						</div>
-						<div class="col-md-4">
+						<div class="col-sm-12 col-md-4">
 							<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatOpp">Challenge someone else</button>
+						</div>
+						<div class="col-sm-12">
+							<button type="button" class="btn btn-block btn-danger btn-lg center-block" id="btnExplain" style="margin-top:10px;padding:15px 30px;font-size:24px;border-radius:100px;letter-spacing:1px;">"Hang on a minute, shouldn't all votes be equal?"</button>
 						</div>
 					</div>
 				</div>	
@@ -163,8 +168,10 @@
 						<p>Need a conclusion here.</p>
 					</div>
 				</div>
-	
-				<button type="button" class="btn btn-block btn-danger btn-lg center-block" id="btnExplain" style="padding:15px 30px;font-size:24px;border-radius:100px;letter-spacing:1px;">"Hang on minute, shouldn't all votes be equal?"</button>		
+				
+				<div class="container" class="max-width:800px;margin:0 auto;">
+				</div>
+				
 				<div class="card">
 					<div class="card-body">
 						<p>The number of votes in each parliamentary seat is based on the electoral roll for the first quarter of 2016 published by the Election Commission.</p>
