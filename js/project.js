@@ -60,12 +60,12 @@ var resultHeads = [
                 if(i & 1)
                 {
                   //is odd
-                  $("#mobileSeatList").append('<div class="optSeat color2">' + selectedSeats[i] + '</div>');
+                  $("#mobileSeatList").append('<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optSeat btn btn-danger btn-lg">' + selectedSeats[i] + '</a></li>');
                 }
                 else
                 {
                   //is even
-                  $("#mobileSeatList").append('<div class="optSeat color1">' + selectedSeats[i] + '</div>');
+                  $("#mobileSeatList").append('<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optSeat btn btn-danger btn-lg">' + selectedSeats[i] + '</a></li>');
                 }
               }
               panel('pageMobileMenu');

@@ -9,175 +9,172 @@
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css">
 		<style type="text/css">
+			.btn{border-radius:100px!important;}
 			hr{border-color:#212121;}
 			footer{position:fixed;bottom:30px;right:30px;z-index:1;color:rgba(255,255,255,0.5);background:none;font-size:12px;text-transform:uppercase;letter-spacing:1px;}
 			.panel{background:none;box-shadow:none;}
+			.nav-item a{margin-bottom:10px}
 		</style>
 	</head>
 	<body style="background:url('img/bg_1920x1080.png');background-size:cover;background-attachment:fixed;">
 	<div class="container">
 		<div id="pageOpen" class="panel">
-			<div class="container text-center" style="margin-top:12%;">
-				<h1 style="font-size:50px;margin:0">Undi Power</h1>
-				<p class="lead" style="line-height:1em;">How powerful is your one vote in GE14?</p>
+			<div class="container text-center" style="margin-top:10%">
+				<h1 style="font-size:50px">Undi Power</h1>
+				<p class="lead" style="line-height:1em;">How powerful is your vote?</p>
 				<hr>
 				<div class="text-center">
-					<p>Put your voting power to the test by fighting through our line-up of political leaders!</p>
-					<button type="button" class="btn btn-danger btn-lg" id="btnMobile" style="padding:20px 40px;font-size:24px">Bring it on!</button>
+					<p>Put your vote to test against our line-up of mighty leaders!</p>
+					<button type="button" class="btn btn-danger btn-lg" id="btnMobile" style="padding:15px 30px;font-size:24px;border-radius:100px;letter-spacing:1px;">Bring it on!</button>
 				</div>
-				<div class="container text-right">
+				<div style="position:absolute;bottom:30px;left:30px;z-index:1">
 					<img src="img/avatar_me_480x480.png" width="240" height="240" alt="">
 				</div>
 			</div>
 		</div>
 		<div id="pageMobileMenuState" class="panel">
-			<div class="container text-center" style="margin-top:12%;">
+			<div class="container text-center" style="margin-top:10%;">
 				<p class="lead" style="line-height:1em;">Which state are you voting in?</p>
-					<ul class="nav nav-pills mobileMenuBox" id="mobileStateList">
-						<li class="nav-item"><button type="button" class="optState btn btn-danger btn-lg">Perlis</button></li>
-						<li class="nav-item"><button type="button" class="optState btn btn-danger btn-lg">Kedah</button></li>
-						<li class="nav-item"><button type="button" class="optState btn btn-danger btn-lg">Kelantan</button></li>
-						<li class="nav-item"><button type="button" class="optState btn btn-danger btn-lg">Terengganu</button></li>
-						<li class="nav-item"><button type="button" class="optState btn btn-danger btn-lg">Pulau Pinang</button></li>
-						<li class="nav-item"><button type="button" class="optState btn btn-danger btn-lg">Perak</button></li>
-						<li class="nav-item"><button type="button" class="optState btn btn-danger btn-lg">Pahang</button></li>
-						<li class="nav-item"><button type="button" class="optState btn btn-danger btn-lg">Selangor</button></li>
-						<li class="nav-item"><button type="button" class="optState btn btn-danger btn-lg">Kuala Lumpur</button></li>
-						<li class="nav-item"><button type="button" class="optState btn btn-danger btn-lg">Putrajaya</button></li>
-						<li class="nav-item"><button type="button" class="optState btn btn-danger btn-lg">Negeri Sembilan</button></li>
-						<li class="nav-item"><button type="button" class="optState btn btn-danger btn-lg">Melaka</button></li>
-						<li class="nav-item"><button type="button" class="optState btn btn-danger btn-lg">Johor</button></li>
-						<li class="nav-item"><button type="button" class="optState btn btn-danger btn-lg">Labuan</button></li>
-						<li class="nav-item"><button type="button" class="optState btn btn-danger btn-lg">Sabah</button></li>
-						<li class="nav-item"><button type="button" class="optState btn btn-danger btn-lg">Sarawak</button></li>
+					<ul class="nav mobileMenuBox row" id="mobileStateList">
+						<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optState btn btn-danger btn-lg">Perlis</a></li>
+						<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optState btn btn-danger btn-lg">Kedah</a></li>
+						<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optState btn btn-danger btn-lg">Kelantan</a></li>
+						<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optState btn btn-danger btn-lg">Terengganu</a></li>
+						<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optState btn btn-danger btn-lg">Pulau Pinang</a></li>
+						<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optState btn btn-danger btn-lg">Perak</a></li>
+						<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optState btn btn-danger btn-lg">Pahang</a></li>
+						<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optState btn btn-danger btn-lg">Selangor</a></li>
+						<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optState btn btn-danger btn-lg">Kuala Lumpur</a></li>
+						<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optState btn btn-danger btn-lg">Putrajaya</a></li>
+						<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optState btn btn-danger btn-lg">Negeri Sembilan</a></li>
+						<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optState btn btn-danger btn-lg">Melaka</a></li>
+						<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optState btn btn-danger btn-lg">Johor</a></li>
+						<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optState btn btn-danger btn-lg">Labuan</a></li>
+						<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optState btn btn-danger btn-lg">Sabah</a></li>
+						<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optState btn btn-danger btn-lg">Sarawak</a></li>
 					</ul>
 				</div>
 			</div>
-	    </div>
-		<div id="pageMobileMenu" class="panel">  
-	      <div class="headline">Select your seat</div>                             
-	      <div class="mobileMenuBox" id="mobileSeatList">
-	      </div> 
-	      <div class="noteM">
-	            *The parliamentary seats listed in the menu are based on the seats contested in General Election 2013, not the new list proposed by the Election Commission that has yet to be passed.
-	      </div>    
-	    </div>
+			</div>
+		<div id="pageMobileMenu" class="panel">	
+			<div class="container text-center" style="margin-top:10%;">
+				<p class="lead" style="line-height:1em;">Select voting seat*</p>			
+				<ul class="nav mobileMenuBox row" id="mobileSeatList"></ul> 
+				<p>*The parliamentary seats listed in the menu are based on the seats contested in General Election 2013, not the new list proposed by the Election Commission that has yet to be passed.</p>
+			</div>
+			</div>
 		<div id="pageSeat" class="panel">
-	        <div class="headline">Pick your opponent</div>
-	        <div class="row">
-	            <div class="col-md-6 opponent oppHover" id="1">
-	              <img class="img-responsive" src="img/avatar_najib_240x240.png">
-	              <div class="oppProfile">
-	                <!-- <div class="oppName">Mohd. Najib Abdul Razak</div> -->
-	                <div class="oppLevel">Level 51</div>
-	              </div>
-	            </div>
-	            <div class="col-md-6 opponent oppHover" id="2">
-	              <img class="img-responsive" src="img/avatar_wan_240x240.png">
-	              <div class="oppProfile">
-	                <!-- <div class="oppName">Wan Azizah Wan Ismail</div> -->
-	                <div class="oppLevel">Level 57</div>
-	              </div>
-	            </div>
-	        </div>
-	        <div class="row">
-	            <div class="col-md-6 opponent oppHover" id="3">
-	              <img class="img-responsive" src="img/avatar_me_240x240.png">
-	              <div class="oppProfile">
-	                <!-- <div class="oppName">Tengku Adnan Tengku Mansor</div> -->
-	                <div class="oppLevel">Level 100</div>
-	              </div>
-	            </div>
-	            <div class="col-md-6 opponent oppHover" id="4">
-	              <img class="img-responsive" src="img/avatar_me_240x240.png">
-	              <div class="oppProfile">
-	                <!-- <div class="oppName">Lim Kit Siang</div> -->
-	                <div class="oppLevel">Level 26</div>
-	              </div>
-	            </div>
-	        </div>
-	        <div class="row">
-	            <div class="col-md-6 opponent oppHover" id="5">
-	              <img class="img-responsive" src="img/avatar_me_240x240.png">
-	              <div class="oppProfile">
-	                <!-- <div class="oppName">Ong Kian Ming</div> -->
-	                <div class="oppLevel">Level 8</div>
-	              </div>
-	            </div>
-	            <div class="col-md-6 opponent oppHover" id="6">
-	              <img class="img-responsive" src="img/avatar_me_240x240.png">
-	              <div class="oppProfile">
-	                <!-- <div class="oppName">Bung Moktar Radin</div> -->
-	                <div class="oppLevel">Level 94</div>
-	              </div>
-	            </div>
-	        </div>
-	    </div>
+			<div class="container text-center" style="margin-top:12%">
+				<p class="lead" style="line-height:1em;">Who are you challenging?</p>
+				<div class="row">
+					<div class="col-sm-6 col-md-4 col-lg-2 opponent oppHover" id="1">
+						<img class="img-responsive" src="img/avatar_opp1_240x240.png" alt="Opponent 1">
+						<!-- <div class="oppName">Mohd. Najib Abdul Razak</div> -->
+						<div class="oppLevel">Level 51</div>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-2 opponent oppHover" id="2">
+						<img class="img-responsive" src="img/avatar_opp2_240x240.png">
+						<div class="oppProfile">
+							<!-- <div class="oppName">Wan Azizah Wan Ismail</div> -->
+							<div class="oppLevel">Level 57</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-2 opponent oppHover" id="3">
+						<img class="img-responsive" src="img/avatar_opp1_240x240.png">
+						<div class="oppProfile">
+							<!-- <div class="oppName">Tengku Adnan Tengku Mansor</div> -->
+							<div class="oppLevel">Level 100</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-2 opponent oppHover" id="4">
+						<img class="img-responsive" src="img/avatar_opp2_240x240.png">
+						<div class="oppProfile">
+							<!-- <div class="oppName">Lim Kit Siang</div> -->
+							<div class="oppLevel">Level 26</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-3 col-lg-2 opponent oppHover" id="5">
+						<img class="img-responsive" src="img/avatar_opp1_240x240.png">
+						<div class="oppProfile">
+							<!-- <div class="oppName">Ong Kian Ming</div> -->
+							<div class="oppLevel">Level 8</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-3 col-lg-2 opponent oppHover" id="6">
+						<img class="img-responsive" src="img/avatar_opp2_240x240.png">
+						<div class="oppProfile">
+							<!-- <div class="oppName">Bung Moktar Radin</div> -->
+							<div class="oppLevel">Level 94</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
 		<div id="pageFight" class="panel">
-	        <div class="imgFight"><img class="img-responsive" src="img/fight_najib_you_lose_480x480.gif"></div>
-	        <div class="text" id="animationText">Animation starts...</div>
-	        <button type="button" class="btn btn-primary btn-lg center-block" id="btnWhy" disabled>Find out why</button>
-	    </div>
-		<div id="pageAnalysis" class="panel">  
-	        <div class="headline" id="resultHead"></div>    
-	        <div class="text">
-	          <p><span id="result01"></span></p>
-	        </div>
-	        <div class="row" id="voteChart">
-	            <div class="col-md-5 vote" id="winnerVote"><img class="img-responsive" src="graphic/ballot-icon.png"></div>
-	            <div class="col-md-2 vote" id="vsVote">=</div>
-	            <div class="col-md-5 vote" id="loserVote">
-	                <div class="row">
-	                    <div class="col-md-4 vote voteBox" id="voteBox0"></div>
-	                    <div class="col-md-4 vote voteBox" id="voteBox1"></div>
-	                    <div class="col-md-4 vote voteBox" id="voteBox2"></div>
-	                </div>
-	                <div class="row">
-	                    <div class="col-md-4 vote voteBox" id="voteBox3"></div>
-	                    <div class="col-md-4 vote voteBox" id="voteBox4"></div>
-	                    <div class="col-md-4 vote voteBox" id="voteBox5"></div>
-	                </div>
-	            </div>
-	        </div> 
-	        <div class="row" id="profileChart">
-	            <div class="col-md-6 vote" id="winnerAvatar">
-	              <img class="img-responsive" src="img/avatar_najib_240x240.png">
-	              <div>
-	                <div class="profileSeat" id="leftSeat"></div>
-	                <div class="profileVoter" id="leftVoter"></div>
-	                <div class="profileName" id="leftName"></div>
-	                <div class="profileParty" id="leftParty"></div>
-	              </div>
-	            </div>
-	            <div class="col-md-6 vote" id="loserAvatar">
-	              <img class="img-responsive" src="img/avatar_wan_240x240.png">
-	              <div>
-	                <div class="profileSeat" id="rightSeat"></div>
-	                <div class="profileVoter" id="rightVoter"></div>
-	                <div class="profileName" id="rightName"></div>
-	                <div class="profileParty" id="rightParty"></div>
-	              </div>
-	            </div>
-	        </div>
+					<div class="imgFight"><img class="img-responsive" src="img/fight_opp1_you_lose_480x480.gif"></div>
+					<div class="text" id="animationText">Animation starts...</div>
+					<button type="button" class="btn btn-primary btn-lg center-block" id="btnWhy" disabled>Find out why</button>
+			</div>
+		<div id="pageAnalysis" class="panel">	
+					<div class="headline" id="resultHead"></div>		
+					<div class="text">
+						<p><span id="result01"></span></p>
+					</div>
+					<div class="row" id="voteChart">
+							<div class="col-md-5 vote" id="winnerVote"><img class="img-responsive" src="graphic/ballot-icon.png"></div>
+							<div class="col-md-2 vote" id="vsVote">=</div>
+							<div class="col-md-5 vote" id="loserVote">
+									<div class="row">
+											<div class="col-md-4 vote voteBox" id="voteBox0"></div>
+											<div class="col-md-4 vote voteBox" id="voteBox1"></div>
+											<div class="col-md-4 vote voteBox" id="voteBox2"></div>
+									</div>
+									<div class="row">
+											<div class="col-md-4 vote voteBox" id="voteBox3"></div>
+											<div class="col-md-4 vote voteBox" id="voteBox4"></div>
+											<div class="col-md-4 vote voteBox" id="voteBox5"></div>
+									</div>
+							</div>
+					</div> 
+					<div class="row" id="profileChart">
+							<div class="col-md-6 vote" id="winnerAvatar">
+								<img class="img-responsive" src="img/avatar_opp1_240x240.png">
+								<div>
+									<div class="profileSeat" id="leftSeat"></div>
+									<div class="profileVoter" id="leftVoter"></div>
+									<div class="profileName" id="leftName"></div>
+									<div class="profileParty" id="leftParty"></div>
+								</div>
+							</div>
+							<div class="col-md-6 vote" id="loserAvatar">
+								<img class="img-responsive" src="img/avatar_opp2_240x240.png">
+								<div>
+									<div class="profileSeat" id="rightSeat"></div>
+									<div class="profileVoter" id="rightVoter"></div>
+									<div class="profileName" id="rightName"></div>
+									<div class="profileParty" id="rightParty"></div>
+								</div>
+							</div>
+					</div>
 
-	        <button type="button" class="btn btn-primary btn-lg center-block" id="btnExplain">Explain to me</button>
-	        <!-- Scroller content ends here -->
-	        <div class="text">Need a conclusion here.</div>
-	        <button type="button" class="btn btn-primary btn-lg center-block" id="btnShare">Share your results</button>
-	        <div class="row" id="repeat">
-	            <div class="col-md-6 vote">
-	              <button type="button" class="btn btn-primary btn-lg center-block" id="btnRepeatSeat">Pick another seat</button>
-	            </div>
-	            <div class="col-md-6 vote">
-	              <button type="button" class="btn btn-primary btn-lg center-block" id="btnRepeatOpp">Pick another opponent</button>
-	            </div>
-	        </div>      
-	        <div class="note">
-	            The number of votes in each parliamentary seat is based on the electoral roll for the first quarter of 2016 published by the Election Commission.
-	            The classification of parliamentary seats into urban, semi-rural and rural is based on the study done by research firm Politweet.org as the Election Commission does not classify each seat. You can read the methodology <a href="https://politweet.wordpress.com/about/" target="_blank">here</a>.
-	        </div>
-	        <div id="credit">Kuek Ser Kuang Keng + Malaysiakini</div>
-	    </div> 		
+					<button type="button" class="btn btn-primary btn-lg center-block" id="btnExplain">Explain to me</button>
+					<!-- Scroller content ends here -->
+					<div class="text">Need a conclusion here.</div>
+					<button type="button" class="btn btn-primary btn-lg center-block" id="btnShare">Share your results</button>
+					<div class="row" id="repeat">
+							<div class="col-md-6 vote">
+								<button type="button" class="btn btn-primary btn-lg center-block" id="btnRepeatSeat">Pick another seat</button>
+							</div>
+							<div class="col-md-6 vote">
+								<button type="button" class="btn btn-primary btn-lg center-block" id="btnRepeatOpp">Pick another opponent</button>
+							</div>
+					</div>			
+					<div class="note">
+							The number of votes in each parliamentary seat is based on the electoral roll for the first quarter of 2016 published by the Election Commission.
+							The classification of parliamentary seats into urban, semi-rural and rural is based on the study done by research firm Politweet.org as the Election Commission does not classify each seat. You can read the methodology <a href="https://politweet.wordpress.com/about/" target="_blank">here</a>.
+					</div>
+					<div id="credit">Kuek Ser Kuang Keng + Malaysiakini</div>
+			</div> 		
 </div>
 
 <footer>Kuek Ser Kuang Keng + Malaysiakini</footer>
@@ -186,9 +183,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>f
 <!-- load counties list from a separate js file -->
-<script src="js/seat-list.js"></script>
-<script src="js/data.js"></script>
-<script src="js/project.js"></script>
+<script src="https://pages.malaysiakini.com/undipower/js/seat-list.js"></script>
+<script src="https://pages.malaysiakini.com/undipower/js/data.js"></script>
+<script src="https://pages.malaysiakini.com/undipower/js/project.js"></script>
 
 </body>
 </html>
