@@ -33,9 +33,9 @@ var selectedData,
     indexOpp;  
 
 var resultHeads = [
-    "Why was it a draw?",
-    "Here's why you lost",
-    "How did you win?",
+    "Why a Draw?",
+    "Why You Lost",
+    "How You Won",
 ];
 
     function init() {      
@@ -80,8 +80,8 @@ var resultHeads = [
             panel('pageFight');
             compareSeat();
             setTimeout(function(){
-                $('#btnWhy').attr('disabled',false);
-            }, 2000);
+                $('#btnWhy').attr('hidden',false);
+            }, 5000);
         });        
         $('#btnWhy').click(function () {
             panel('pageAnalysis');

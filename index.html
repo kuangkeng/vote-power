@@ -5,7 +5,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Undi Power</title>
-		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css">
 		<style type="text/css">
@@ -15,6 +14,7 @@
 			.panel{background:none;box-shadow:none;}
 			.nav-item{display:inline!important;}
 			.nav-item a{margin-bottom:10px}
+			.btn-xl{margin-top:10px;padding:15px 30px;font-size:24px;border-radius:100px;letter-spacing:1px;}
 		</style>
 	</head>
 	<body style="background:url('img/bg_1920x1080.png');background-size:cover;background-attachment:fixed;">
@@ -25,7 +25,7 @@
 				<hr>
 				<div class="text-center">
 					<p>Put your vote to the test against our line-up of mighty leaders!</p>
-					<button type="button" class="btn btn-danger btn-lg" id="btnMobile" style="padding:15px 30px;font-size:24px;border-radius:100px;letter-spacing:1px;">Bring it on!</button>
+					<button type="button" class="btn btn-danger btn-xl" id="btnMobile">Bring it on!</button>
 				</div>
 				<div style="position:absolute;bottom:30px;left:30px;z-index:-1">
 					<img src="img/avatar_me_480x480.png" width="240" height="240" alt="">
@@ -67,7 +67,7 @@
 			</div>
 		<div id="pageSeat" class="panel">
 			<div class="container text-center" style="margin-top:10%">
-				<p class="lead" style="line-height:1em;">Lastly, select your opponent</p>
+				<p class="lead" style="line-height:1em;">Lastly, select your worthy opponent</p>
 				<div class="row no-gutters" style="margin-top:5%">
 					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 opponent oppHover" id="1" style="margin:0;padding:0;cursor:pointer">
 						<img class="img-responsive" src="img/avatar_opp1_240x240.png" alt="Opponent 1">
@@ -113,13 +113,13 @@
 					</div>
 				</div>
 			</div>
-			</div>
+		</div>
 		<div id="pageFight" class="panel" style="background:#fff">
 			<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#fff;z-index:1;">
-				<div class="container text-center" style="max-width:600px">
+				<div class="container text-center" style="max-width:480px">
 					<img class="img-responsive" src="img/fight_opp1_you_lose_480x480.gif" width="100%">
 					<!--p class="text-center" id="animationText">Fighting...</p-->
-					<button type="button" class="btn btn-danger btn-lg center-block" id="btnWhy" disabled>How did I lose?</button>
+					<button type="button" class="btn btn-danger btn-xl center-block" id="btnWhy" hidden>How come I lost?</button>
 				</div>
 			</div>
 		</div>
@@ -130,18 +130,18 @@
 					<p id="result01"></p>
 				</div>
 				<div class="row no-gutters" id="voteChart" style="max-width:800px;margin:0 auto;">
-					<div class="col-md-4 align-middle text-right" id="winnerVote">
+					<div class="col-xs-4 align-middle text-right" id="winnerVote">
 						<img class="img-responsive" src="img/avatar_me_480x480.png" alt="">
 					</div>
-					<div class="col-md-1 align-middle text-center" id="vsVote" style="font-size:100px">=</div>
-					<div class="col-md-7 align-middle" id="loserVote">
-						<div class="row">
-							<div class="col-sm-6 col-md-4 voteBox" id="voteBox0"></div>
-							<div class="col-sm-6 col-md-4 voteBox" id="voteBox1"></div>
-							<div class="col-sm-6 col-md-4 voteBox" id="voteBox2"></div>
-							<div class="col-sm-6 col-md-4 voteBox" id="voteBox3"></div>
-							<div class="col-sm-6 col-md-4 voteBox" id="voteBox4"></div>
-							<div class="col-sm-6 col-md-4 voteBox" id="voteBox5"></div>
+					<div class="col-xs-1 align-middle text-center md-large" id="vsVote" style="font-size:80px">=</div>
+					<div class="col-xs-7 align-middle" id="loserVote">
+						<div class="row no-gutters">
+							<div class="col-xs-4" id="voteBox0"></div>
+							<div class="col-xs-4" id="voteBox1"></div>
+							<div class="col-xs-4" id="voteBox2"></div>
+							<div class="col-xs-4" id="voteBox3"></div>
+							<div class="col-xs-4" id="voteBox4"></div>
+							<div class="col-xs-4" id="voteBox5"></div>
 						</div>
 					</div>
 				</div>
@@ -162,17 +162,17 @@
 				</div> 
 				<div class="row" id="profileChart">
 					<div class="row" id="repeat" style="max-width:800px;margin:0 auto;">
-						<div class="col-sm-12 col-md-4">
-							<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatSeat">Change your seat</button>
+						<div class="col-xs-12 col-sm-6">
+							<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatSeat">Change seat</button>
 						</div>
-						<div class="col-sm-12 col-md-4">
-							<button type="button" class="btn btn-block btn-primary btn-lg center-block" id="btnShare">Share your results</button>
-						</div>
-						<div class="col-sm-12 col-md-4">
-							<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatOpp">Challenge someone else</button>
+						<div class="col-xs-12 col-sm-6">
+							<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatOpp">Change oppoment</button>
 						</div>
 						<div class="col-sm-12">
-							<button type="button" class="btn btn-block btn-danger btn-lg center-block" id="btnExplain" style="margin-top:10px;padding:15px 30px;font-size:24px;border-radius:100px;letter-spacing:1px;">"Hang on a minute, shouldn't all votes be equal?"</button>
+							<button type="button" class="btn btn-block btn-info btn-lg center-block margin" id="btnShare">Share your results</button>
+						</div>
+						<div class="col-sm-12">
+							<button type="button" class="btn btn-block btn-danger btn-xl center-block" id="btnExplain">"Hang on a minute, shouldn't all votes be equal?"</button>
 						</div>
 					</div>
 				</div>	
@@ -197,8 +197,7 @@
 
 		<footer>Kuek Ser Kuang Keng + Malaysiakini</footer>
 		
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>f
 		<!-- load counties list from a separate js file -->
 		<script src="js/seat-list.js"></script>
