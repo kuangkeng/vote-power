@@ -34,8 +34,8 @@ var selectedData,
 
 var resultHeads = [
     "Why was it a draw?",
-    "You've lost. Here's why",
-    "You've won. There's a reason",
+    "Here's why you lost",
+    "How did you win?",
 ];
 
     function init() {      
@@ -55,18 +55,8 @@ var resultHeads = [
               panel('pageSeat');
             } else {
               $("#mobileSeatList").html('');
-              for (i = 0; i < selectedSeats.length; i++) { 
-                //check if i is even or odd to give alternate background color
-                if(i & 1)
-                {
-                  //is odd
-                  $("#mobileSeatList").append('<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optSeat btn btn-danger btn-lg">' + selectedSeats[i] + '</a></li>');
-                }
-                else
-                {
-                  //is even
-                  $("#mobileSeatList").append('<li class="nav-item align-items-center col-sm-6 col-md-3 col-lg-2"><a class="optSeat btn btn-danger btn-lg">' + selectedSeats[i] + '</a></li>');
-                }
+              for (i = 0; i < selectedSeats.length; i++) {
+                $("#mobileSeatList").append('<li class="nav-item align-items-center col-sm-6 col-md-4 col-lg-3"><a class="optSeat btn btn-danger btn-lg">' + selectedSeats[i] + '</a></li>');
               }
               panel('pageMobileMenu');
             }   
@@ -196,19 +186,19 @@ var resultHeads = [
       console.log("checkInt = " + checkInt);
       
       for (i = 0; i < fullVote; i++) { 
-        $("#voteBox" + i).append('<img class="img-responsive" src="graphic/ballot-icon.png">');
+        $("#voteBox" + i).append('<img class="img-responsive" src="img/avatar_opp1_240x240.png">');
       }  
 
       if (checkInt == true){} 
         else {
-          $("#voteBox" + fullVote).append('<img class="img-responsive" src="graphic/ballot-icon-half.png">');
+          $("#voteBox" + fullVote).append('<img class="img-responsive" src="img/avatar_opp1_half_240x240.png">');
         }
 
       //Populate text for result page  
       $('#resultHead').text(resultHeads[result])
 
       var resultSummary = [
-          "You got a draw because your vote has equal power to the votes in " + oppSeat + ".",
+          "You drew because your vote has equal power to the votes in " + oppSeat + ".",
           "You lost because one vote in " + oppSeat + " is equal to " + voteWeight2 + " votes of yours.",
           "You won because your one vote is equal to "+ voteWeight2 + " votes in " + oppSeat + "."          
       ];

@@ -1,75 +1,76 @@
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/project.css">
+  </head>
+<body>
+<div class="wrapper">    
+    <div class="text">
+      <p>Each Malaysian voter can only casts one vote to elect one Member of Parliament (MP) but under the current electoral system, not every vote has the same power. For example, in a thinly-populated constituency like Putrajaya, the 17,925 voters there vote to elect one MP while in a over-crowded constituency like Subang, 130,211 voters  seven times the number of voters in Putrajaya  also elect one MP.</p> 
+      <p>In other words, one Putrajaya vote is equal to seven Subang vote. Subang voters are under-represented while Putrajaya voter is over-represented. This malpractice is called malapportionment, a violation of the “one person, one vote, one value” principle in a democratic political system.</p>
+      <p>Let's look deeper into malapportionment at the national level.</p>
+    </div>
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Game Explained</title>
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css">
-	</head>
-	<body>
-		<div class="container">
-			<h1>Game Explained</h1>
-			<p>Each Malaysian voter can only casts one vote to elect one Member of Parliament (MP) but under the current electoral system, not every vote has the same power. For example, in a thinly-populated constituency like Putrajaya, the 17,925 voters there vote to elect one MP while in a over-crowded constituency like Subang, 130,211 voters - seven times the number of voters in Putrajaya - also elect one MP.</p> 
-			<p>In other words, one Putrajaya vote is equal to seven Subang vote. Subang voters are under-represented while Putrajaya voter is over-represented. This malpractice is called malapportionment, a violation of the “one person, one vote, one value” principle in a democratic political system.</p>
-			<p>Let's look deeper into malapportionment at the national level.</p>
-		</div>
-		
-		<!-- Scroller content starts here -->
-		<div class="container">
-			<div class="text-wrapper">
-				<div class="trigger" data-step="none" data-marker="0">
-					There are <div class="background">222</div> parliamentary seats in the whole country.
-				</div>
-				<div class="trigger" data-step="1" data-marker="1">
-					Each of them is represented by one line. The length of the line represents the number of voters in that seat.
-				</div>
-				<div class="trigger" data-step="2" data-marker="2">
-					The voter size of seats range from <div class="background">17,925</div> (Putrajaya) to <div class="background">146,625</div> (Kapar in Selangor). The national average size is <div class="background">61,103.</div>
-				</div>
-<!--				 <div class="trigger" data-step="none" data-marker="2.1">
-					There, public health officials are working to control the transmission of the disease in a new population of young people.
-				</div> -->
-				<div class="trigger" data-step="3" data-marker="3">
-					BN won most of the seats with <span class="font">fewer voters.</span> The average size of a BN seat is <div class="background">48,273.</div>
-				</div>	 
-				<div class="trigger" data-step="4" data-marker="4">
-					The rest were won by the opposition. The average size of an opposition seat is <div class="background">79,921.</div>
-				</div>	
-				<div class="trigger" data-step="5" data-marker="5">
-					If we only look at <span class="font">rural seats</span>, the voter size difference among them is still <span class="font">big</span>.
-				</div>	
-				<div class="trigger" data-step="6" data-marker="5">
-					It is <span class="font">even bigger</span> among urban seats.
-				</div> 
-				<div class="trigger" data-step="7" data-marker="5">
-					Malapportionment is part of the reason why in the 2013 general election, BN retained its power by winning <div class="background">60%</div> of parliamentary seats with a mere <div class="background">47%</div> of total votes while the opposition coalition could only win <div class="background">40%</div> of seats with <div class="background">51%</div> of votes.
-				</div>							
-			</div>
-			<div class="chart-wrapper">
-				<div id="instruct">Mouse over or tap each bar to see the details of each seat.</div>
-				<div id="chart-container"></div>
-				<div id="errorBox"><p>Please refresh this page to see the animated charts.</p></div>
-			</div> 
-		</div>
-		<!-- Scroller content ends here -->
-		<div class="text">Need a conclusion here and links to other stories if necessary.</div>
-			<div class="note">
-				<p>The number of votes in each parliamentary seat is based on the electoral roll for the first quarter of 2016 published by the Election Commission.</p>
-				<p>The classification of parliamentary seats into urban, semi-rural and rural is based on the study done by research firm Politweet.org as the Election Commission does not classify each seat. You can read the methodology <a href="https://politweet.wordpress.com/about/" target="_blank">here</a>.</p>
-			</div>
-		</div>
-		
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script src="https://code.highcharts.com/highcharts.js"></script>
-		<script src="https://pages.malaysiakini.com/undipower/library/scrollstory/jquery.scrollstory.js"></script>
-		<!-- load counties list from a separate js file -->
-		<script src="https://pages.malaysiakini.com/undipower/js/data.js"></script>
-		<script src="https://pages.malaysiakini.com/undipower/js/explain.js"></script>
-	
-	</body>
-</html>
+<!-- Scroller content starts here -->
+    <div class="scroller-wrapper">
+      <div class="text-wrapper">
+        <div class="trigger" data-step="none" data-marker="0">
+          There are <div class="background">222</div> parliamentary seats in the whole country.
+        </div>
+        <div class="trigger" data-step="1" data-marker="1">
+          Each of them is represented by one line. The length of the line represents the number of voters in that seat.
+        </div>
+        <div class="trigger" data-step="2" data-marker="2">
+          The voter size of seats range from <div class="background">17,925</div> (Putrajaya) to <div class="background">146,625</div> (Kapar in Selangor). The national average size is <div class="background">61,103.</div>
+        </div>
+<!--         <div class="trigger" data-step="none" data-marker="2.1">
+          There, public health officials are working to control the transmission of the disease in a new population of young people.
+        </div> -->
+        <div class="trigger" data-step="3" data-marker="3">
+          BN won most of the seats with <span class="font">fewer voters.</span> The average size of a BN seat is <div class="background">48,273.</div>
+        </div>   
+        <div class="trigger" data-step="4" data-marker="4">
+          The rest were won by the opposition. The average size of an opposition seat is <div class="background">79,921.</div>
+        </div>  
+        <div class="trigger" data-step="5" data-marker="5">
+          If we only look at <span class="font">rural seats</span>, the voter size difference among them is still <span class="font">big</span>.
+        </div>  
+        <div class="trigger" data-step="6" data-marker="5">
+          It is <span class="font">even bigger</span> among urban seats.
+        </div> 
+        <div class="trigger" data-step="7" data-marker="5">
+          Malapportionment is part of the reason why in the 2013 general election, BN retained its power by winning <div class="background">60%</div> of parliamentary seats with a mere <div class="background">47%</div> of total votes while the opposition coalition could only win <div class="background">40%</div> of seats with <div class="background">51%</div> of votes.
+        </div>              
+      </div>
+      <div class="chart-wrapper">
+        <div id="instruct">Mouse over or tap each bar to see the details of each seat.</div>
+        <div id="chart-container"></div>
+        <div id="errorBox"><p>Please refresh this page to see the animated charts.</p></div>
+      </div> 
+    </div>
+    <!-- Scroller content ends here -->
+    <div class="text">Need a conclusion here and links to other stories if necessary.</div>
+    <div class="note">
+        The number of votes in each parliamentary seat is based on the electoral roll for the first quarter of 2016 published by the Election Commission.
+        The classification of parliamentary seats into urban, semi-rural and rural is based on the study done by research firm Politweet.org as the Election Commission does not classify each seat. You can read the methodology <a href="https://politweet.wordpress.com/about/" target="_blank">here</a>.
+  </div>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="library/scrollstory/jquery.scrollstory.js"></script>
+<!-- load counties list from a separate js file -->
+<script src="js/data.js"></script>
+<script src="js/explain.js"></script>
+-
+</body>
+ </html>
