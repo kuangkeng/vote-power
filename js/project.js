@@ -4,7 +4,7 @@ var viewportHeight = $(window).height(),
     headlineHeight = $('.headline').outerHeight( true);
 
 $('#pageMobileMenu').css({height:viewportHeight});
-$('.mobileMenuBox').css({height:viewportHeight*0.8-headlineHeight});
+//$('.mobileMenuBox').css({height:viewportHeight*0.8-headlineHeight});
 
 var selectedData,
     selectedSeat, 
@@ -56,7 +56,7 @@ var resultHeads = [
             } else {
               $("#mobileSeatList").html('');
               for (i = 0; i < selectedSeats.length; i++) {
-                $("#mobileSeatList").append('<li class="nav-item align-items-center col-sm-6 col-md-4 col-lg-3"><a class="optSeat btn btn-danger btn-lg">' + selectedSeats[i] + '</a></li>');
+                $("#mobileSeatList").append('<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optSeat btn btn-danger btn-lg">' + selectedSeats[i] + '</a></li>');
               }
               panel('pageMobileMenu');
             }   

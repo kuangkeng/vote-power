@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css">
 		<style type="text/css">
 			.btn{border-radius:100px!important;}
-			hr{border-color:#212121;}
+			hr{border-color:#354a5d;}
 			footer{position:fixed;bottom:30px;right:30px;z-index:1;color:rgba(255,255,255,0.5);background:none;font-size:12px;text-transform:uppercase;letter-spacing:1px;}
 			.panel{background:none;box-shadow:none;}
 			.nav-item{display:inline!important;}
@@ -34,68 +34,82 @@
 		</div>
 		<div id="pageMobileMenuState" class="panel">
 			<div class="container text-center" style="max-width:800px;margin-top:10%;">
-				<p class="lead" style="line-height:1em;">Which state are you voting in?</p>
+				<p class="lead" style="line-height:1em;">First, select the state you are voting in?</p>
 					<ul class="nav mobileMenuBox row text-center" id="mobileStateList" style="text-align:center!important">
-						<li class="nav-item align-items-center col-sm-6 col-md-4 col-lg-3"><a class="optState btn btn-danger btn-lg">Perlis</a></li>
-						<li class="nav-item align-items-center col-sm-6 col-md-4 col-lg-3"><a class="optState btn btn-danger btn-lg">Kedah</a></li>
-						<li class="nav-item align-items-center col-sm-6 col-md-4 col-lg-3"><a class="optState btn btn-danger btn-lg">Kelantan</a></li>
-						<li class="nav-item align-items-center col-sm-6 col-md-4 col-lg-3"><a class="optState btn btn-danger btn-lg">Terengganu</a></li>
-						<li class="nav-item align-items-center col-sm-6 col-md-4 col-lg-3"><a class="optState btn btn-danger btn-lg">Pulau Pinang</a></li>
-						<li class="nav-item align-items-center col-sm-6 col-md-4 col-lg-3"><a class="optState btn btn-danger btn-lg">Perak</a></li>
-						<li class="nav-item align-items-center col-sm-6 col-md-4 col-lg-3"><a class="optState btn btn-danger btn-lg">Pahang</a></li>
-						<li class="nav-item align-items-center col-sm-6 col-md-4 col-lg-3"><a class="optState btn btn-danger btn-lg">Selangor</a></li>
-						<li class="nav-item align-items-center col-sm-6 col-md-4 col-lg-3"><a class="optState btn btn-danger btn-lg">Kuala Lumpur</a></li>
-						<li class="nav-item align-items-center col-sm-6 col-md-4 col-lg-3"><a class="optState btn btn-danger btn-lg">Putrajaya</a></li>
-						<li class="nav-item align-items-center col-sm-6 col-md-4 col-lg-3"><a class="optState btn btn-danger btn-lg">Negeri Sembilan</a></li>
-						<li class="nav-item align-items-center col-sm-6 col-md-4 col-lg-3"><a class="optState btn btn-danger btn-lg">Melaka</a></li>
-						<li class="nav-item align-items-center col-sm-6 col-md-4 col-lg-3"><a class="optState btn btn-danger btn-lg">Johor</a></li>
-						<li class="nav-item align-items-center col-sm-6 col-md-4 col-lg-3"><a class="optState btn btn-danger btn-lg">Labuan</a></li>
-						<li class="nav-item align-items-center col-sm-6 col-md-4 col-lg-3"><a class="optState btn btn-danger btn-lg">Sabah</a></li>
-						<li class="nav-item align-items-center col-sm-6 col-md-4 col-lg-3"><a class="optState btn btn-danger btn-lg">Sarawak</a></li>
+						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Perlis</a></li>
+						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Kedah</a></li>
+						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Kelantan</a></li>
+						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Terengganu</a></li>
+						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Pulau Pinang</a></li>
+						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Perak</a></li>
+						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Pahang</a></li>
+						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Selangor</a></li>
+						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Kuala Lumpur</a></li>
+						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Putrajaya</a></li>
+						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Negeri Sembilan</a></li>
+						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Melaka</a></li>
+						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Johor</a></li>
+						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Labuan</a></li>
+						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Sabah</a></li>
+						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Sarawak</a></li>
 					</ul>
 				</div>
 			</div>
 			</div>
 		<div id="pageMobileMenu" class="panel">	
 			<div class="container text-center" style="max-width:800px;margin-top:10%;">
-				<p class="lead" style="line-height:1em;">Select voting seat*</p>			
-				<ul class="nav mobileMenuBox row" id="mobileSeatList"></ul> 
-				<p>*The parliamentary seats listed in the menu are based on the seats contested in General Election 2013, not the new list proposed by the Election Commission that has yet to be passed.</p>
+				<p class="lead" style="line-height:1em;">Next, select your seat area*</p>			
+				<ul class="nav mobileMenuBox row" id="mobileSeatList"></ul>
+				<div style="max-width:480px;margin:10% auto 0">
+					<p class="small" style="line-height:1.2em;">* Based on the seats contested in General Election 2013, not the new list proposed by the Election Commission that has yet to be passed.</p>
+				</div>
 			</div>
 			</div>
 		<div id="pageSeat" class="panel">
 			<div class="container text-center" style="margin-top:10%">
-				<p class="lead" style="line-height:1em;">Choose your opponent</p>
-				<div class="row no-gutters">
-					<div class="col-sm-6 col-md-4 col-lg-2 opponent oppHover" id="1" style="cursor:pointer">
-						<span class="badge badge-pill badge-danger">111 Wins</span>
+				<p class="lead" style="line-height:1em;">Lastly, select your opponent</p>
+				<div class="row no-gutters" style="margin-top:5%">
+					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 opponent oppHover" id="1" style="margin:0;padding:0;cursor:pointer">
 						<img class="img-responsive" src="img/avatar_opp1_240x240.png" alt="Opponent 1">
-						<div class="oppLevel" style="border-top:5px solid #212121;padding:5px 0;">Level 51</div>
+						<div class="oppLevel" style="border-top:1px solid #354a5d;padding:5px 0;">Level 51</div>
+						<div style="position:absolute;bottom:50px;right:20px;">
+							<span class="badge">111 Wins</span>
+						</div>
 					</div>
-					<div class="col-sm-6 col-md-4 col-lg-2 opponent oppHover" id="2" style="cursor:pointer">
-						<span class="badge badge-pill badge-danger">111 Wins</span>
+					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 opponent oppHover" id="2" style="margin:0;padding:0;cursor:pointer">
 						<img class="img-responsive" src="img/avatar_opp2_240x240.png">
-						<div class="oppLevel" style="border-top:5px solid #212121;padding:5px 0;">Level 57</div>
+						<div class="oppLevel" style="border-top:1px solid #354a5d;padding:5px 0;">Level 57</div>
+						<div style="position:absolute;bottom:50px;right:20px;">
+							<span class="badge">111 Wins</span>
+						</div>
 					</div>
-					<div class="col-sm-6 col-md-4 col-lg-2 opponent oppHover" id="3" style="cursor:pointer">
-						<span class="badge badge-pill badge-danger">111 Wins</span>
+					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 opponent oppHover" id="3" style="margin:0;padding:0;cursor:pointer">
 						<img class="img-responsive" src="img/avatar_opp3_240x240.png">
-						<div class="oppLevel" style="border-top:5px solid #212121;padding:5px 0;">Level 100</div>
+						<div class="oppLevel" style="border-top:1px solid #354a5d;padding:5px 0;">Level 100</div>
+						<div style="position:absolute;bottom:50px;right:20px;">
+							<span class="badge">111 Wins</span>
+						</div>
 					</div>
-					<div class="col-sm-6 col-md-4 col-lg-2 opponent oppHover" id="4" style="cursor:pointer">
-						<span class="badge badge-pill badge-danger">111 Wins</span>
+					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 opponent oppHover" id="4" style="margin:0;padding:0;cursor:pointer">
 						<img class="img-responsive" src="img/avatar_opp4_240x240.png">
-						<div class="oppLevel" style="border-top:5px solid #212121;padding:5px 0;">Level 26</div>
+						<div class="oppLevel" style="border-top:1px solid #354a5d;padding:5px 0;">Level 26</div>
+						<div style="position:absolute;bottom:50px;right:20px;">
+							<span class="badge">111 Wins</span>
+						</div>
 					</div>
-					<div class="col-sm-6 col-md-4 col-lg-2 opponent oppHover" id="5" style="cursor:pointer">
-						<span class="badge badge-pill badge-danger">111 Wins</span>
+					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 opponent oppHover" id="5" style="margin:0;padding:0;cursor:pointer">
 						<img class="img-responsive" src="img/avatar_opp5_240x240.png">
-						<div class="oppLevel" style="border-top:5px solid #212121;padding:5px 0;">Level 8</div>
+						<div class="oppLevel" style="border-top:1px solid #354a5d;padding:5px 0;">Level 8</div>
+						<div style="position:absolute;bottom:50px;right:20px;">
+							<span class="badge">111 Wins</span>
+						</div>
 					</div>
-					<div class="col-sm-6 col-md-4 col-lg-2 opponent oppHover" id="6" style="cursor:pointer">
-						<span class="badge badge-pill badge-danger">111 Wins</span>
+					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 opponent oppHover" id="6" style="margin:0;padding:0;cursor:pointer">
 						<img class="img-responsive" src="img/avatar_opp6_240x240.png">
-						<div class="oppLevel" style="border-top:5px solid #212121;padding:5px 0;">Level 94</div>
+						<div class="oppLevel" style="border-top:1px solid #354a5d;padding:5px 0;">Level 94</div>
+						<div style="position:absolute;bottom:50px;right:20px;">
+							<span class="badge">111 Wins</span>
+						</div>
 					</div>
 				</div>
 			</div>
