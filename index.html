@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Undi Power</title>
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/vendor/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css">
 		<style type="text/css">
 			.btn{border-radius:100px!important;}
@@ -35,7 +35,7 @@
 		<div id="pageMobileMenuState" class="panel">
 			<div class="container text-center" style="max-width:800px;margin-top:10%;">
 				<p class="lead" style="line-height:1em;">First, select the state you are voting in?</p>
-					<ul class="nav mobileMenuBox row text-center" id="mobileStateList" style="text-align:center!important">
+					<ul class="nav row text-center" id="mobileStateList" style="text-align:center!important">
 						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Perlis</a></li>
 						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Kedah</a></li>
 						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Kelantan</a></li>
@@ -59,7 +59,7 @@
 		<div id="pageMobileMenu" class="panel">	
 			<div class="container text-center" style="max-width:800px;margin-top:10%;">
 				<p class="lead" style="line-height:1em;">Next, select your seat area*</p>			
-				<ul class="nav mobileMenuBox row" id="mobileSeatList"></ul>
+				<ul class="nav row" id="mobileSeatList"></ul>
 				<div style="max-width:480px;margin:10% auto 0">
 					<p class="small" style="line-height:1.2em;">* Based on the seats contested in General Election 2013, not the new list proposed by the Election Commission that has yet to be passed.</p>
 				</div>
@@ -138,9 +138,7 @@
 		<div id="pageAnalysis" class="panel">
 			<div class="container text-center">
 				<h2 id="resultHead"></h2>
-				<div class="text">
-					<p id="result01"></p>
-				</div>
+				<p id="result01"></p>
 				<div class="row no-gutters" id="voteChart" style="max-width:800px;margin:0 auto;">
 					<div class="col-xs-4 align-middle text-right" id="winnerVote">
 						<img class="img-responsive" src="img/avatar_me_480x480.png" alt="">
@@ -178,10 +176,10 @@
 							<button type="button" class="btn btn-block btn-danger btn-xl center-block" id="btnExplain">"Hang on a minute, shouldn't all votes be equal?"</button>
 						</div>
 						<div class="col-xs-12 col-sm-6">
-							<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatSeat">Replay</button>
+							<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatSeat2">Replay</button>
 						</div>
 						<div class="col-xs-12 col-sm-6">
-							<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatOpp">Change someone else</button>
+							<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatOpp2">Change someone else</button>
 						</div>
 						<div class="col-sm-12" style="margin-top:10px">
 							<button type="button" class="btn btn-block btn-info btn-lg center-block margin" id="btnShare">Ask your friends to play along</button>
@@ -209,8 +207,8 @@
 
 		<footer>Kuek Ser Kuang Keng + Malaysiakini</footer>
 		
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>f
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/js/vendor/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/js/flat-ui.min.js"></script>
 		<!-- load counties list from a separate js file -->
 		<script src="js/seat-list.js"></script>
 		<script src="js/data.js"></script>

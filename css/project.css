@@ -14,95 +14,11 @@ body {
 }
 
 .panel {
-    position: relative;
     display: none;
-    border:1px solid #D3D3D3;
-    padding:10px;
-}
-
-.title {
-    font-size: 45px;
-    font-weight: 600;
-    padding:20px 10px 10px 10px;
-    text-align: center;
-    line-height: 26px;
-}
-
-.headline {
-    font-size: 25px;
-    font-weight: normal;
-    padding:20px 10px 10px;
-    line-height: 24px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.text {
-    font-size: 20px;
-    font-weight: normal;
-    padding:10px;
-    line-height: 28px;
-}
-
-.mobileMenuBox {
-  margin: 0 5%;
-  overflow-y:scroll;
-  -webkit-overflow-scrolling: touch;
-}
-
-.optSeat, .optState {
-  font-size: 22px;
-  line-height: 25px;
-  padding:8px 0px 8px 15px; 
-}
-
-.optState:hover {
-  background-color: #c7c7c7;
-}
-
-.optSeat:hover{
-  background-color: #c7c7c7;
 } 
 
 .color1 {
   background-color: #f9f9f9;
-}
-
-.note {
-    font-size: 13px;
-    color: #808080;
-    line-height: 15px;
-    padding:10px;
-}
-
-.noteM{
-    position: absolute;
-    bottom:0;
-    left:0;
-    font-size: 13px;
-    color: #808080;
-    line-height: 15px;
-    padding:10px;
-    background-color: #ffffff;
-}
-
-#credit {
-    color: #808080;
-    font-size: 10px;
-    padding:20px 10px 0px;
-    text-align: right;
-    font-style: italic;
-}
-
-.btn {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.opponent {
-    position: relative;
-    padding:0px;
-    border:0.5px solid #ffffff;
 }
 
 #profileChart {
@@ -174,15 +90,10 @@ body {
 }
 
 .trigger {
-  font-size: 20px;
-  line-height: 28px;
   width:65%;
-  padding:5px 5px;
   margin-left:35%;
   margin-bottom: 500px;
-  background-color: rgba(255, 255, 255, 0.9);
-  opacity:0.1;
-  text-align: left;
+  text-align:left;
 }
 
 #errorBox {
@@ -211,9 +122,9 @@ body {
 .background {
   display: inline-block;
   padding:0px 5px;
-  background: #E01518;
+  background: #e54e42;
   /* Old browsers */
-  background: linear-gradient(to left, white 50%, #E01518 50%);
+  background: linear-gradient(to left, transparent 50%, #E01518 50%);
   background-size: 200% 100%;
   background-position:right bottom;
   transition: all 2s ease;

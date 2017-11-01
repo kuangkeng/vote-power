@@ -99,6 +99,16 @@ var resultHeads = [
             panel('pageSeat');
             //$('#btnWhy').attr('hidden',true);
         });
+        $('#btnRepeatSeat2').click(function () {
+            $(window).scrollTop(0);
+            panel('pageMobileMenuState');
+            //$('#btnWhy').attr('hidden',true);
+        });
+        $('#btnRepeatOpp2').click(function () {
+            $(window).scrollTop(0);
+            panel('pageSeat');
+            //$('#btnWhy').attr('hidden',true);
+        });
         $('#btnShare').click(function () {
 
         });
