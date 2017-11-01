@@ -114,12 +114,24 @@
 				</div>
 			</div>
 		</div>
-		<div id="pageFight" class="panel" style="background:#fff">
-			<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#fff;z-index:1;">
-				<div class="container text-center" style="max-width:480px">
-					<img class="img-responsive" src="img/fight_opp1_you_lose_480x480.gif" width="100%">
-					<!--p class="text-center" id="animationText">Fighting...</p-->
-					<button type="button" class="btn btn-danger btn-xl center-block" id="btnWhy" hidden>How come I lost?</button>
+		<div id="pageFight" class="panel">
+			<div class="container text-center" style="margin:5% auto 0;max-width:480px">
+				<img class="img-responsive" src="img/fight_opp1_you_lose_480x480.gif" width="100%" style="border-radius:480px;border:10px solid #fff;">
+			</div>
+			<div class="container">
+				<div class="row" id="repeat" style="max-width:800px;margin:0 auto;">
+					<div class="col-xs-12 col-sm-4">
+						<button type="button" class="btn btn-block btn-danger btn-lg center-block" id="btnWhy">How did I lose?</button>
+					</div>
+					<div class="col-xs-12 col-sm-4">
+						<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatSeat">Replay</button>
+					</div>
+					<div class="col-xs-12 col-sm-4">
+						<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatOpp">Different opponent</button>
+					</div>
+					<div class="col-sm-12" style="margin-top:10px">
+						<button type="button" class="btn btn-block btn-info btn-lg center-block margin" id="btnShare">Share this with your friends</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -148,13 +160,13 @@
 				<div class="row no-gutters" id="voteChart" style="max-width:800px;margin:0 auto;">
 					<div class="col-md-4" id="winnerAvatar">
 						<div>
-							<p>You are voting in <strong id="leftSeat"></strong> with <strong id="leftVoter"></strong></p>
+							<p>You're voting in <br><strong id="leftSeat"></strong><br> with <strong id="leftVoter"></strong></p>
 						</div>
 					</div>
 					<div class="col-md-1"></div>
-					<div class="col-md-4" id="loserAvatar">
+					<div class="col-md-7" id="loserAvatar">
 						<div>
-							<p>Your opponent is voting in <strong id="rightSeat"></strong> with <strong id="rightVoter"></strong></p>
+							<p>Your opponent is voting in <br><strong id="rightSeat"></strong><br> with <strong id="rightVoter"></strong></p>
 							<!--div class="profileName" id="rightName"></div>
 							<div class="profileParty" id="rightParty"></div-->
 						</div>
@@ -162,17 +174,17 @@
 				</div> 
 				<div class="row" id="profileChart">
 					<div class="row" id="repeat" style="max-width:800px;margin:0 auto;">
-						<div class="col-xs-12 col-sm-6">
-							<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatSeat">Change seat</button>
-						</div>
-						<div class="col-xs-12 col-sm-6">
-							<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatOpp">Change oppoment</button>
-						</div>
-						<div class="col-sm-12">
-							<button type="button" class="btn btn-block btn-info btn-lg center-block margin" id="btnShare">Share your results</button>
-						</div>
-						<div class="col-sm-12">
+						<div class="col-sm-12" style="margin-bottom:10px">
 							<button type="button" class="btn btn-block btn-danger btn-xl center-block" id="btnExplain">"Hang on a minute, shouldn't all votes be equal?"</button>
+						</div>
+						<div class="col-xs-12 col-sm-6">
+							<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatSeat">Replay</button>
+						</div>
+						<div class="col-xs-12 col-sm-6">
+							<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatOpp">Change someone else</button>
+						</div>
+						<div class="col-sm-12" style="margin-top:10px">
+							<button type="button" class="btn btn-block btn-info btn-lg center-block margin" id="btnShare">Ask your friends to play along</button>
 						</div>
 					</div>
 				</div>	

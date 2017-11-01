@@ -92,12 +92,12 @@ var resultHeads = [
         $('#btnRepeatSeat').click(function () {
             $(window).scrollTop(0);
             panel('pageMobileMenuState');
-            $('#btnWhy').attr('disabled',true);
+            //$('#btnWhy').attr('hidden',true);
         });
         $('#btnRepeatOpp').click(function () {
             $(window).scrollTop(0);
             panel('pageSeat');
-            $('#btnWhy').attr('disabled',true);
+            //$('#btnWhy').attr('hidden',true);
         });
         $('#btnShare').click(function () {
 
