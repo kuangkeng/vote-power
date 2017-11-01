@@ -1,4 +1,4 @@
-console.log("project2!");
+console.log("project3!");
 
 //CODE FOR SCROLLSTORY STARTS HERE
 // check viewport dimensions and use them to set the text box margin and chart height and width
@@ -94,8 +94,13 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
 
     function init() {      
       dataPassed = getUrl();
-      matchSeat();
-      compareSeat();
+      if (dataPassed == "") {
+        steps = steps_null;
+      } else {
+        steps = steps_num;
+        matchSeat();
+        compareSeat();
+      }
       setTimeout(scrollstory,500);
     }
 
@@ -284,7 +289,309 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
     }
 
     //SCROLLSTORY: chart animation steps. steps[0][i] are sequential animations, steps[1][i] are reverse animations. Refer to highchart API: http://api.highcharts.com/highcharts/Chart.update
-    var steps = [
+    var steps_null = [
+        [
+            function step0(){ 
+                chart.addSeries({
+                    name: "noColor", 
+                    id: "noColor",
+                    data :dataVoter2,
+                });
+            },
+            function step1(){  
+                chart.get("noColor").points[40].update({
+                    color: colorBN,
+                    dataLabels: {
+                      enabled: true,
+                      allowOverlap: true,
+                      padding: 0,
+                      color: '#7e7e7e',
+                      format: 'Langkawi<br>37,632 voters',
+                      align: 'left',
+                      zIndex: 10,
+                      style: {fontSize: '12px'},
+                    }
+                });
+                chart.get("noColor").points[98].update({
+                    color: colorOPP,
+                    dataLabels: {
+                      enabled: true,
+                      allowOverlap: true,
+                      padding: 0,
+                      color: '#7e7e7e',
+                      format: 'Bukit Bintang<br>52,753 voters',
+                      align: 'left',
+                      zIndex: 10,
+                      style: {fontSize: '12px'},
+                    }
+                });
+                chart.get("noColor").points[169].update({
+                    color: colorOPP,
+                    dataLabels: {
+                      enabled: true,
+                      allowOverlap: true,
+                      padding: 0,
+                      color: '#7e7e7e',
+                      format: 'Bandar Kuching<br>81,037 voters',
+                      align: 'left',
+                      zIndex: 10,
+                      style: {fontSize: '12px'},
+                    }
+                });
+            },
+            function step2(){   
+                chart.get("noColor").points[0].update({
+                    color: colorBN,
+                    dataLabels: {
+                      enabled: true,
+                      allowOverlap: true,
+                      padding: 0,
+                      color: '#7e7e7e',
+                      format: 'Putrajaya<br>17,925 voters',
+                      align: 'left',
+                      zIndex: 10,
+                      style: {fontSize: '12px'},
+                    }
+                });
+                chart.get("noColor").points[221].update({
+                    color: colorOPP,
+                    dataLabels: {
+                      enabled: true,
+                      allowOverlap: true,
+                      padding: 0,
+                      color: '#7e7e7e',
+                      format: 'Kapar<br>146,625 voters',
+                      align: 'left',
+                      zIndex: 10,
+                      style: {fontSize: '12px'},
+                    }
+                });
+                chart.yAxis[0].addPlotLine({
+                    value: averageNat, 
+                    color: '#a8a8a8',
+                    dashStyle: 'shortdash',
+                    width: 1,
+                    zIndex: 9,
+                    label: {
+                      text: 'National<br>average<br>61,103',
+                      align: 'left',
+                      rotation: 0,
+                      style: {
+                          color: '#939393',
+                          fontSize: 12,
+                      },
+                    },
+                    id: 'plotline-national'
+                });        
+            },
+            function step3(){  
+                chart.get("noColor").points[40].update({
+                  dataLabels: {enabled: false}
+                });  
+                chart.get("noColor").points[98].update({
+                  dataLabels: {enabled: false}
+                }); 
+                chart.get("noColor").points[169].update({
+                  dataLabels: {enabled: false}
+                });    
+                chart.get("noColor").points[0].update({
+                  dataLabels: {enabled: false}
+                });
+                chart.get("noColor").points[221].update({
+                  dataLabels: {enabled: false}
+                });             
+                chart.get("noColor").remove();
+                chart.addSeries({
+                    name: "allColors", 
+                    id: "allColors",
+                    data :dataAll2
+                });
+                chart.get("allColors").setData(dataBN2);                  
+                chart.yAxis[0].removePlotLine('plotline-national');
+                chart.yAxis[0].addPlotLine({
+                  value: averageBN, 
+                  color: '#a8a8a8',
+                  dashStyle: 'shortdash',
+                  width: 1,
+                  zIndex: 9,
+                  label: {
+                    text: 'BN<br>average<br>48,273',
+                    align: 'left',
+                    rotation: 0,
+                    style: {
+                        color: '#939393',
+                        fontSize: 12,
+                    },
+                  },
+                  id: 'plotline-BN'
+                });                
+            },
+            function step4(){ 
+                chart.get("allColors").setData(dataVoter2);            
+                chart.yAxis[0].addPlotLine({
+                  value: averageOPP, 
+                  color: '#a8a8a8',
+                  dashStyle: 'shortdash',
+                  width: 1,
+                  zIndex: 9,
+                  label: {
+                    text: 'OPP<br>average<br>79,921',
+                    align: 'left',
+                    rotation: 0,
+                    style: {
+                        color: '#939393',
+                        fontSize: 12,
+                    },
+                  },
+                  id: 'plotline-OPP'
+                });
+            },
+            function step5(){ 
+                chart.get("allColors").setData(dataRural2);
+            },
+            function step6(){ 
+                chart.get("allColors").setData(dataUrban2);
+            },
+            function step7(){ 
+                chart.get("allColors").setData(dataVoter2);
+            },                        
+        ],
+        //reverse animations
+        [   function reverse0(){},
+            function reverse1(){  
+                chart.get("noColor").points[40].update({
+                  color:"#d3d3d3",
+                  dataLabels: {enabled: false}
+                });  
+                chart.get("noColor").points[98].update({
+                  color:"#d3d3d3",
+                  dataLabels: {enabled: false}
+                }); 
+                chart.get("noColor").points[169].update({
+                  color:"#d3d3d3",
+                  dataLabels: {enabled: false}
+                });   
+            },
+            function reverse2(){ 
+                chart.get("noColor").points[0].update({
+                  color:"#d3d3d3",
+                  dataLabels: {enabled: false}
+                });
+                chart.get("noColor").points[221].update({
+                  color:"#d3d3d3",
+                  dataLabels: {enabled: false}
+                });   
+                chart.yAxis[0].removePlotLine('plotline-national');
+            },
+            function reverse3(){ 
+                chart.get("allColors").remove();
+                chart.addSeries({
+                    color:"#d3d3d3",
+                    name: "noColor", 
+                    id: "noColor",
+                    data :dataVoter2,
+                });
+                chart.yAxis[0].removePlotLine('plotline-BN');
+                chart.yAxis[0].addPlotLine({
+                    value: averageNat, 
+                    color: '#a8a8a8',
+                    dashStyle: 'shortdash',
+                    width: 1,
+                    zIndex: 9,
+                    label: {
+                      text: 'National<br>average<br>61,103',
+                      align: 'left',
+                      rotation: 0,
+                      style: {
+                          color: '#939393',
+                          fontSize: 12,
+                      },
+                    },
+                    id: 'plotline-national'
+                });
+                chart.get("noColor").points[40].update({
+                    color: colorBN,
+                    dataLabels: {
+                      enabled: true,
+                      allowOverlap: true,
+                      padding: 0,
+                      color: '#7e7e7e',
+                      format: 'Langkawi<br>37,632 voters',
+                      align: 'left',
+                      zIndex: 10,
+                      style: {fontSize: '12px'},
+                    }
+                });
+                chart.get("noColor").points[98].update({
+                    color: colorOPP,
+                    dataLabels: {
+                      enabled: true,
+                      allowOverlap: true,
+                      padding: 0,
+                      color: '#7e7e7e',
+                      format: 'Bukit Bintang<br>52,753 voters',
+                      align: 'left',
+                      zIndex: 10,
+                      style: {fontSize: '12px'},
+                    }
+                });
+                chart.get("noColor").points[169].update({
+                    color: colorOPP,
+                    dataLabels: {
+                      enabled: true,
+                      allowOverlap: true,
+                      padding: 0,
+                      color: '#7e7e7e',
+                      format: 'Bandar Kuching<br>81,037 voters',
+                      align: 'left',
+                      zIndex: 10,
+                      style: {fontSize: '12px'},
+                    }
+                });
+                chart.get("noColor").points[0].update({
+                    color: colorBN,
+                    dataLabels: {
+                      enabled: true,
+                      allowOverlap: true,
+                      padding: 0,
+                      color: '#7e7e7e',
+                      format: 'Putrajaya<br>17,925 voters',
+                      align: 'left',
+                      zIndex: 10,
+                      style: {fontSize: '12px'},
+                    }
+                });
+                chart.get("noColor").points[221].update({
+                    color: colorOPP,
+                    dataLabels: {
+                      enabled: true,
+                      allowOverlap: true,
+                      padding: 0,
+                      color: '#7e7e7e',
+                      format: 'Kapar<br>146,625 voters',
+                      align: 'left',
+                      zIndex: 10,
+                      style: {fontSize: '12px'},
+                    }
+                });
+            },
+            function reverse4(){ 
+                chart.get("allColors").setData(dataBN2);
+                chart.yAxis[0].removePlotLine('plotline-OPP');
+            },
+            function reverse5(){ 
+                chart.get("allColors").setData(dataVoter2); 
+            }, 
+            function reverse6(){ 
+                chart.get("allColors").setData(dataRural2);
+            },
+            function reverse7(){ 
+                chart.get("allColors").setData(dataUrban2);
+            },      
+        ]
+    ];
+
+    var steps_num = [
         [
             function step0(){ 
                 chart.addSeries({
@@ -573,7 +880,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
             legend: {enabled: false},
             tooltip: {
                 headerFormat:'',
-                pointFormat: '<b>{point.seat}</b><br>Voters:<b>{point.y:,0f}</b><br>{point.name}, {point.party}',
+                pointFormat: '<b>{point.seat}</b><br><b>{point.y:,0f}</b> voters <br>{point.name}, {point.party}',
             },
             plotOptions: {
                 series: {
@@ -618,23 +925,3 @@ function addThousandSeparator(nStr) {
 $(document).ready(function(){
   init();
 }); 
-
-
-
-// function sendData() {
-//   $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
-//     function(json) {
-//       $.ajax({
-//         type: 'POST',
-//         url: 'https://docs.google.com/forms/d/e/1FAIpQLSezn9Ag2Fo5Jsss1mkERwxAPlK7aOpcQK5GU5v9zPcMz8xmfg/formResponse',
-//         data: { 
-//           "entry.225955305": selectedSeat,
-//           "entry.225955305": oppSeat,
-//           "entry.225955305": result_text,
-//           "entry.1489940444": json.ip,
-//           "entry.283757303": document.referrer,
-//         }
-//       }); 
-//     }
-//   );   
-// }
