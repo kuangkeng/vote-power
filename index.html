@@ -11,10 +11,11 @@
 			.btn{border-radius:100px!important;}
 			hr{border-color:#354a5d;}
 			footer{position:fixed;bottom:30px;right:30px;z-index:1;color:rgba(255,255,255,0.5);background:none;font-size:12px;text-transform:uppercase;letter-spacing:1px;}
-			.panel{background:none;box-shadow:none;}
+			.panel{background:none;box-shadow:none;display:none;}
 			.nav-item{display:inline!important;}
 			.nav-item a{margin-bottom:10px}
 			.btn-xl{margin-top:10px;padding:15px 30px;font-size:24px;border-radius:100px;letter-spacing:1px;}
+			#resultBox{display: none;}
 		</style>
 	</head>
 	<body style="background:url('img/bg_1920x1080.png');background-size:cover;background-attachment:fixed;">
@@ -116,12 +117,12 @@
 		</div>
 		<div id="pageFight" class="panel">
 			<div class="container text-center" style="margin:5% auto 0;max-width:480px">
-				<img class="img-responsive" src="img/fight_opp1_you_lose_480x480.gif" width="100%" style="border-radius:480px;border:10px solid #fff;">
+				<img class="img-responsive" id="fightImg" src="img/fight_opp1_you_lose_480x480.gif" width="100%" style="border-radius:480px;border:10px solid #fff;">
 			</div>
-			<div class="container">
+			<div class="container" id="resultBox">
 				<div class="row" id="repeat" style="max-width:800px;margin:0 auto;">
 					<div class="col-xs-12 col-sm-4">
-						<button type="button" class="btn btn-block btn-danger btn-lg center-block" id="btnWhy">How did I lose?</button>
+						<button type="button" class="btn btn-block btn-danger btn-lg center-block" id="btnWhy">Why?</button>
 					</div>
 					<div class="col-xs-12 col-sm-4">
 						<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatSeat">Replay</button>
@@ -141,7 +142,7 @@
 				<p id="result01"></p>
 				<div class="row no-gutters" id="voteChart" style="max-width:800px;margin:0 auto;">
 					<div class="col-xs-4 align-middle text-right" id="winnerVote">
-						<img class="img-responsive" src="img/avatar_me_480x480.png" alt="">
+						<img class="img-responsive" id="leftVoteHead" src="img/avatar_me_480x480.png" alt="">
 					</div>
 					<div class="col-xs-1 align-middle text-center md-large" id="vsVote" style="font-size:80px">=</div>
 					<div class="col-xs-7 align-middle" id="loserVote">
@@ -156,24 +157,18 @@
 					</div>
 				</div>
 				<div class="row no-gutters" id="voteChart" style="max-width:800px;margin:0 auto;">
-					<div class="col-md-4" id="winnerAvatar">
-						<div>
-							<p>You're voting in <br><strong id="leftSeat"></strong><br> with <strong id="leftVoter"></strong></p>
-						</div>
+					<div class="col-md-4">
+						<p>You're voting in <br><strong id="leftSeat"></strong><br> with <strong id="leftVoter"></strong></p>
 					</div>
 					<div class="col-md-1"></div>
-					<div class="col-md-7" id="loserAvatar">
-						<div>
-							<p>Your opponent is voting in <br><strong id="rightSeat"></strong><br> with <strong id="rightVoter"></strong></p>
-							<!--div class="profileName" id="rightName"></div>
-							<div class="profileParty" id="rightParty"></div-->
-						</div>
+					<div class="col-md-7">
+						<p>Your opponent is representing <br><strong id="rightSeat"></strong><br> with <strong id="rightVoter"></strong></p>
 					</div>
 				</div> 
 				<div class="row" id="profileChart">
 					<div class="row" id="repeat" style="max-width:800px;margin:0 auto;">
 						<div class="col-sm-12" style="margin-bottom:10px">
-							<button type="button" class="btn btn-block btn-danger btn-xl center-block" id="btnExplain">"Hang on a minute, shouldn't all votes be equal?"</button>
+							<button type="button" class="btn btn-block btn-danger btn-xl center-block" id="btnExplain">Hang on a minute, shouldn't all votes be equal?</button>
 						</div>
 						<div class="col-xs-12 col-sm-6">
 							<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatSeat2">Replay</button>
@@ -189,7 +184,6 @@
 				<!-- Scroller content ends here -->
 				<div class="card">
 					<div class="card-body">
-						<p>Need a conclusion here.</p>
 					</div>
 				</div>
 				
@@ -199,7 +193,6 @@
 				<div class="card">
 					<div class="card-body">
 						<p>The number of votes in each parliamentary seat is based on the electoral roll for the first quarter of 2016 published by the Election Commission.</p>
-						<p>The classification of parliamentary seats into urban, semi-rural and rural is based on the study done by research firm Politweet.org as the Election Commission does not classify each seat. You can read the methodology <a href="https://politweet.wordpress.com/about/" target="_blank">here</a>.</p>
 					</div>
 				</div>
 			</div>

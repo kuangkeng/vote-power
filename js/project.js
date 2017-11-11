@@ -1,4 +1,4 @@
-console.log("start10!");
+console.log("start16");
 
 var viewportHeight = $(window).height(),
     headlineHeight = $('.headline').outerHeight( true);
@@ -30,12 +30,18 @@ var selectedData,
     voteWeight2,
     result,
     result_text,
-    indexOpp;  
+    idOpp;
 
 var resultHeads = [
     "Why a Draw?",
     "Why You Lost",
     "How You Won",
+];
+
+var btnTexts = [
+  "Why didn't I win?",
+  "How did I lose?",
+  "How did I win?",
 ];
 
     function init() {      
@@ -46,7 +52,7 @@ var resultHeads = [
             panel('pageMobileMenuState');
         });
         $('.optState').click(function () {
-            selectedStateIndex = $(this).index();
+            selectedStateIndex = $('.optState').index(this);
             selectedSeats = seatByState[selectedStateIndex];
             if (selectedStateIndex == 9 || selectedStateIndex == 13){
               selectedSeat = selectedSeats[0];
@@ -68,8 +74,8 @@ var resultHeads = [
             panel('pageSeat');
         });    
         $('.opponent').click(function () {
-            var idOpp = $(this).attr('id')-1;
-            oppData = opponents[idOpp];
+            idOpp = $(this).attr('id');
+            oppData = opponents[idOpp-1];
             oppSeat = oppData.seat;
             oppKod = oppData.kod;
             oppName = oppData.name;
@@ -80,7 +86,7 @@ var resultHeads = [
             panel('pageFight');
             compareSeat();
             setTimeout(function(){
-                $('#btnWhy').attr('hidden',false);
+                $('#resultBox').fadeIn();
             }, 5000);
         });        
         $('#btnWhy').click(function () {
@@ -156,6 +162,8 @@ var resultHeads = [
     }
 
     function compareSeat(){
+      var voteHeadLeft = "me";
+      var voteHeadRight = "opp" + idOpp;
       var bigNum, smallNum;
       difVoter = selectedVoter - oppVoter;
       if(difVoter>0){
@@ -178,15 +186,18 @@ var resultHeads = [
         voteWeight2 = Math.round(voteWeight*2)/2;
         if (difVoter > 0) {
           result = 1;
-          result_text = "lost";
+          result_text = "lose";
+          voteHeadLeft = "opp" + idOpp;
+          voteHeadRight = "me";
         }  else {
           result = 2;
-          result_text = "won";
+          result_text = "win";
         }
       } else {
         result = 0;
         result_text = "draw";
         voteWeight2 = 1;
+        $("#btnExplain").text("But some votes have more power than yours, find out why");
       }
       console.log("result = " + result);
       console.log("voteWeight = " + voteWeight);
@@ -194,18 +205,26 @@ var resultHeads = [
       var fullVote = Math.floor(voteWeight2);
       var checkInt = isInt(voteWeight2);
       console.log("checkInt = " + checkInt);
-      
+      var voteHeadLeftUrl = "img/avatar_" + voteHeadLeft + "_240x240.png";
+      var voteHeadRightUrl = "img/avatar_" + voteHeadRight + "_240x240.png";
+      var voteHeadRightHalfUrl = "img/avatar_" + voteHeadRight + "_half_240x240.png";
       for (i = 0; i < fullVote; i++) { 
-        $("#voteBox" + i).append('<img class="img-responsive" src="img/avatar_opp1_240x240.png">');
-      }  
+        $("#voteBox" + i).append('<img class="img-responsive" src="'+ voteHeadRightUrl +'">');
+      }
 
       if (checkInt == true){} 
         else {
-          $("#voteBox" + fullVote).append('<img class="img-responsive" src="img/avatar_opp1_half_240x240.png">');
+          $("#voteBox" + fullVote).append('<img class="img-responsive" src="'+ voteHeadRightHalfUrl +'">');
         }
 
+      $("#leftVoteHead").attr("src", voteHeadLeftUrl);
+
       //Populate text for result page  
-      $('#resultHead').text(resultHeads[result])
+      var fightUrl = "img/fight_opp" + idOpp + "_you_" + result_text + "_480x480.gif";
+
+      $("#fightImg").attr("src",fightUrl);
+      $('#btnWhy').text(btnTexts[result]);
+      $('#resultHead').text(resultHeads[result]);
 
       var resultSummary = [
           "You drew because your vote has equal power to the votes in " + oppSeat + ".",
