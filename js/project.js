@@ -1,4 +1,4 @@
-console.log("start16");
+console.log("start17");
 
 var viewportHeight = $(window).height(),
     headlineHeight = $('.headline').outerHeight( true);
@@ -87,7 +87,7 @@ var btnTexts = [
             compareSeat();
             setTimeout(function(){
                 $('#resultBox').fadeIn();
-            }, 5000);
+            }, 8000);
         });        
         $('#btnWhy').click(function () {
             panel('pageAnalysis');
@@ -95,25 +95,21 @@ var btnTexts = [
         $('#btnExplain').click(function () {
             openExplain();
         });
-        $('#btnRepeatSeat').click(function () {
+        $('.btnRepeatSeat').click(function () {
             $(window).scrollTop(0);
             panel('pageMobileMenuState');
-            //$('#btnWhy').attr('hidden',true);
+            $("#resultBox").hide();
+            $("#loserVote").html("");
+            $("#leftVoteHead").removeClass("flipImg");
+            $(".opponent").css({'background-color':'rgba(0,0,0,0)','pointer-events':'auto'});
+            $('.opponent > img').css('opacity','1');
         });
-        $('#btnRepeatOpp').click(function () {
+        $('.btnRepeatOpp').click(function () {
             $(window).scrollTop(0);
             panel('pageSeat');
-            //$('#btnWhy').attr('hidden',true);
-        });
-        $('#btnRepeatSeat2').click(function () {
-            $(window).scrollTop(0);
-            panel('pageMobileMenuState');
-            //$('#btnWhy').attr('hidden',true);
-        });
-        $('#btnRepeatOpp2').click(function () {
-            $(window).scrollTop(0);
-            panel('pageSeat');
-            //$('#btnWhy').attr('hidden',true);
+            $("#resultBox").hide();
+            $("#loserVote").html("");
+            $("#leftVoteHead").removeClass("flipImg");
         });
         $('#btnShare').click(function () {
 
@@ -156,7 +152,7 @@ var btnTexts = [
       }  
       var darkenIndex = jQuery.inArray(selectedSeat, oppSeats);
       if (darkenIndex == -1){} else {
-        $('#'+ (darkenIndex+1)).removeClass('oppHover').css({'background-color':'rgba(0,0,0,0.5)','pointer-events':'none'});
+        $('#'+ (darkenIndex+1)).css({'background-color':'rgba(0,0,0,0.5)','pointer-events':'none'});
         $('#'+ (darkenIndex+1) + "> img" ).css('opacity','0.8');
       }
     }
@@ -203,21 +199,35 @@ var btnTexts = [
       console.log("voteWeight = " + voteWeight);
       console.log("voteWeight2 = " + voteWeight2);
       var fullVote = Math.floor(voteWeight2);
+      var maxVote = Math.ceil(voteWeight2);
       var checkInt = isInt(voteWeight2);
       console.log("checkInt = " + checkInt);
       var voteHeadLeftUrl = "img/avatar_" + voteHeadLeft + "_240x240.png";
       var voteHeadRightUrl = "img/avatar_" + voteHeadRight + "_240x240.png";
       var voteHeadRightHalfUrl = "img/avatar_" + voteHeadRight + "_half_240x240.png";
-      for (i = 0; i < fullVote; i++) { 
-        $("#voteBox" + i).append('<img class="img-responsive" src="'+ voteHeadRightUrl +'">');
+      var voteHeadWidth;
+      console.log("maxVote = " + maxVote);
+      if (maxVote >2  && maxVote <7){
+        voteHeadWidth = "33%"  
+      } else if (maxVote >6){
+        voteHeadWidth = "26%"  
       }
-
+      else {
+        voteHeadWidth = (100/maxVote)+"%";
+      }
+      
+      for (i = 0; i < fullVote; i++) { 
+        $("#loserVote").append('<div class="voteHead"><img class="img-responsive" src="'+ voteHeadRightUrl +'"></div>');
+      }
       if (checkInt == true){} 
         else {
-          $("#voteBox" + fullVote).append('<img class="img-responsive" src="'+ voteHeadRightHalfUrl +'">');
+          $("#loserVote").append('<div class="voteHead"><img class="img-responsive" src="'+ voteHeadRightHalfUrl +'"></div>');
         }
-
+      $(".voteHead").css({"max-width":voteHeadWidth, "display":"inline-block"});  
+      if(maxVote == 1){$("#loserVote").css({"text-align":"center"});} 
+        else {$("#loserVote").css({"text-align":"left"});} 
       $("#leftVoteHead").attr("src", voteHeadLeftUrl);
+      if(result == 1){$("#leftVoteHead").addClass("flipImg");}
 
       //Populate text for result page  
       var fightUrl = "img/fight_opp" + idOpp + "_you_" + result_text + "_480x480.gif";
@@ -234,7 +244,7 @@ var btnTexts = [
 
       $('#result01').text(resultSummary[result]);
 
-      if(result>1){
+      if(result == 2 || result == 0){
         //user avatar put on left, opp on right
         $('#leftSeat').text(selectedKod + " " + selectedSeat);
         $('#leftVoter').text(addThousandSeparator(selectedVoter) + " voters");
@@ -244,6 +254,8 @@ var btnTexts = [
         $('#rightVoter').text(addThousandSeparator(oppVoter) + " voters");
         $('#rightName').text(oppName);
         $('#rightParty').text(oppParty);
+        $('#voteTextLeft').text("You're voting in");
+        $('#voteTextRight').text("Your opponent is representing");
       } else {
         $('#leftSeat').text(oppKod + " " + oppSeat);
         $('#leftVoter').text(addThousandSeparator(oppVoter) + " voters");
@@ -253,6 +265,8 @@ var btnTexts = [
         $('#rightVoter').text(addThousandSeparator(selectedVoter) + " voters");
         $('#rightName').text(selectedName);
         $('#rightParty').text(selectedParty);
+        $('#voteTextLeft').text("Your opponent is representing");
+        $('#voteTextRight').text("You're voting in");
       }
     }
 

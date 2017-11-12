@@ -16,6 +16,14 @@
 			.nav-item a{margin-bottom:10px}
 			.btn-xl{margin-top:10px;padding:15px 30px;font-size:24px;border-radius:100px;letter-spacing:1px;}
 			#resultBox{display: none;}
+			.flipImg {
+		        -moz-transform: scaleX(-1);
+		        -o-transform: scaleX(-1);
+		        -webkit-transform: scaleX(-1);
+		        transform: scaleX(-1);
+		        filter: FlipH;
+		        -ms-filter: "FlipH";
+			}
 		</style>
 	</head>
 	<body style="background:url('img/bg_1920x1080.png');background-size:cover;background-attachment:fixed;">
@@ -68,7 +76,7 @@
 			</div>
 		<div id="pageSeat" class="panel">
 			<div class="container text-center" style="margin-top:10%">
-				<p class="lead" style="line-height:1em;">Lastly, select your worthy opponent</p>
+				<p class="lead" style="line-height:1em;">Now select your opponent</p>
 				<div class="row no-gutters" style="margin-top:5%">
 					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 opponent oppHover" id="1" style="margin:0;padding:0;cursor:pointer">
 						<img class="img-responsive" src="img/avatar_opp1_240x240.png" alt="Opponent 1">
@@ -125,10 +133,10 @@
 						<button type="button" class="btn btn-block btn-danger btn-lg center-block" id="btnWhy">Why?</button>
 					</div>
 					<div class="col-xs-12 col-sm-4">
-						<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatSeat">Replay</button>
+						<button type="button" class="btn btn-block btn-inverse btn-lg center-block btnRepeatSeat">Replay</button>
 					</div>
 					<div class="col-xs-12 col-sm-4">
-						<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatOpp">Different opponent</button>
+						<button type="button" class="btn btn-block btn-inverse btn-lg center-block btnRepeatOpp">Different opponent</button>
 					</div>
 					<div class="col-sm-12" style="margin-top:10px">
 						<button type="button" class="btn btn-block btn-info btn-lg center-block margin" id="btnShare">Share this with your friends</button>
@@ -140,29 +148,24 @@
 			<div class="container text-center">
 				<h2 id="resultHead"></h2>
 				<p id="result01"></p>
-				<div class="row no-gutters" id="voteChart" style="max-width:800px;margin:0 auto;">
-					<div class="col-xs-4 align-middle text-right" id="winnerVote">
-						<img class="img-responsive" id="leftVoteHead" src="img/avatar_me_480x480.png" alt="">
+				<div class="row no-gutters" id="voteChart" style="max-width:800px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;">
+					<div class="col-xs-5 align-middle text-right" id="winnerVote">
+						<img class="img-responsive center-block" id="leftVoteHead" src="img/avatar_me_480x480.png" alt="">
 					</div>
-					<div class="col-xs-1 align-middle text-center md-large" id="vsVote" style="font-size:80px">=</div>
-					<div class="col-xs-7 align-middle" id="loserVote">
-						<div class="row no-gutters">
-							<div class="col-xs-4" id="voteBox0"></div>
-							<div class="col-xs-4" id="voteBox1"></div>
-							<div class="col-xs-4" id="voteBox2"></div>
-							<div class="col-xs-4" id="voteBox3"></div>
-							<div class="col-xs-4" id="voteBox4"></div>
-							<div class="col-xs-4" id="voteBox5"></div>
+					<div class="col-xs-2 align-middle text-center md-large" id="vsVote" style="font-size:80px;">=</div>
+					<div class="col-xs-5 align-middle">
+						<div class="row no-gutters" id="loserVote" style="text-align:left;">
+							
 						</div>
 					</div>
 				</div>
 				<div class="row no-gutters" id="voteChart" style="max-width:800px;margin:0 auto;">
-					<div class="col-md-4">
-						<p>You're voting in <br><strong id="leftSeat"></strong><br> with <strong id="leftVoter"></strong></p>
+					<div class="col-md-5">
+						<p><span id="voteTextLeft">You're voting in</span><br><strong id="leftSeat"></strong><br> with <strong id="leftVoter"></strong></p>
 					</div>
-					<div class="col-md-1"></div>
-					<div class="col-md-7">
-						<p>Your opponent is representing <br><strong id="rightSeat"></strong><br> with <strong id="rightVoter"></strong></p>
+					<div class="col-md-2"></div>
+					<div class="col-md-5">
+						<p><span id="voteTextRight">Your opponent is representing</span><br><strong id="rightSeat"></strong><br> with <strong id="rightVoter"></strong></p>
 					</div>
 				</div> 
 				<div class="row" id="profileChart">
@@ -171,10 +174,10 @@
 							<button type="button" class="btn btn-block btn-danger btn-xl center-block" id="btnExplain">Hang on a minute, shouldn't all votes be equal?</button>
 						</div>
 						<div class="col-xs-12 col-sm-6">
-							<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatSeat2">Replay</button>
+							<button type="button" class="btn btn-block btn-inverse btn-lg center-block btnRepeatSeat">Replay</button>
 						</div>
 						<div class="col-xs-12 col-sm-6">
-							<button type="button" class="btn btn-block btn-inverse btn-lg center-block" id="btnRepeatOpp2">Change someone else</button>
+							<button type="button" class="btn btn-block btn-inverse btn-lg center-block btnRepeatOpp">Change someone else</button>
 						</div>
 						<div class="col-sm-12" style="margin-top:10px">
 							<button type="button" class="btn btn-block btn-info btn-lg center-block margin" id="btnShare">Ask your friends to play along</button>
