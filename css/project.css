@@ -11,6 +11,7 @@ body {
 
 .wrapper {
     margin: 0 auto;
+    max-width: 480px;
 }
 
 .panel {
@@ -90,8 +91,8 @@ body {
 }
 
 .trigger {
-  width:65%;
-  margin-left:35%;
+  width:60%;
+  margin-left:40%;
   margin-bottom: 500px;
   text-align:left;
 }

@@ -101,8 +101,6 @@ var btnTexts = [
             $("#resultBox").hide();
             $("#loserVote").html("");
             $("#leftVoteHead").removeClass("flipImg");
-            $(".opponent").css({'background-color':'#e54e42!important','pointer-events':'auto'});
-            $('.opponent > img').css('opacity','1');
         });
         $('.btnRepeatOpp').click(function () {
             $(window).scrollTop(0);
@@ -142,19 +140,6 @@ var btnTexts = [
       selectedName = selectedData[0].name;
       selectedLevel = selectedData[0].level;
       console.log(JSON.stringify(selectedData));
-      darkenOpp();
-    }
-
-    function darkenOpp(){
-      var oppSeats = [];
-      for (i = 0; i < opponents.length; i++) { 
-        oppSeats.push(opponents[i].seat);
-      }  
-      var darkenIndex = jQuery.inArray(selectedSeat, oppSeats);
-      if (darkenIndex == -1){} else {
-        $('#'+ (darkenIndex+1)).css({'background-color':'rgba(0,0,0,0)','pointer-events':'none'});
-        $('#'+ (darkenIndex+1) + "> img" ).css('opacity','0.3');
-      }
     }
 
     function compareSeat(){

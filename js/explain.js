@@ -370,7 +370,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                     value: averageNat, 
                     color: '#a8a8a8',
                     dashStyle: 'shortdash',
-                    width: 1,
+                    width: 2,
                     zIndex: 9,
                     label: {
                       text: 'National<br>average<br>61,103',
@@ -412,7 +412,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                   value: averageBN, 
                   color: '#a8a8a8',
                   dashStyle: 'shortdash',
-                  width: 1,
+                  width: 2,
                   zIndex: 9,
                   label: {
                     text: 'BN<br>average<br>48,273',
@@ -432,7 +432,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                   value: averageOPP, 
                   color: '#a8a8a8',
                   dashStyle: 'shortdash',
-                  width: 1,
+                  width: 2,
                   zIndex: 9,
                   label: {
                     text: 'OPP<br>average<br>79,921',
@@ -496,7 +496,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                     value: averageNat, 
                     color: '#a8a8a8',
                     dashStyle: 'shortdash',
-                    width: 1,
+                    width: 2,
                     zIndex: 9,
                     label: {
                       text: 'National<br>average<br>61,103',
@@ -636,7 +636,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                     value: averageNat, 
                     color: '#a8a8a8',
                     dashStyle: 'shortdash',
-                    width: 1,
+                    width: 2,
                     zIndex: 9,
                     label: {
                       text: 'National<br>average<br>61,103',
@@ -676,7 +676,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                   value: averageBN, 
                   color: '#a8a8a8',
                   dashStyle: 'shortdash',
-                  width: 1,
+                  width: 2,
                   zIndex: 9,
                   label: {
                     text: 'BN<br>average<br>48,273',
@@ -702,7 +702,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                   value: averageOPP, 
                   color: '#a8a8a8',
                   dashStyle: 'shortdash',
-                  width: 1,
+                  width: 2,
                   zIndex: 9,
                   label: {
                     text: 'OPP<br>average<br>79,921',
@@ -793,7 +793,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                     value: averageNat, 
                     color: '#a8a8a8',
                     dashStyle: 'shortdash',
-                    width: 1,
+                    width: 2,
                     zIndex: 9,
                     label: {
                       text: 'National<br>average<br>61,103',
