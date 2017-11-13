@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="uk-height-1-1">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Undi Power</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/vendor/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.34/css/uikit.min.css">
 		<style type="text/css">
-			.btn{border-radius:100px!important;}
+			body{color:#333;font-weight:300;}
+			.uk-button{border-radius:100px!important;}
 			hr{border-color:#354a5d;}
 			footer{position:fixed;bottom:30px;right:30px;z-index:1;color:rgba(255,255,255,0.5);background:none;font-size:12px;text-transform:uppercase;letter-spacing:1px;}
-			.panel{background:none;box-shadow:none;display:none;}
-			.nav-item{display:inline!important;}
-			.nav-item a{margin-bottom:10px}
-			.btn-xl{margin-top:10px;padding:15px 30px;font-size:24px;border-radius:100px;letter-spacing:1px;}
 			#resultBox{display: none;}
 			.flipImg {
 		        -moz-transform: scaleX(-1);
@@ -24,191 +20,178 @@
 		        filter: FlipH;
 		        -ms-filter: "FlipH";
 			}
+			.opponent:hover{color:#fff;background:#ee5370;border-radius:10px;padding:0;}
+			.opponent:hover div{border-color:#ee5370!important;}
 		</style>
 	</head>
-	<body style="background:url('img/bg_1920x1080.png');background-size:cover;background-attachment:fixed;">
-		<div id="pageOpen" class="panel">
-			<div class="container text-center" style="max-width:800px;margin-top:5%">
-				<h1 style="font-size:50px">Undi Power</h1>
-				<p class="lead" style="line-height:1em;">How powerful is your vote?</p>
+	<body>
+		<div class="uk-width-1-1 uk-height-1-1 uk-background-cover uk-background-fixed" style="background-image:url('img/bg_1920x1080.png');position:fixed;top:0;left:0;z-index:-1"></div>
+		<section id="pageOpen" class="uk-section uk-height-1-1 panel">
+			<div class="uk-container uk-container-small uk-text-center">
+				<div class="uk-text-smal uk-text-uppercase uk-text-large">Undi Power</div>
+				<h1 class="uk-article-title uk-text-bold uk-text-uppercase uk-margin-remove-top" style="font-size:38px;font-weight:900">How Powerful is Your Vote?</h1>
+				<!--p class="uk-text-large uk-margin-remove-top" style="line-height:1em;">How powerful is your vote?</p-->
 				<hr>
-				<div class="text-center">
-					<p>Put your vote to the test against our line-up of mighty leaders!</p>
-					<button type="button" class="btn btn-danger btn-xl" id="btnMobile">Bring it on!</button>
-				</div>
-				<div style="position:absolute;bottom:30px;left:30px;z-index:-1">
-					<img src="img/avatar_me_480x480.png" width="240" height="240" alt="">
-				</div>
+				<p class="uk-visible@s uk-text-large">Put your vote to the test against our line-up of mighty leaders!</p>
+				<button id="btnMobile" type="button" class="uk-button uk-button-large uk-button-danger uk-border-rounded" style="font-size:24px">Start</button>
 			</div>
-		</div>
-		<div id="pageMobileMenuState" class="panel">
-			<div class="container text-center" style="max-width:800px;margin-top:10%;">
-				<p class="lead" style="line-height:1em;">First, select the state you are voting in?</p>
-					<ul class="nav row text-center" id="mobileStateList" style="text-align:center!important">
-						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Perlis</a></li>
-						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Kedah</a></li>
-						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Kelantan</a></li>
-						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Terengganu</a></li>
-						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Pulau Pinang</a></li>
-						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Perak</a></li>
-						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Pahang</a></li>
-						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Selangor</a></li>
-						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Kuala Lumpur</a></li>
-						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Putrajaya</a></li>
-						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Negeri Sembilan</a></li>
-						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Melaka</a></li>
-						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Johor</a></li>
-						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Labuan</a></li>
-						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Sabah</a></li>
-						<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optState btn btn-danger btn-lg">Sarawak</a></li>
-					</ul>
-				</div>
+			<div style="position:fixed;bottom:30px;left:5%;z-index:1">
+				<img src="img/avatar_me_480x480.png" width="240" height="240" alt="">
 			</div>
+		</section>
+		
+		<section id="pageMobileMenuState" class="uk-section panel">
+			<div class="uk-container uk-container-small uk-text-center">
+				<p class="uk-text-large uk-text-bold">Which state you are voting in?</p>
+				<ul id="mobileStateList" class="uk-child-width-1-1@s uk-child-width-1-3@m uk-child-width-1-4@l uk-grid-small" uk-grid>
+					<li><a class="optState uk-button uk-button-secondary uk-border-rounded uk-width-1-1 uk-margin-small-bottom">Perlis</a></li>
+					<li><a class="optState uk-button uk-button-secondary uk-border-rounded uk-width-1-1 uk-margin-small-bottom">Kedah</a></li>
+					<li><a class="optState uk-button uk-button-secondary uk-border-rounded uk-width-1-1 uk-margin-small-bottom">Kelantan</a></li>
+					<li><a class="optState uk-button uk-button-secondary uk-border-rounded uk-width-1-1 uk-margin-small-bottom">Terengganu</a></li>
+					<li><a class="optState uk-button uk-button-secondary uk-border-rounded uk-width-1-1 uk-margin-small-bottom">Pulau Pinang</a></li>
+					<li><a class="optState uk-button uk-button-secondary uk-border-rounded uk-width-1-1 uk-margin-small-bottom">Perak</a></li>
+					<li><a class="optState uk-button uk-button-secondary uk-border-rounded uk-width-1-1 uk-margin-small-bottom">Pahang</a></li>
+					<li><a class="optState uk-button uk-button-secondary uk-border-rounded uk-width-1-1 uk-margin-small-bottom">Selangor</a></li>
+					<li><a class="optState uk-button uk-button-secondary uk-border-rounded uk-width-1-1 uk-margin-small-bottom">Kuala Lumpur</a></li>
+					<li><a class="optState uk-button uk-button-secondary uk-border-rounded uk-width-1-1 uk-margin-small-bottom">Putrajaya</a></li>
+					<li><a class="optState uk-button uk-button-secondary uk-border-rounded uk-width-1-1 uk-margin-small-bottom">Negeri Sembilan</a></li>
+					<li><a class="optState uk-button uk-button-secondary uk-border-rounded uk-width-1-1 uk-margin-small-bottom">Melaka</a></li>
+					<li><a class="optState uk-button uk-button-secondary uk-border-rounded uk-width-1-1 uk-margin-small-bottom">Johor</a></li>
+					<li><a class="optState uk-button uk-button-secondary uk-border-rounded uk-width-1-1 uk-margin-small-bottom">Labuan</a></li>
+					<li><a class="optState uk-button uk-button-secondary uk-border-rounded uk-width-1-1 uk-margin-small-bottom">Sabah</a></li>
+					<li><a class="optState uk-button uk-button-secondary uk-border-rounded uk-width-1-1 uk-margin-small-bottom">Sarawak</a></li>
+				</ul>
 			</div>
-		<div id="pageMobileMenu" class="panel">	
-			<div class="container text-center" style="max-width:800px;margin-top:10%;">
-				<p class="lead" style="line-height:1em;">Next, select your seat area*</p>			
-				<ul class="nav row" id="mobileSeatList"></ul>
-				<div style="max-width:480px;margin:10% auto 0">
-					<p class="small" style="line-height:1.2em;">* Based on the seats contested in General Election 2013, not the new list proposed by the Election Commission that has yet to be passed.</p>
-				</div>
+			<div style="position:fixed;bottom:30px;left:40%;z-index:1">
+				<img src="img/avatar_me_480x480.png" width="240" height="240" alt="">
 			</div>
+		</section>
+		
+		<section id="pageMobileMenu" class="uk-section panel">	
+			<div class="uk-container uk-container-small uk-text-center">
+				<p class="uk-text-large" style="line-height:1em;">Select your seat area*</p>			
+				<ul id="mobileSeatList" class="uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-1-3@l uk-grid-small" uk-grid></ul>
+				<p class="uk-margin-top uk-text-left">* Based on the seats contested in General Election 2013, not the new list proposed by the Election Commission that has yet to be passed.</p>
 			</div>
-		<div id="pageSeat" class="panel">
-			<div class="container text-center" style="margin-top:10%">
-				<p class="lead" style="line-height:1em;">Now select your opponent</p>
-				<div class="row no-gutters" style="margin-top:5%">
-					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 opponent oppHover" id="1" style="margin:0;padding:0;cursor:pointer">
+			<div style="position:fixed;bottom:30px;right:-30px;z-index:1">
+				<img src="img/avatar_me_480x480.png" width="240" height="240" alt="">
+			</div>
+		</section>
+		<section id="pageSeat" class="uk-section panel">
+			<div class="uk-container uk-container-small uk-text-center">
+				<p class="uk-text-large" style="line-height:1em;">Now select your opponent</p>
+				<div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-6@l uk-grid-collapse" uk-grid>
+					<div class="opponent uk-position-relative" id="1" style="cursor:pointer">
 						<img class="img-responsive" src="img/avatar_opp1_240x240.png" alt="Opponent 1">
 						<div class="oppLevel" style="border-top:1px solid #354a5d;padding:5px 0;">Level 51</div>
-						<div style="position:absolute;bottom:50px;right:20px;">
-							<span class="badge">111 Wins</span>
-						</div>
+						<div class="uk-label uk-label-danger">111 Wins</div>
 					</div>
-					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 opponent oppHover" id="2" style="margin:0;padding:0;cursor:pointer">
+					<div class="opponent uk-position-relative" id="2" style="cursor:pointer">
 						<img class="img-responsive" src="img/avatar_opp2_240x240.png">
 						<div class="oppLevel" style="border-top:1px solid #354a5d;padding:5px 0;">Level 57</div>
-						<div style="position:absolute;bottom:50px;right:20px;">
-							<span class="badge">111 Wins</span>
-						</div>
+						<div class="uk-label uk-label-danger">111 Wins</div>
 					</div>
-					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 opponent oppHover" id="3" style="margin:0;padding:0;cursor:pointer">
+					<div class="opponent uk-position-relative" id="3" style="cursor:pointer">
 						<img class="img-responsive" src="img/avatar_opp3_240x240.png">
 						<div class="oppLevel" style="border-top:1px solid #354a5d;padding:5px 0;">Level 100</div>
-						<div style="position:absolute;bottom:50px;right:20px;">
-							<span class="badge">111 Wins</span>
-						</div>
+						<div class="uk-label uk-label-danger">111 Wins</div>
 					</div>
-					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 opponent oppHover" id="4" style="margin:0;padding:0;cursor:pointer">
+					<div class="opponent uk-position-relative" id="4" style="cursor:pointer">
 						<img class="img-responsive" src="img/avatar_opp4_240x240.png">
 						<div class="oppLevel" style="border-top:1px solid #354a5d;padding:5px 0;">Level 26</div>
-						<div style="position:absolute;bottom:50px;right:20px;">
-							<span class="badge">111 Wins</span>
-						</div>
+						<div class="uk-label uk-label-danger">111 Wins</div>
 					</div>
-					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 opponent oppHover" id="5" style="margin:0;padding:0;cursor:pointer">
+					<div class="opponent uk-position-relative" id="5" style="cursor:pointer">
 						<img class="img-responsive" src="img/avatar_opp5_240x240.png">
 						<div class="oppLevel" style="border-top:1px solid #354a5d;padding:5px 0;">Level 8</div>
-						<div style="position:absolute;bottom:50px;right:20px;">
-							<span class="badge">111 Wins</span>
-						</div>
+						<div class="uk-label uk-label-danger">111 Wins</div>
 					</div>
-					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 opponent oppHover" id="6" style="margin:0;padding:0;cursor:pointer">
+					<div class="opponent uk-position-relative" id="6" style="cursor:pointer">
 						<img class="img-responsive" src="img/avatar_opp6_240x240.png">
 						<div class="oppLevel" style="border-top:1px solid #354a5d;padding:5px 0;">Level 94</div>
-						<div style="position:absolute;bottom:50px;right:20px;">
-							<span class="badge">111 Wins</span>
-						</div>
+						<div class="uk-label uk-label-danger">111 Wins</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div id="pageFight" class="panel">
-			<div class="container text-center" style="margin:5% auto 0;max-width:480px">
-				<img class="img-responsive" id="fightImg" src="img/fight_opp1_you_lose_480x480.gif" width="100%" style="border-radius:480px;border:10px solid #fff;">
+		</section>
+		
+		<section id="pageFight" class="uk-section panel">
+			<div class="uk-container uk-container-small uk-text-center" style="max-width:400px;margin:0 auto;">
+				<img class="img-responsive" id="fightImg" src="img/avatar_me_480x480.png" width="100%" style="border-radius:480px;border:10px solid #fff;">
 			</div>
-			<div class="container" id="resultBox">
-				<div class="row" id="repeat" style="max-width:800px;margin:0 auto;">
-					<div class="col-xs-12 col-sm-4">
-						<button type="button" class="btn btn-block btn-danger btn-lg center-block" id="btnWhy">Why?</button>
+			<div style="margin:20px auto;text-align:center;">
+				<p class="uk-text-large" style="line-height:1em;">Recruit your friends</p>
+				<div class="addthis_inline_share_toolbox" style="text-align:center"></div>
+			</div>
+			<div id="resultBox" style="position:absolute;top:200px;left:0;z-index:9999;width:100%;">
+				<div id="repeat" style="max-width:260px;margin:0 auto">
+					<div class="uk-margin-small-bottom">
+						<button type="button" class="uk-button uk-button-secondary uk-width-1-1 btnRepeatSeat"><span uk-icon="icon:refresh"></span> Replay</button>
 					</div>
-					<div class="col-xs-12 col-sm-4">
-						<button type="button" class="btn btn-block btn-inverse btn-lg center-block btnRepeatSeat">Replay</button>
+					<div class="uk-margin-small-bottom">
+						<button type="button" class="uk-button uk-button-secondary uk-width-1-1 btnRepeatOpp">Change Opponent</button>
 					</div>
-					<div class="col-xs-12 col-sm-4">
-						<button type="button" class="btn btn-block btn-inverse btn-lg center-block btnRepeatOpp">Different opponent</button>
-					</div>
-					<div class="col-sm-12" style="margin-top:10px">
-						<button type="button" class="btn btn-block btn-info btn-lg center-block margin" id="btnShare">Share this with your friends</button>
+					<div class="uk-margin-small-bottom">
+						<button type="button" class="uk-button uk-button-danger uk-width-1-1" id="btnWhy">Why?</button>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div id="pageAnalysis" class="panel">
-			<div class="container text-center">
-				<h2 id="resultHead"></h2>
-				<p id="result01"></p>
-				<div class="row no-gutters" id="voteChart" style="max-width:800px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;">
-					<div class="col-xs-5 align-middle text-right" id="winnerVote">
-						<img class="img-responsive center-block" id="leftVoteHead" src="img/avatar_me_480x480.png" alt="">
+		</section>
+		
+		<section id="pageAnalysis" class="uk-section panel">
+			<div class="uk-container uk-container-small uk-text-center">
+				<h2 id="resultHead" class="uk-card-title uk-text-bold"></h2>
+				<p id="result01" class="uk-text-large"></p>
+				<div id="voteChart" uk-grid>
+					<div class="uk-width-2-5 uk-flex uk-flex-middle uk-flex-right" id="winnerVote">
+						<img id="leftVoteHead" src="img/avatar_me_480x480.png" alt="">
 					</div>
-					<div class="col-xs-2 align-middle text-center md-large" id="vsVote" style="font-size:80px;">=</div>
-					<div class="col-xs-5 align-middle">
-						<div class="row no-gutters" id="loserVote" style="text-align:left;">
-							
-						</div>
+					<div class="uk-width-1-5 uk-flex uk-flex-middle uk-flex-center" id="vsVote" style="font-size:80px;">=</div>
+					<div class="uk-width-2-5 uk-flex uk-flex-middle">
+						<ul class="uk-child-width-1-3 uk-grid-small" id="loserVote" uk-grid></ul>
 					</div>
 				</div>
-				<div class="row no-gutters" id="voteChart" style="max-width:800px;margin:0 auto;">
-					<div class="col-md-5">
-						<p><span id="voteTextLeft">You're voting in</span><br><strong id="leftSeat"></strong><br> with <strong id="leftVoter"></strong></p>
+				<div id="voteChart" class="uk-text-center uk-grid-collpase" uk-grid>
+					<div class="uk-width-2-5">
+						<p><span id="voteTextLeft">You're voting in</span><br><strong id="leftSeat"></strong><br> with <strong id="leftVoter"></strong>*</p>
 					</div>
-					<div class="col-md-2"></div>
-					<div class="col-md-5">
-						<p><span id="voteTextRight">Your opponent is representing</span><br><strong id="rightSeat"></strong><br> with <strong id="rightVoter"></strong></p>
+					<div class="uk-width-1-5"></div>
+					<div class="uk-width-2-5">
+						<p><span id="voteTextRight">Your opponent is representing</span><br><strong id="rightSeat"></strong><br> with <strong id="rightVoter"></strong>*</p>
 					</div>
-				</div> 
-				<div class="row" id="profileChart">
-					<div class="row" id="repeat" style="max-width:800px;margin:0 auto;">
-						<div class="col-sm-12" style="margin-bottom:10px">
-							<button type="button" class="btn btn-block btn-danger btn-xl center-block" id="btnExplain">Hang on a minute, shouldn't all votes be equal?</button>
-						</div>
-						<div class="col-xs-12 col-sm-6">
-							<button type="button" class="btn btn-block btn-inverse btn-lg center-block btnRepeatSeat">Replay</button>
-						</div>
-						<div class="col-xs-12 col-sm-6">
-							<button type="button" class="btn btn-block btn-inverse btn-lg center-block btnRepeatOpp">Change someone else</button>
-						</div>
-						<div class="col-sm-12" style="margin-top:10px">
-							<button type="button" class="btn btn-block btn-info btn-lg center-block margin" id="btnShare">Ask your friends to play along</button>
-						</div>
+				</div>
+				<div class="uk-margin">
+					<button type="button" class="uk-button uk-button-large uk-button-danger uk-width-1-1" id="btnExplain" style="font-size:24px">Hang on a minute, shouldn't all votes be equal?</button>
+				</div>
+				<div id="profileChart" class="uk-child-width-1-1@s uk-child-width-1-3@m" uk-grid>
+					<div>
+						<button type="button" class="uk-button uk-button-large uk-button-secondary uk-width-1-1 btnRepeatSeat"><span uk-icon="icon:refresh"></span> Replay</button>
 					</div>
-				</div>	
-				<!-- Scroller content ends here -->
-				<div class="card">
-					<div class="card-body">
+					<div>
+						<button type="button" class="uk-button uk-button-large uk-button-secondary uk-width-1-1 btnRepeatOpp">Change Opponent</button>
+					</div>
+					<div>
+						<button type="button" class="uk-button uk-button-large uk-button-primary uk-width-1-1 margin" id="btnShare">Share</button>
 					</div>
 				</div>
 				
-				<div class="container" class="max-width:800px;margin:0 auto;">
-				</div>
-				
-				<div class="card">
-					<div class="card-body">
-						<p>The number of votes in each parliamentary seat is based on the electoral roll for the first quarter of 2016 published by the Election Commission.</p>
+				<div class="uk-card uk-card-default uk-card-small uk-margin-top">
+					<div class="uk-card-body">
+						* The number of votes in each parliamentary seat is based on the electoral roll for the first quarter of 2016 published by the Election Commission.
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 
 		<footer>Kuek Ser Kuang Keng + Malaysiakini</footer>
 		
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/js/vendor/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/js/flat-ui.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.34/js/uikit.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.34/js/uikit-icons.min.js"></script>
 		<!-- load counties list from a separate js file -->
 		<script src="js/seat-list.js"></script>
 		<script src="js/data.js"></script>
 		<script src="js/project.js"></script>
-		
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59db45bf7ee5f0c1"></script> 
 	</body>
 </html>

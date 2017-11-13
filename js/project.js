@@ -39,7 +39,7 @@ var resultHeads = [
 ];
 
 var btnTexts = [
-  "Why didn't I win?",
+  "Why a Draw?",
   "How did I lose?",
   "How did I win?",
 ];
@@ -62,7 +62,7 @@ var btnTexts = [
             } else {
               $("#mobileSeatList").html('');
               for (i = 0; i < selectedSeats.length; i++) {
-                $("#mobileSeatList").append('<li class="nav-item align-items-center col-6 col-xs-6 col-sm-4 col-md-3"><a class="optSeat btn btn-danger btn-lg">' + selectedSeats[i] + '</a></li>');
+                $("#mobileSeatList").append('<li><a class="optSeat uk-button uk-button-secondary uk-border-rounded uk-width-1-1">' + selectedSeats[i] + '</a></li>');
               }
               panel('pageMobileMenu');
             }   
@@ -83,11 +83,11 @@ var btnTexts = [
             oppParty = oppData.party;
             oppPos = oppData.pos;
             oppLevel = oppData.level;
-            panel('pageFight');
             compareSeat();
+            panel('pageFight');
             setTimeout(function(){
                 $('#resultBox').fadeIn();
-            }, 8000);
+            }, 10000);
         });        
         $('#btnWhy').click(function () {
             panel('pageAnalysis');
@@ -101,7 +101,7 @@ var btnTexts = [
             $("#resultBox").hide();
             $("#loserVote").html("");
             $("#leftVoteHead").removeClass("flipImg");
-            $(".opponent").css({'background-color':'rgba(0,0,0,0)','pointer-events':'auto'});
+            $(".opponent").css({'background-color':'#e54e42!important','pointer-events':'auto'});
             $('.opponent > img').css('opacity','1');
         });
         $('.btnRepeatOpp').click(function () {
@@ -152,8 +152,8 @@ var btnTexts = [
       }  
       var darkenIndex = jQuery.inArray(selectedSeat, oppSeats);
       if (darkenIndex == -1){} else {
-        $('#'+ (darkenIndex+1)).css({'background-color':'rgba(0,0,0,0.5)','pointer-events':'none'});
-        $('#'+ (darkenIndex+1) + "> img" ).css('opacity','0.8');
+        $('#'+ (darkenIndex+1)).css({'background-color':'rgba(0,0,0,0)','pointer-events':'none'});
+        $('#'+ (darkenIndex+1) + "> img" ).css('opacity','0.3');
       }
     }
 
@@ -193,7 +193,7 @@ var btnTexts = [
         result = 0;
         result_text = "draw";
         voteWeight2 = 1;
-        $("#btnExplain").text("But some votes have more power than yours, find out why");
+        $("#btnExplain").text("Some voters are more powerful than you, find out why");
       }
       console.log("result = " + result);
       console.log("voteWeight = " + voteWeight);
@@ -217,11 +217,11 @@ var btnTexts = [
       }
       
       for (i = 0; i < fullVote; i++) { 
-        $("#loserVote").append('<div class="voteHead"><img class="img-responsive" src="'+ voteHeadRightUrl +'"></div>');
+        $("#loserVote").append('<li class="voteHead"><img class="img-responsive" src="'+ voteHeadRightUrl +'"></li>');
       }
       if (checkInt == true){} 
         else {
-          $("#loserVote").append('<div class="voteHead"><img class="img-responsive" src="'+ voteHeadRightHalfUrl +'"></div>');
+          $("#loserVote").append('<li class="voteHead"><img class="img-responsive" src="'+ voteHeadRightHalfUrl +'"></li>');
         }
       $(".voteHead").css({"max-width":voteHeadWidth, "display":"inline-block"});  
       if(maxVote == 1){$("#loserVote").css({"text-align":"center"});} 
@@ -237,9 +237,9 @@ var btnTexts = [
       $('#resultHead').text(resultHeads[result]);
 
       var resultSummary = [
-          "You drew because your vote has equal power to the votes in " + oppSeat + ".",
-          "You lost because one vote in " + oppSeat + " is equal to " + voteWeight2 + " votes of yours.",
-          "You won because your one vote is equal to "+ voteWeight2 + " votes in " + oppSeat + "."          
+          "You drew because your vote has very similar power to the votes in " + oppSeat + ".",
+          "You lost because one vote in " + oppSeat + " is equavalent to " + voteWeight2 + " votes of yours.",
+          "You won because your one vote is equavalent to "+ voteWeight2 + " votes in " + oppSeat + "."          
       ];
 
       $('#result01').text(resultSummary[result]);
