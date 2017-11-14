@@ -3,7 +3,7 @@ console.log("start17");
 var viewportHeight = $(window).height(),
     headlineHeight = $('.headline').outerHeight( true);
 
-$('#pageMobileMenu').css({height:viewportHeight});
+$('#pageSeat').css({height:viewportHeight});
 //$('.mobileMenuBox').css({height:viewportHeight*0.8-headlineHeight});
 
 var selectedData,
@@ -45,33 +45,33 @@ var btnTexts = [
 ];
 
     function init() {      
-        panel('pageOpen');
+        panel('pageStart');
         //Events for each button clicked
-        $('#btnMobile').click(function () {
+        $('#btnStart').click(function () {
             $(window).scrollTop(0);
-            panel('pageMobileMenuState');
+            panel('pageState');
         });
-        $('.optState').click(function () {
-            selectedStateIndex = $('.optState').index(this);
+        $('.btnState').click(function () {
+            selectedStateIndex = $('.btnState').index(this);
             selectedSeats = seatByState[selectedStateIndex];
             if (selectedStateIndex == 9 || selectedStateIndex == 13){
               selectedSeat = selectedSeats[0];
               matchSeat();
               $(window).scrollTop(0);
-              panel('pageSeat');
+              panel('pageOpponent');
             } else {
               $("#mobileSeatList").html('');
               for (i = 0; i < selectedSeats.length; i++) {
-                $("#mobileSeatList").append('<li><a class="optSeat uk-button uk-button-secondary uk-border-rounded uk-width-1-1">' + selectedSeats[i] + '</a></li>');
+                $("#mobileSeatList").append('<li><a class="btnSeat uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">' + selectedSeats[i] + '</a></li>');
               }
-              panel('pageMobileMenu');
+              panel('pageSeat');
             }   
         }); 
-        $('#mobileSeatList').on('click', '.optSeat', function(){
+        $('#mobileSeatList').on('click', '.btnSeat', function(){
             selectedSeat = $(this).text();
             matchSeat();
             $(window).scrollTop(0);
-            panel('pageSeat');
+            panel('pageOpponent');
         });    
         $('.opponent').click(function () {
             idOpp = $(this).attr('id');
@@ -97,14 +97,14 @@ var btnTexts = [
         });
         $('.btnRepeatSeat').click(function () {
             $(window).scrollTop(0);
-            panel('pageMobileMenuState');
+            panel('pageState');
             $("#resultBox").hide();
             $("#loserVote").html("");
             $("#leftVoteHead").removeClass("flipImg");
         });
         $('.btnRepeatOpp').click(function () {
             $(window).scrollTop(0);
-            panel('pageSeat');
+            panel('pageOpponent');
             $("#resultBox").hide();
             $("#loserVote").html("");
             $("#leftVoteHead").removeClass("flipImg");
@@ -202,11 +202,11 @@ var btnTexts = [
       }
       
       for (i = 0; i < fullVote; i++) { 
-        $("#loserVote").append('<li class="voteHead"><img class="img-responsive" src="'+ voteHeadRightUrl +'"></li>');
+        $("#loserVote").append('<li class="voteHead"><img src="'+ voteHeadRightUrl +'" alt=""></li>');
       }
       if (checkInt == true){} 
         else {
-          $("#loserVote").append('<li class="voteHead"><img class="img-responsive" src="'+ voteHeadRightHalfUrl +'"></li>');
+          $("#loserVote").append('<li class="voteHead"><img src="'+ voteHeadRightHalfUrl +'" alt=""></li>');
         }
       $(".voteHead").css({"max-width":voteHeadWidth, "display":"inline-block"});  
       if(maxVote == 1){$("#loserVote").css({"text-align":"center"});} 

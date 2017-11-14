@@ -1,17 +1,10 @@
-body {
-  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
-  font-size: 150%;
-  line-height: 1.5em;
-  color: #565656;
-      }  
-
 .ui-widget, .ui-widget input {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
 }
 
 .wrapper {
     margin: 0 auto;
-    max-width: 480px;
+    max-width: 680px;
 }
 
 .panel {
