@@ -261,6 +261,9 @@ var btnTexts = [
         $('#voteTextLeft').text("Your opponent is representing");
         $('#voteTextRight').text("You're voting in");
       }
+
+      result_share = "I " + result_text +" , what about you?";
+
     }
 
     function showOppWin(){
