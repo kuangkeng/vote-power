@@ -182,7 +182,7 @@ var btnTexts = [
         result = 0;
         result_text = "draw";
         voteWeight2 = 1;
-        $("#btnExplain").text("Some voters are more powerful than you, find out why");
+        $("#btnExplain").text("Not everyone has the same voting power. Find out why");
       }
       console.log("result = " + result);
       console.log("voteWeight = " + voteWeight);

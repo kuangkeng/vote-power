@@ -4,11 +4,16 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#333333" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
 		<title>Why isn't every Malaysian vote equal?</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.34/css/uikit.min.css">
 		<link rel="stylesheet" type="text/css" href="css/project.css">
 		<style>
 			p{font-size:20px;}
+			.text-wrapper{font-size:20px!important;}
 		</style>
 	</head>
 	<body>
@@ -21,19 +26,43 @@
 			</div>
 		</section>
 		
-		<section class="uk-hidden@s uk-section uk-section-secondary uk-text-center">
-			<a href="https://static03.malaysiakini.com/undipower/" class="uk-button uk-button-text"><span uk-icon="icon:play-circle;ratio:2" class="uk-margin-small-right"></span>Play the game</a>
+		<section class="uk-hidden@s uk-section uk-section-default">
+			<div class="uk-container uk-container-small" style="max-width:620px">
+				<a href="https://static03.malaysiakini.com/undipower/" class="uk-button uk-button-text"><span uk-icon="icon:play-circle;ratio:2" class="uk-margin-small-right"></span>Play the game</a>
+			</div>
 		</section>
 		
 		<section class="uk-section uk-section-default">
 			<div class="uk-container uk-container-small" style="max-width:620px">
 				<h1 class="uk-article-title" style="font-size:50px;font-weight:900;">Why isn't every vote equal in Malaysia?</h1>
-				<p class="uk-article-meta uk-margin-bottom">Created by Kuek Ser Kuang Keng &amp; Malaysiakini on 1 Dec 2017</p>
+				<p class="uk-article-meta uk-margin-bottom" style="font-size:18px">Created by Kuek Ser Kuang Keng &amp; Malaysiakini on 1 Dec 2017</p>
 				<p class="uk-text-lead uk-margin-large-bottom">“One person, one vote” is a key principle to ensure political equality in a democratic society. In layman's term, it means every citizen has the same power when it comes to voting.</p>
 				<p>To many it sounds pretty reasonable and intuitive but the implementation of this principle has been heavily manipulated in many political systems including the one in Malaysia.</p>
 				<p>We know that each Malaysian voter can only cast one vote to elect one Member of Parliament (MP) to represent the voter in the Parliament. However, not every vote has the same voting power under the current electoral system.</p>
-				<p>For example, in a thinly-populated constituency like Putrajaya, the 17,925 voters there vote to elect one MP while in a over-crowded constituency like Subang, the 130,211 voters there - seven times the number of voters in Putrajaya - also elect one MP.</p>
-				<p>In other words, one vote in Putrajaya is equal to seven votes in Subang. Voters in Subang are under-represented while voters in Putrajaya are over-represented. This malpractice is called malapportionment, a violation of the “one person, one vote” principle.</p>
+				<p>For example, in a thinly-populated constituency like <i>Putrajaya</i>, the 17,925 voters there vote to elect one MP while in a over-crowded constituency like <i>Subang</i>, the 130,211 voters there - seven times the number of voters in <i>Putrajaya</i> - also elect one MP.</p>
+				<figure class="uk-card uk-card-default uk-card-body uk-card-small uk-text-center uk-margin-large">
+					<div class="uk-grid-collapse" uk-grid>
+						<div class="uk-width-1-1 uk-width-2-5@m">
+							<figure class="uk-flex uk-flex-middle uk-flex-center" style="color:#fff;background:#333;width:90px;height:90px;border-radius:45px;margin:80px auto 0;">Putrajaya</figure>
+							<p class="uk-margin-large-bottom"><span uk-icon="icon:users;ratio:2" class="uk-margin-small-right"></span>17,925</p>
+						</div>
+						<div class="uk-width-1-1 uk-width-3-5@m">
+							<figure class="uk-text-large uk-flex uk-flex-middle uk-flex-center" style="color:#fff;background:#333;width:250px;height:250px;border-radius:125px;margin:0 auto;">Subang</figure>
+							<p><span uk-icon="icon:users;ratio:2" class="uk-margin-small-right"></span>130,211</p>
+						</div>
+					</div>
+				</figure>
+				<p>In other words, one vote in <i>Putrajaya</i> is equal to seven votes in <i>Subang</i>. Voters in <i>Subang</i> are under-represented while voters in <i>Putrajaya</i> are over-represented. This malpractice is called malapportionment, a violation of the “one person, one vote” principle.</p>
+				<figure class="uk-card uk-card-default uk-card-body uk-card-small uk-text-center uk-margin-large">
+					<div class="uk-grid-collapse" uk-grid>
+						<div class="uk-width-1-1 uk-width-3-5@m">
+							<figure class="uk-text-large uk-flex uk-flex-middle uk-flex-center" style="color:#fff;background:#333;width:250px;height:250px;border-radius:125px;margin:0 auto;"><div><div style="font-size:100px">7x</div>Putrajaya</div></figure>
+						</div>
+						<div class="uk-width-1-1 uk-width-2-5@m">
+							<figure class="uk-flex uk-flex-middle uk-flex-center" style="color:#fff;background:#333;width:90px;height:90px;border-radius:45px;margin:80px auto;">Subang</figure>
+						</div>
+					</div>
+				</figure>
 				<p>Let's look deeper into malapportionment at the national level.</p>
 			</div>
 		</section>
@@ -48,7 +77,7 @@
 					The length of the line represents the number of voters in that seat.
 				</div>
 				<div class="trigger" data-step="2" data-marker="2">
-					The voter size of seats range from <strong class="background">17,925</strong> (Putrajaya) to <strong class="background">146,625</strong> (Kapar in Selangor). The national average size is <strong class="background">61,103.</strong>
+					The voter size of seats range from <strong class="background">17,925</strong> (<i>Putrajaya</i>) to <strong class="background">146,625</strong> (Kapar in Selangor). The national average size is <strong class="background">61,103.</strong>
 				</div>
 				<div class="trigger" data-step="3" data-marker="3">
 					BN won most of the seats with <strong class="font">fewer voters.</strong> The average size of a BN seat is <div class="background">48,273.</div>
@@ -76,9 +105,10 @@
 		
 		<section class="uk-section uk-section-default">
 			<div class="uk-container uk-container-small" style="max-width:620px">
-				<p>According to the 2016 first quarter voter list, the number of voters in the largest parliamentary seat Kapar in Selangor (146,625) is over eight times the number of voters in Putrajaya (17,925), the smallest parliamentary seat.</p>
+				<p>According to the 2016 first quarter voter list, the number of voters in the largest parliamentary seat Kapar in Selangor (146,625) is over eight times the number of voters in <i>Putrajaya</i> (17,925), the smallest parliamentary seat.</p>
 
-				<p>In theory, a party could capture federal power by winning just 17% of the total votes. How? Out of the total parliamentary seats of 222, it wins 112 seats with the smaller voter numbers to form the federal government. In each seat it wins, it only garners a majority of one vote. It loses all the votes in the other 110 larger seats. The total number of votes it secures in such situation is only 17% of the total votes.</p>
+				<h2>In theory, a party could capture federal power by winning just 17% of the total votes. How?</h2>
+				<p>Out of the total parliamentary seats of 222, it wins 112 seats with the smaller voter numbers to form the federal government. In each seat it wins, it only garners a majority of one vote. It loses all the votes in the other 110 larger seats. The total number of votes it secures in such situation is only 17% of the total votes.</p>
 
 				<p>You might ask if there are laws that prohibit such violation of political equality. There used to be but they were removed by the parliament.</p>
 
@@ -86,7 +116,7 @@
 
 				<p>This number was changed to 33.33 percent in the 1962 Constitution Amendment. It was then totally removed in the 1973 Constitutional Amendment, giving a blank cheque for the Election Commission to redraw the constituencies.</p>
 
-				<p>What can we do? You can choose to move to smaller constituencies like Putrajaya and vote there to expand your voting power or you can support initiatives to reform the electoral system like the Bersih movement.</p>
+				<p>What can we do? You can choose to move to smaller constituencies like <i>Putrajaya</i> and vote there to expand your voting power or you can support initiatives to reform the electoral system like the Bersih movement.</p>
 
 				<p>Most importantly, register as a voter and vote else your voting power is zero.</p>
 				<div class="uk-margin-large-top" style="max-width:480px">
