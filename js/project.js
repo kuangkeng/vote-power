@@ -44,7 +44,8 @@ var btnTexts = [
   "How did I win?",
 ];
 
-    function init() {      
+    function init() {   
+        showOppWin();
         panel('pageStart');
         //Events for each button clicked
         $('#btnStart').click(function () {
@@ -88,6 +89,7 @@ var btnTexts = [
             setTimeout(function(){
                 $('#resultBox').fadeIn();
             }, 10000);
+            sendData();
         });        
         $('#btnWhy').click(function () {
             panel('pageAnalysis');
@@ -96,6 +98,7 @@ var btnTexts = [
             openExplain();
         });
         $('.btnRepeatSeat').click(function () {
+            showOppWin();
             $(window).scrollTop(0);
             panel('pageState');
             $("#resultBox").hide();
@@ -103,6 +106,7 @@ var btnTexts = [
             $("#leftVoteHead").removeClass("flipImg");
         });
         $('.btnRepeatOpp').click(function () {
+            showOppWin();
             $(window).scrollTop(0);
             panel('pageOpponent');
             $("#resultBox").hide();
@@ -216,7 +220,7 @@ var btnTexts = [
 
       //Populate text for result page  
       var fightUrl = "img/fight_opp" + idOpp + "_you_" + result_text + "_480x480.gif";
-
+      $("#fightImg").attr("src","");
       $("#fightImg").attr("src",fightUrl);
       $('#btnWhy').text(btnTexts[result]);
       $('#resultHead').text(resultHeads[result]);
@@ -255,6 +259,38 @@ var btnTexts = [
       }
     }
 
+    function showOppWin(){
+      //Retrieve previous users data from google spreadsheet and convert them into arrays.
+      //Use Tabletop function to convert google spreadsheet into json (documentation: https://github.com/jsoma/tabletop)
+      //The google spreadsheet has to be published first
+      var spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1zonJ5ASmJGbY1ZvJ6rL4_plCO99o6OqZ3fgwJtRZGM4/pubhtml';
+      Tabletop.init( { key: spreadsheet_url,
+                      callback: getRecord,
+                      simpleSheet: true } )
+
+      //Convert data in the spreadsheet to json and store them in "dataset" using Tabletop JS
+      function getRecord(dataset, tabletop) {
+        //find the total users  
+        var user_num = dataset.length;
+        console.log("user_num = " + user_num);
+        //Repeat for all opponents
+        for (count=0; count<opponents.length; count++){
+          //select only entries that match the selected opponent
+          var dataset_opp = jQuery.grep(dataset, function (n, i) {
+            return (n.opponent == opponents[count].seat);
+          },false);
+          // console.log("dataset_opp = " + JSON.stringify(dataset_opp));
+          //select only entries of which the opponent won
+          var dataset_opp_win = jQuery.grep(dataset_opp, function (n, i) {
+            return (n.result == "lose");
+          },false);
+          var win_num = dataset_opp_win.length;
+          console.log("win_num " + opponents[count].seat + " = " + win_num);
+          $("#" + (count+1) + "> .uk-label").text(win_num + " WINS");
+        }
+      }
+    }
+
     //Function to check if a number is integer
     function isInt(value) {
       return !isNaN(value) && parseInt(Number(value)) == value && !isNaN(parseInt(value, 10));
@@ -276,20 +312,20 @@ $(document).ready(function(){
   init();
 }); 
 
-// function sendData() {
-//   $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
-//     function(json) {
-//       $.ajax({
-//         type: 'POST',
-//         url: 'https://docs.google.com/forms/d/e/1FAIpQLSezn9Ag2Fo5Jsss1mkERwxAPlK7aOpcQK5GU5v9zPcMz8xmfg/formResponse',
-//         data: { 
-//           "entry.225955305": selectedSeat,
-//           "entry.225955305": oppSeat,
-//           "entry.225955305": result_text,
-//           "entry.1489940444": json.ip,
-//           "entry.283757303": document.referrer,
-//         }
-//       }); 
-//     }
-//   );   
-// }
+function sendData() {
+  $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
+    function(json) {
+      $.ajax({
+        type: 'POST',
+        url: 'https://docs.google.com/forms/d/e/1FAIpQLSfkDwjYHmZZxtfTVtjoSvDlbvsc8VGphLeeiboKAHBjeb-ZmA/formResponse',
+        data: { 
+          "entry.927637414": selectedSeat,
+          "entry.2041801391": oppSeat,
+          "entry.1987551221": result_text,
+          "entry.1639422024": json.ip,
+          "entry.1860643513": document.referrer,
+        }
+      }); 
+    }
+  );   
+}
