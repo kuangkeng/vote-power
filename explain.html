@@ -8,19 +8,28 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.34/css/uikit.min.css">
 		<link rel="stylesheet" type="text/css" href="css/project.css">
 		<style>
-			p{color:#333;font-size:20px;font-weight:300;letter-spacing:0;}
+			p{font-size:20px;}
 		</style>
 	</head>
 	<body>
-		<section class="uk-section uk-section-secondary">
-			<div class="uk-container uk-container-small uk-text-center" style="max-width:680px">
-				<h1 class="uk-text-bold" style="font-size:50px">Why isn't every vote equal in Malaysia?</h1>
+		<section class="uk-visible@s uk-text-center" style="background:rgba(255,255,255,0.8);position:fixed;bottom:15px;left:15px;z-index:1;width:120px;border:1px solid rgba(0,0,0,0.1);border-radius:10px;padding:10px;">
+			<div>
+				<a href="https://static03.malaysiakini.com/undipower/"><img src="img/avatar_me_480x480.png" width="240" height="240" alt=""></a>
+			</div>
+			<div>
+				<a href="https://static03.malaysiakini.com/undipower/" class="uk-button uk-button-text">Play the game</a>
 			</div>
 		</section>
 		
+		<section class="uk-hidden@s uk-section uk-section-secondary uk-text-center">
+			<a href="https://static03.malaysiakini.com/undipower/" class="uk-button uk-button-text"><span uk-icon="icon:play-circle;ratio:2" class="uk-margin-small-right"></span>Play the game</a>
+		</section>
+		
 		<section class="uk-section uk-section-default">
-			<div class="uk-container uk-container-small" style="max-width:680px">
-				<p>“One person, one vote” is a key principle to ensure political equality in a democratic society. In layman's term, it means every citizen has the same power when it comes to voting.</p>
+			<div class="uk-container uk-container-small" style="max-width:620px">
+				<h1 class="uk-article-title" style="font-size:50px;font-weight:900;">Why isn't every vote equal in Malaysia?</h1>
+				<p class="uk-article-meta uk-margin-bottom">Created by Kuek Ser Kuang Keng &amp; Malaysiakini on 1 Dec 2017</p>
+				<p class="uk-text-lead uk-margin-large-bottom">“One person, one vote” is a key principle to ensure political equality in a democratic society. In layman's term, it means every citizen has the same power when it comes to voting.</p>
 				<p>To many it sounds pretty reasonable and intuitive but the implementation of this principle has been heavily manipulated in many political systems including the one in Malaysia.</p>
 				<p>We know that each Malaysian voter can only cast one vote to elect one Member of Parliament (MP) to represent the voter in the Parliament. However, not every vote has the same voting power under the current electoral system.</p>
 				<p>For example, in a thinly-populated constituency like Putrajaya, the 17,925 voters there vote to elect one MP while in a over-crowded constituency like Subang, the 130,211 voters there - seven times the number of voters in Putrajaya - also elect one MP.</p>
@@ -66,7 +75,7 @@
 		<!-- Scroller content ends here -->
 		
 		<section class="uk-section uk-section-default">
-			<div class="uk-container uk-container-small" style="max-width:680px">
+			<div class="uk-container uk-container-small" style="max-width:620px">
 				<p>According to the 2016 first quarter voter list, the number of voters in the largest parliamentary seat Kapar in Selangor (146,625) is over eight times the number of voters in Putrajaya (17,925), the smallest parliamentary seat.</p>
 
 				<p>In theory, a party could capture federal power by winning just 17% of the total votes. How? Out of the total parliamentary seats of 222, it wins 112 seats with the smaller voter numbers to form the federal government. In each seat it wins, it only garners a majority of one vote. It loses all the votes in the other 110 larger seats. The total number of votes it secures in such situation is only 17% of the total votes.</p>
@@ -86,6 +95,16 @@
 				</div>
 			</div>
 		</section>
+		<section class="uk-section uk-section-default">
+			<div class="uk-container uk-container-small uk-text-center">
+				<p class="uk-text-large" style="line-height:1em;">Share this</p>
+				<div class="addthis_inline_share_toolbox" style="text-align:center"></div>
+			</div>
+		</section>
+		
+		<section class="uk-hidden@s uk-section uk-section-secondary uk-text-center">
+			<a href="https://static03.malaysiakini.com/undipower/" class="uk-button uk-button-text"><span uk-icon="icon:play-circle;ratio:2" class="uk-margin-small-right"></span>Play the game</a>
+		</section>
 		
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.34/js/uikit.min.js"></script>
@@ -95,5 +114,6 @@
 		<!-- load counties list from a separate js file -->
 		<script src="js/data.js"></script>
 		<script src="js/explain.js"></script>
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0bc2fb3a12b579"></script> 
 	</body>
  </html>

@@ -8,7 +8,9 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.34/css/uikit.min.css">
 		<style type="text/css">
 			body{color:#333;font-weight:300;}
+			.uk-section{padding:30px 0;}
 			.uk-button{border-radius:100px!important;}
+			.btnState{margin-bottom:15px!important;}
 			hr{border-color:#354a5d;}
 			footer{position:fixed;bottom:30px;right:30px;z-index:1;color:rgba(255,255,255,0.5);background:none;font-size:12px;text-transform:uppercase;letter-spacing:1px;}
 			#resultBox{display: none;}
@@ -20,8 +22,10 @@
 		        filter: FlipH;
 		        -ms-filter: "FlipH";
 			}
-			.opponent:hover{color:#fff;background:#ee5370;border-radius:10px;padding:0;}
-			.opponent:hover div{border-color:#ee5370!important;}
+			.opponent{cursor:pointer;}
+			.opponent:hover .uk-card-media-top{background:#ee5370!important;}
+			.opponent:hover .oppLevel{color:#ee5370!important;}
+			.uk-card-badge.uk-label{background:rgba(0,0,0,0.5);border-radius:20px;}
 			.panel{display:none;}
 		</style>
 	</head>
@@ -30,7 +34,7 @@
 		
 		<section id="pageStart" class="uk-section uk-height-1-1 panel">
 			<div class="uk-container uk-container-small uk-text-center">
-				<div class="uk-text-smal uk-text-uppercase uk-text-large">Undi Power</div>
+				<div class="uk-text-smal uk-text-uppercase uk-text-large uk-margin-top">Undi Power</div>
 				<h1 class="uk-article-title uk-text-bold uk-text-uppercase uk-margin-remove-top" style="font-size:38px;font-weight:900">How Powerful is Your Vote?</h1>
 				<hr>
 				<p class="uk-visible@s uk-text-large">Put your vote to the test against our line-up of mighty leaders!</p>
@@ -43,8 +47,8 @@
 		
 		<section id="pageState" class="uk-section panel">
 			<div class="uk-container uk-container-small uk-text-center">
-				<p class="uk-text-large uk-text-bold">Which state you are voting in?</p>
-				<ul id="mobileStateList" class="uk-child-width-1-1 uk-child-width-1-3@m uk-child-width-1-4@l uk-grid-small" uk-grid>
+				<p class="uk-text-large">Which state you are voting in?</p>
+				<ul id="mobileStateList" class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-4@l uk-grid-small" uk-grid>
 					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Perlis</a></li>
 					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Kedah</a></li>
 					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Kelantan</a></li>
@@ -80,38 +84,74 @@
 		</section>
 		
 		<section id="pageOpponent" class="uk-section panel">
-			<div class="uk-container uk-container-small uk-text-center">
-				<p class="uk-text-large" style="line-height:1em;">Now select your opponent</p>
-				<div class="uk-child-width-1-2 uk-child-width-1-3@m uk-child-width-1-6@l uk-grid-collapse" uk-grid>
-					<div class="opponent uk-position-relative" id="1" style="cursor:pointer">
-						<img class="img-responsive" src="img/avatar_opp1_240x240.png" alt="Opponent 1">
-						<div class="oppLevel" style="border-top:1px solid #354a5d;padding:5px 0;">Level 51</div>
-						<div class="uk-label uk-label-danger">550 Wins</div>
+			<div class="uk-container uk-container-small uk-text-center" style="max-width:600px">
+				<p class="uk-text-large">Select your opponent</p>
+				<div class="uk-child-width-1-2 uk-child-width-1-2@m uk-child-width-1-3@l uk-grid-small" uk-grid>
+					<div>
+						<div class="opponent uk-card uk-card-default uk-card-small uk-margin-bottom" id="1">
+							<div class="uk-card-media-top" style="background:#333">
+								<img class="img-responsive" src="img/avatar_opp1_240x240.png" alt="Opponent 1">
+							</div>
+							<div class="uk-card-body">
+								<div class="uk-card-badge uk-label">550 Wins</div>
+								<div class="oppLevel">Level 51</div>
+							</div>
+						</div>
 					</div>
-					<div class="opponent uk-position-relative" id="2" style="cursor:pointer">
-						<img class="img-responsive" src="img/avatar_opp2_240x240.png">
-						<div class="oppLevel" style="border-top:1px solid #354a5d;padding:5px 0;">Level 57</div>
-						<div class="uk-label uk-label-danger">20 Wins</div>
+					<div>
+						<div class="opponent uk-card uk-card-default uk-card-small uk-margin-bottom" id="2">
+							<div class="uk-card-media-top" style="background:#333">
+								<img class="img-responsive" src="img/avatar_opp2_240x240.png" alt="Opponent 2">
+							</div>
+							<div class="uk-card-body">
+								<div class="uk-card-badge uk-label">20 Wins</div>
+								<div class="oppLevel">Level 57</div>
+							</div>
+						</div>
 					</div>
-					<div class="opponent uk-position-relative" id="3" style="cursor:pointer">
-						<img class="img-responsive" src="img/avatar_opp3_240x240.png">
-						<div class="oppLevel" style="border-top:1px solid #354a5d;padding:5px 0;">Level 100</div>
-						<div class="uk-label uk-label-danger">1110 Wins</div>
+					<div>
+						<div class="opponent uk-card uk-card-default uk-card-small uk-margin-bottom" id="3">
+							<div class="uk-card-media-top" style="background:#333">
+								<img class="img-responsive" src="img/avatar_opp3_240x240.png">
+							</div>
+							<div class="uk-card-body">
+								<div class="uk-card-badge uk-label">1110 Wins</div>
+								<div class="oppLevel">Level 100</div>
+							</div>
+						</div>
 					</div>
-					<div class="opponent uk-position-relative" id="4" style="cursor:pointer">
-						<img class="img-responsive" src="img/avatar_opp4_240x240.png">
-						<div class="oppLevel" style="border-top:1px solid #354a5d;padding:5px 0;">Level 26</div>
-						<div class="uk-label uk-label-danger">120 Wins</div>
+					<div>
+						<div class="opponent uk-card uk-card-default uk-card-small uk-margin-bottom" id="4">
+							<div class="uk-card-media-top" style="background:#333">
+								<img class="img-responsive" src="img/avatar_opp4_240x240.png">
+							</div>
+							<div class="uk-card-body">
+								<div class="uk-card-badge uk-label">120 Wins</div>
+								<div class="oppLevel">Level 26</div>
+							</div>
+						</div>
 					</div>
-					<div class="opponent uk-position-relative" id="5" style="cursor:pointer">
-						<img class="img-responsive" src="img/avatar_opp5_240x240.png">
-						<div class="oppLevel" style="border-top:1px solid #354a5d;padding:5px 0;">Level 8</div>
-						<div class="uk-label uk-label-danger">0 Wins</div>
+					<div>
+						<div class="opponent uk-card uk-card-default uk-card-small uk-margin-bottom" id="5">
+							<div class="uk-card-media-top" style="background:#333">
+								<img class="img-responsive" src="img/avatar_opp5_240x240.png">
+							</div>
+							<div class="uk-card-body">
+								<div class="uk-card-badge uk-label">0 Wins</div>
+								<div class="oppLevel">Level 8</div>
+							</div>
+						</div>
 					</div>
-					<div class="opponent uk-position-relative" id="6" style="cursor:pointer">
-						<img class="img-responsive" src="img/avatar_opp6_240x240.png">
-						<div class="oppLevel" style="border-top:1px solid #354a5d;padding:5px 0;">Level 94</div>
-						<div class="uk-label uk-label-danger">880 Wins</div>
+					<div>
+						<div class="opponent uk-card uk-card-default uk-card-small uk-margin-bottom" id="6">
+							<div class="uk-card-media-top" style="background:#333">
+								<img class="img-responsive" src="img/avatar_opp6_240x240.png">
+							</div>
+							<div class="uk-card-body">
+								<div class="oppLevel">Level 94</div>
+								<div class="uk-card-badge uk-label">880 Wins</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -170,11 +210,11 @@
 						<button type="button" class="uk-button uk-button-large uk-button-secondary uk-width-1-1 btnRepeatSeat"><span uk-icon="icon:refresh"></span> Replay</button>
 					</div>
 					<div>
-						<button type="button" class="uk-button uk-button-large uk-button-secondary uk-width-1-1 btnRepeatOpp">Change Opponent</button>
+						<button type="button" class="uk-button uk-button-large uk-button-secondary uk-width-1-1 btnRepeatOpp">Fight Another Opponent</button>
 					</div>
 				</div>
 				<div class="uk-margin uk-text-center">
-					<p class="uk-text-large" style="line-height:1em;">Recruit your friends</p>
+					<p class="uk-text-large" style="line-height:1em;">Share this with your friends</p>
 					<div class="addthis_inline_share_toolbox" style="text-align:center"></div>
 				</div>
 				<div class="uk-card uk-card-default uk-card-small uk-margin-top uk-margin-large-bottom">
@@ -194,7 +234,7 @@
 		<script src="js/seat-list.js"></script>
 		<script src="js/data.js"></script>
 		<script src="js/project.js"></script>
-		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59db45bf7ee5f0c1"></script>
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0bc2fb3a12b579"></script> 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.2/tabletop.min.js"></script>
 	</body>
 </html>
