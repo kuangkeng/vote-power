@@ -219,7 +219,7 @@
 					</div>
 				</div>
 				<div class="uk-margin uk-text-center">
-					<p class="uk-text-large" style="line-height:1em;">Share this with your friends</p>
+					<p class="uk-text-large" style="line-height:1em;"  id="btnShare">Share this with your friends</p>
 					<div class="addthis_inline_share_toolbox" style="text-align:center"></div>
 				</div>
 				<div class="uk-card uk-card-default uk-card-small uk-margin-top uk-margin-large-bottom">
@@ -241,5 +241,23 @@
 		<script src="js/project.js"></script>
 		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0bc2fb3a12b579"></script> 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.2/tabletop.min.js"></script>
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '1965894353438113',
+		      xfbml      : true,
+		      version    : 'v2.11'
+		    });
+		    FB.AppEvents.logPageView();
+		  };
+
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "https://connect.facebook.net/en_US/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		</script>
 	</body>
 </html>

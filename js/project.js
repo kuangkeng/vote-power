@@ -114,7 +114,10 @@ var btnTexts = [
             $("#leftVoteHead").removeClass("flipImg");
         });
         $('#btnShare').click(function () {
-
+            facebook();
+        });
+        $('.at-svc-twitter').click(function () {
+            // tweet();
         });
     }
 
@@ -311,6 +314,21 @@ var btnTexts = [
 $(document).ready(function(){
   init();
 }); 
+
+function facebook() {
+FB.ui({
+  method: 'share',
+  href: 'https://pages.malaysiakini.com/votepower-kk/VotePowerResult.php?result_share=' + result_share, 
+  }, function(response){});
+}
+
+function tweet() {
+  var tweet_url = 'https://twitter.com/intent/tweet?related=pritheworld&text=';
+  tweet_url += encodeURIComponent(tweet_rating);
+  tweet_url += '&url=http://bit.ly/2qtja4a&via=pri';
+  tweet_url += ' pic.twitter.com/u9wrwPxLQ8';
+  window.open(tweet_url,'_blank');
+}
 
 function sendData() {
   $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
