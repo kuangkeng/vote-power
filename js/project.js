@@ -1,4 +1,4 @@
-console.log("start17");
+console.log("start18");
 
 var viewportHeight = $(window).height(),
     headlineHeight = $('.headline').outerHeight( true);
@@ -30,7 +30,8 @@ var selectedData,
     voteWeight2,
     result,
     result_text,
-    idOpp;
+    idOpp,
+    result_share;
 
 var resultHeads = [
     "Why a Draw?",
@@ -289,7 +290,7 @@ var btnTexts = [
           },false);
           var win_num = dataset_opp_win.length;
           console.log("win_num " + opponents[count].seat + " = " + win_num);
-          $("#" + (count+1) + "> .uk-label").text(win_num + " WINS");
+          $("#" + (count+1) + " .uk-label").text(win_num + " WINS");
         }
       }
     }
