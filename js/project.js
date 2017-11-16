@@ -45,6 +45,12 @@ var btnTexts = [
   "How did I win?",
 ];
 
+var result_shares = [
+  "I just fought a tough battle in Undi Power. Join me!",
+  "I was defeated in Undi Power. Revenge me!",
+  "I won the battle of Undi Power! Join me"
+];
+
     function init() {   
         showOppWin();
         panel('pageStart');
@@ -116,12 +122,6 @@ var btnTexts = [
             $("#shareBox").hide();
             $("#loserVote").html("");
             $("#leftVoteHead").removeClass("flipImg");
-        });
-        $('#btnShare').click(function () {
-            facebook();
-        });
-        $('.at-svc-twitter').click(function () {
-            // tweet();
         });
     }
 
@@ -220,8 +220,8 @@ var btnTexts = [
           $("#loserVote").append('<li class="voteHead"><img src="'+ voteHeadRightHalfUrl +'" alt=""></li>');
         }
       $(".voteHead").css({"max-width":voteHeadWidth, "display":"inline-block"});  
-      if(maxVote == 1){$("#loserVote").css({"text-align":"center"});} 
-        else {$("#loserVote").css({"text-align":"left"});} 
+      if(maxVote == 1){$("#loserVoteBox").addClass("uk-flex-center");}
+        else {$("#loserVoteBox").removeClass("uk-flex-center");}
       $("#leftVoteHead").attr("src", voteHeadLeftUrl);
       if(result == 1){$("#leftVoteHead").addClass("flipImg");}
 
@@ -264,9 +264,6 @@ var btnTexts = [
         $('#voteTextLeft').text("Your opponent is representing");
         $('#voteTextRight').text("You're voting in");
       }
-
-      result_share = "I " + result_text +" , what about you?";
-
     }
 
     function showOppWin(){
@@ -323,16 +320,17 @@ $(document).ready(function(){
 }); 
 
 function facebook() {
+console.log("sharing result = " + result_shares[result]);
 FB.ui({
   method: 'share',
-  href: 'https://pages.malaysiakini.com/votepower-kk/VotePowerResult.php?result_share=' + result_share, 
+  href: 'https://pages.malaysiakini.com/votepower-kk/VotePowerResult.php?result_share=' + result_shares[result], 
   }, function(response){});
 }
 
 function tweet() {
-  var tweet_url = 'https://twitter.com/intent/tweet?related=pritheworld&text=';
-  tweet_url += encodeURIComponent(tweet_rating);
-  tweet_url += '&url=http://bit.ly/2qtja4a&via=pri';
+  var tweet_url = 'https://twitter.com/intent/tweet?related=malaysiakini&text=';
+  tweet_url += encodeURIComponent(result_shares[result]);
+  tweet_url += '&url=http://bit.ly/2qtja4a&via=malaysiakini';
   tweet_url += ' pic.twitter.com/u9wrwPxLQ8';
   window.open(tweet_url,'_blank');
 }
