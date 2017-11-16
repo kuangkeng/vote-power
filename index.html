@@ -11,11 +11,15 @@
 		<meta name="format-detection" content="telephone=no">
 		<title>Undi Power</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.34/css/uikit.min.css">
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Arvo" />
 		<style type="text/css">
 			body{color:#333;font-weight:300;}
+			h2{font-family:Arvo;font-size:22px;text-transform:uppercase;}
 			.uk-section{padding:30px 0;}
-			.uk-button{border-radius:100px!important;}
-			.btnState{margin-bottom:15px!important;}
+			.uk-button{font-family:Arvo;border-radius:100px!important;font-size:18px;}
+			.btnState, .btnSeat{font-family:Arvo;font-size:20px!important;}
+			#mobileStateList > li{margin-bottom:15px!important;}
+			.btnState:active, .btnSeat:active{background:#ee5370!important;}
 			hr{border-color:#354a5d;}
 			footer{position:fixed;bottom:20px;right:20px;z-index:0;color:rgba(255,255,255,1);background:none;font-size:12px;text-transform:uppercase;letter-spacing:1px;}
 			.flipImg {
@@ -27,8 +31,7 @@
 		        -ms-filter: "FlipH";
 			}
 			.opponent{cursor:pointer;}
-			.opponent:hover .uk-card-media-top{background:#ee5370!important;}
-			.opponent:hover .oppLevel{color:#ee5370!important;}
+			.opponent:active .uk-card-media-top{background:#ee5370!important;}
 			.uk-card-badge.uk-label{background:rgba(0,0,0,0.5);border-radius:20px;}
 			.panel{display:none;}
 		</style>
@@ -38,7 +41,7 @@
 		
 		<section id="pageStart" class="uk-section uk-height-1-1 panel">
 			<div class="uk-container uk-container-small uk-text-center">
-				<div class="uk-text-smal uk-text-uppercase uk-text-large uk-margin-top">Undi Power</div>
+				<div class="uk-text-smal uk-text-uppercase uk-text-large uk-margin-top" style="font-family:Arvo">Undi Power</div>
 				<h1 class="uk-article-title uk-text-bold uk-text-uppercase uk-margin-remove-top" style="font-size:38px;font-weight:900">How Powerful is Your Vote?</h1>
 				<hr>
 				<p class="uk-visible@s uk-text-large">Fight your way through our line-up of mighty leaders!</p>
@@ -70,8 +73,8 @@
 		
 		<section id="pageState" class="uk-section panel">
 			<div class="uk-container uk-container-small uk-text-center">
-				<p class="uk-text-large uk-text-uppercase">Where will you be voting?</p>
-				<ul id="mobileStateList" class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-4@l uk-grid-small" uk-grid>
+				<h2>Where are you voting?</h2>
+				<ul id="mobileStateList" class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l uk-grid-small" uk-grid="margin:0">
 					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Perlis</a></li>
 					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Kedah</a></li>
 					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Kelantan</a></li>
@@ -108,11 +111,11 @@
 		
 		<section id="pageOpponent" class="uk-section panel">
 			<div class="uk-container uk-text-center">
-				<p class="uk-text-large uk-text-uppercase">Pick your challenger</p>
+				<h2>Pick your challenger</h2>
 				<div class="uk-child-width-1-2 uk-child-width-1-2@m uk-child-width-1-6@l uk-grid-small" uk-grid>
 					<div>
 						<div class="opponent uk-card uk-card-hover uk-card-small uk-margin-bottom" id="5">
-							<div class="uk-card-media-top" style="border:10px solid #fff;border-bottom:none;">
+							<div class="uk-card-media-top" style="background:#333;border:10px solid #fff;border-bottom:none;">
 								<img class="img-responsive" src="img/avatar_opp5_240x240.png">
 							</div>
 							<div class="uk-card-body" style="background:#fff">
@@ -126,7 +129,7 @@
 					</div>
 					<div>
 						<div class="opponent uk-card uk-card-hover uk-card-small uk-margin-bottom" id="4">
-							<div class="uk-card-media-top" style="border:10px solid #fff;border-bottom:none;">
+							<div class="uk-card-media-top" style="background:#333;border:10px solid #fff;border-bottom:none;">
 								<img class="img-responsive" src="img/avatar_opp4_240x240.png">
 							</div>
 							<div class="uk-card-body" style="background:#fff">
@@ -141,7 +144,7 @@
 					</div>
 					<div>
 						<div class="opponent uk-card uk-card-hover uk-card-small uk-margin-bottom" id="1">
-							<div class="uk-card-media-top" style="border:10px solid #fff;border-bottom:none;">
+							<div class="uk-card-media-top" style="background:#333;border:10px solid #fff;border-bottom:none;">
 								<img class="img-responsive" src="img/avatar_opp1_240x240.png" alt="Opponent 1">
 							</div>
 							<div class="uk-card-body" style="background:#fff">
@@ -157,7 +160,7 @@
 					</div>
 					<div>
 						<div class="opponent uk-card uk-card-hover uk-card-small uk-margin-bottom" id="2">
-							<div class="uk-card-media-top" style="border:10px solid #fff;border-bottom:none;">
+							<div class="uk-card-media-top" style="background:#333;border:10px solid #fff;border-bottom:none;">
 								<img class="img-responsive" src="img/avatar_opp2_240x240.png" alt="Opponent 2">
 							</div>
 							<div class="uk-card-body" style="background:#fff">
@@ -173,7 +176,7 @@
 					</div>
 					<div>
 						<div class="opponent uk-card uk-card-hover uk-card-small uk-margin-bottom" id="6">
-							<div class="uk-card-media-top" style="border:10px solid #fff;border-bottom:none;">
+							<div class="uk-card-media-top" style="background:#333;border:10px solid #fff;border-bottom:none;">
 								<img class="img-responsive" src="img/avatar_opp6_240x240.png">
 							</div>
 							<div class="uk-card-body" style="background:#fff">
@@ -190,7 +193,7 @@
 					</div>
 					<div>
 						<div class="opponent uk-card uk-card-hover uk-card-small uk-margin-bottom" id="3">
-							<div class="uk-card-media-top" style="border:10px solid #fff;border-bottom:none;">
+							<div class="uk-card-media-top" style="background:#333;border:10px solid #fff;border-bottom:none;">
 								<img class="img-responsive" src="img/avatar_opp3_240x240.png">
 							</div>
 							<div class="uk-card-body" style="background:#fff">
@@ -214,7 +217,7 @@
 				<img class="uk-width-1-1" id="fightImg" src="img/avatar_me_480x480.png" alt="Fighting animation" style="border-radius:240px;border:10px solid #fff;">
 			</div>
 			<div id="shareBox" style="display:none;margin:20px auto;text-align:center;">
-				<p class="uk-text-large" style="line-height:1em;">Recruit your friends</p>
+				<p class="uk-text-large" style="font-family:Arvo">Recruit your friends</p>
 				<div>
 					<a href="javascript:facebook()" onclick="facebook()" class="uk-button uk-button-large" style="color:#fff;background:#3b5998"><span uk-icon="icon:facebook;ratio:2"></span></a>
 					<a href="javascript:tweet()" onclick="tweet()" class="uk-button uk-button-large" style="color:#fff;background:#55acee"><span uk-icon="icon:twitter;ratio:2"></span></a>
@@ -238,9 +241,12 @@
 		
 		<section id="pageAnalysis" class="uk-section panel">
 			<div class="uk-container uk-container-small uk-text-center">
-				<h2 id="resultHead" class="uk-text-bold"></h2>
-				<p id="result01" class="uk-text-large"></p>
-				<div id="voteChart" uk-grid>
+				<div style="max-width:600px;margin:0 auto;">
+					<h2 id="resultHead"></h2>
+					<p class="uk-text-large"><strong id="leftSeat"></strong> has <strong id="leftVoter"></strong>* and <strong id="rightSeat"></strong> has <strong id="rightVoter"></strong>*</p>
+					<p id="result01" class="uk-text-large uk-text-bold"></p>
+				</div>
+				<div id="voteChart" class="uk-grid-collapse" uk-grid>
 					<div class="uk-width-2-5 uk-flex uk-flex-middle uk-flex-center" id="winnerVote">
 						<img id="leftVoteHead" src="img/avatar_me_480x480.png" alt="">
 					</div>
@@ -249,37 +255,33 @@
 						<ul class="uk-child-width-1-3 uk-grid-small" id="loserVote" uk-grid></ul>
 					</div>
 				</div>
-				<div id="voteChart" class="uk-text-center uk-grid-collpase" uk-grid>
-					<div class="uk-width-2-5">
-						<p><span id="voteTextLeft">You're voting in</span><br><strong id="leftSeat"></strong><br> with <strong id="leftVoter"></strong>*</p>
-					</div>
-					<div class="uk-width-1-5"></div>
-					<div class="uk-width-2-5">
-						<p><span id="voteTextRight">Your opponent is representing</span><br><strong id="rightSeat"></strong><br> with <strong id="rightVoter"></strong>*</p>
-					</div>
+			</div>
+			<div class="uk-section uk-section-secondary" style="background:rgba(0,0,0,0.8">
+				<div class="uk-container uk-container-small uk-text-center">
+					<p class="uk-text-large uk-margin-remove-top"><strong style="color:#222;background:#fff;margin:0 5px 0 0;padding:0 5px 3px;">Higher number of voters</strong> in your parliamentary seat means <strong style="color:#222;background:#fff;margin:0 5px;padding:0 5px 3px;">lesser voting power</strong> you have in the next General Election and vice versa.</p>
 				</div>
-				<div class="uk-margin">
-					<button type="button" class="uk-button uk-button-large uk-button-danger uk-width-1-1 uk-text-capitalize" id="btnExplain" style="font-size:24px;line-height:1em;padding:10px;"><span class="uk-visible@s">Wait a minute, </span>shouldn't all voting power be the same?</button>
-				</div>
-				<div id="profileChart" class="uk-child-width-1-1@s uk-child-width-1-2@m" uk-grid>
-					<div>
-						<button type="button" class="uk-button uk-button-large uk-button-secondary uk-width-1-1 btnRepeatSeat"><span uk-icon="icon:refresh"></span> Replay</button>
+			</div>
+			<div class="uk-container uk-container-small uk-text-center uk-margin-large-top">
+				<div style="max-width:600px;margin:0 auto;">
+					<div class="uk-margin">
+						<button type="button" class="uk-button uk-button-large uk-button-danger uk-width-1-1" id="btnExplain" style="font-size:24px;line-height:1em;padding:10px;">Isn't this unfair?</button>
 					</div>
-					<div>
-						<button type="button" class="uk-button uk-button-large uk-button-secondary uk-width-1-1 btnRepeatOpp">Fight someone else</button>
+					<div id="profileChart" class="uk-child-width-1-1@s uk-child-width-1-2@m uk-grid-small" uk-grid>
+						<div>
+							<button type="button" class="uk-button uk-button-large uk-button-secondary uk-width-1-1 btnRepeatSeat"><span uk-icon="icon:refresh"></span> Replay</button>
+						</div>
+						<div>
+							<button type="button" class="uk-button uk-button-large uk-button-secondary uk-width-1-1 btnRepeatOpp">Fight someone else</button>
+						</div>
 					</div>
-				</div>
-				<div class="uk-margin uk-text-center">
-					<p class="uk-text-large" style="line-height:1em;"  id="btnShare">Share this with your friends</p>
-					<div>
-						<a href="javascript:facebook()" onclick="facebook()" class="uk-button uk-button-large" style="color:#fff;background:#3b5998"><span uk-icon="icon:facebook;ratio:2"></span></a>
-						<a href="javascript:tweet()" onclick="tweet()" class="uk-button uk-button-large" style="color:#fff;background:#55acee"><span uk-icon="icon:twitter;ratio:2"></span></a>
+					<div class="uk-margin-large uk-text-center">
+						<p class="uk-text-large" style="font-family:Arvo" id="btnShare">Share this with your friends</p>
+						<div>
+							<a href="javascript:facebook()" onclick="facebook()" class="uk-button uk-button-large" style="color:#fff;background:#3b5998"><span uk-icon="icon:facebook;ratio:2"></span></a>
+							<a href="javascript:tweet()" onclick="tweet()" class="uk-button uk-button-large" style="color:#fff;background:#55acee"><span uk-icon="icon:twitter;ratio:2"></span></a>
+						</div>
 					</div>
-				</div>
-				<div class="uk-card uk-card-default uk-card-small uk-margin-top uk-margin-large-bottom">
-					<div class="uk-card-body uk-text-left">
-						* The number of votes in each parliamentary seat is based on the electoral roll for the first quarter of 2016 published by the Election Commission.
-					</div>
+					<p class="uk-light">* The number of voters in each parliamentary seat is based on the electoral roll for the first quarter of 2016 published by the Election Commission.</p>
 				</div>
 			</div>
 		</section>

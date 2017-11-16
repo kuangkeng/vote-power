@@ -189,7 +189,7 @@ var btnTexts = [
         result = 0;
         result_text = "draw";
         voteWeight2 = 1;
-        $("#btnExplain").text("Not everyone has the same voting power. Find out why");
+        $("#btnExplain").text("Tell me more");
       }
       console.log("result = " + result);
       console.log("voteWeight = " + voteWeight);
@@ -233,9 +233,9 @@ var btnTexts = [
       $('#resultHead').text(resultHeads[result]);
 
       var resultSummary = [
-          "You drew because your vote has equal or similar power to the votes in " + oppSeat + ".",
-          "You lost because one vote in " + oppSeat + " is equavalent to " + voteWeight2 + " votes of yours.",
-          "You won because your one vote is equavalent to "+ voteWeight2 + " votes in " + oppSeat + "."          
+          "You drew because your voting power in " + selectedSeat + " is equal or similar to your opponent's in " + oppSeat + ".",
+          "You lost because 1 vote in " + oppSeat + " is equavalent to " + voteWeight2 + " votes of yours in " + selectedSeat + ".",
+          "You won because your 1 vote in " + selectedSeat + " is equavalent to "+ voteWeight2 + " votes in " + oppSeat + "."          
       ];
 
       $('#result01').text(resultSummary[result]);
