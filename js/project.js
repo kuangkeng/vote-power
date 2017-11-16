@@ -233,11 +233,11 @@ var result_shares = [
       $('#resultHead').text(resultHeads[result]);
 
       var resultSummary = [
-          "You drew because your voting power in " + selectedSeat + " is equal or similar to your opponent's in " + oppSeat + ".",
-          "You lost because 1 vote in " + oppSeat + " is equavalent to " + voteWeight2 + " votes of yours in " + selectedSeat + ".",
-          "You won because your 1 vote in " + selectedSeat + " is equavalent to "+ voteWeight2 + " votes in " + oppSeat + "."          
+          "Your seat has similar number of voters compare to your opponent's seat. Each seat elects only one Member of Parliament. It means votes in both seats carry the same weight.",
+          "Your seat has about " + voteWeight2 + " times more voters than your opponent's seat but each seat elects only one Member of Parliament. It means one vote in your opponent's seat carries the same weight as " + voteWeight2 + " of your votes.",
+          "Your opponent's seat has about " + voteWeight2 + " times more voters than your seat but each seat elects only one Member of Parliament. It means your one vote carries the same weight as " + voteWeight2 + " votes in your opponent's seat.",
       ];
-
+      
       $('#result01').text(resultSummary[result]);
 
       if(result == 2 || result == 0){
@@ -250,8 +250,8 @@ var result_shares = [
         $('#rightVoter').text(addThousandSeparator(oppVoter) + " voters");
         $('#rightName').text(oppName);
         $('#rightParty').text(oppParty);
-        $('#voteTextLeft').text("You're voting in");
-        $('#voteTextRight').text("Your opponent is representing");
+        $('#voteTextLeft').text("Your seat is");
+        $('#voteTextRight').text("Your opponent's seat is");
       } else {
         $('#leftSeat').text(oppKod + " " + oppSeat);
         $('#leftVoter').text(addThousandSeparator(oppVoter) + " voters");
@@ -261,8 +261,8 @@ var result_shares = [
         $('#rightVoter').text(addThousandSeparator(selectedVoter) + " voters");
         $('#rightName').text(selectedName);
         $('#rightParty').text(selectedParty);
-        $('#voteTextLeft').text("Your opponent is representing");
-        $('#voteTextRight').text("You're voting in");
+        $('#voteTextLeft').text("Your opponent's seat is");
+        $('#voteTextRight').text("Your seat is");
       }
     }
 

@@ -241,32 +241,39 @@
 		
 		<section id="pageAnalysis" class="uk-section panel">
 			<div class="uk-container uk-container-small uk-text-center">
-				<div style="max-width:600px;margin:0 auto;">
-					<h2 id="resultHead"></h2>
-					<p class="uk-text-large"><strong id="leftSeat"></strong> has <strong id="leftVoter"></strong>* and <strong id="rightSeat"></strong> has <strong id="rightVoter"></strong>*</p>
-					<p id="result01" class="uk-text-large uk-text-bold"></p>
-				</div>
-				<div id="voteChart" class="uk-grid-collapse" uk-grid>
-					<div class="uk-width-2-5 uk-flex uk-flex-middle uk-flex-center" id="winnerVote">
+				<h2 id="resultHead" class="uk-text-bold"></h2>
+				<p id="result01" class="uk-text-large uk-text-left"></p>
+				<div uk-grid>
+					<div class="uk-width-2-5 uk-flex uk-flex-middle uk-flex-center">
 						<img id="leftVoteHead" src="img/avatar_me_480x480.png" alt="">
 					</div>
-					<div class="uk-width-1-5 uk-flex uk-flex-middle uk-flex-center" id="vsVote" style="font-size:80px;">=</div>
-					<div class="uk-width-2-5 uk-flex uk-flex-middle" id="loserVoteBox">
-						<ul class="uk-child-width-1-1 uk-grid-small" id="loserVote" uk-grid></ul>
+					<div class="uk-width-1-5 uk-flex uk-flex-middle uk-flex-center" style="font-size:80px;">=</div>
+					<div class="uk-width-2-5 uk-flex uk-flex-middle">
+						<ul class="uk-child-width-1-3 uk-grid-small" id="loserVote" uk-grid></ul>
 					</div>
 				</div>
+				<div class="uk-text-center uk-grid-collpase uk-grid uk-text-large" >
+					<div class="uk-width-2-5">
+						<p><span id="voteTextLeft">Your seat is</span><br><strong id="leftSeat"></strong><br> with <strong id="leftVoter"></strong>*</p>
+					</div>
+					<div class="uk-width-1-5"></div>
+					<div class="uk-width-2-5">
+						<p><span id="voteTextRight">Your opponent's seat is</span><br><strong id="rightSeat"></strong><br> with <strong id="rightVoter"></strong>*</p>
+					</div>
+				</div>
+
 			</div>
 			<div class="uk-section uk-section-secondary" style="background:rgba(0,0,0,0.8">
 				<div class="uk-container uk-container-small uk-text-center">
-					<p class="uk-text-large uk-margin-remove-top"><strong style="color:#222;background:#fff;margin:0 5px 0 0;padding:0 5px 3px;">Higher number of voters</strong> in your parliamentary seat means <strong style="color:#222;background:#fff;margin:0 5px;padding:0 5px 3px;">lesser voting power</strong> you have in the next General Election and vice versa.</p>
+					<p class="uk-text-large uk-margin-remove-top">When the difference in voter numbers is huge, voters in <strong style="color:#222;background:#fff;margin:0 5px 0 0;padding:0 5px 3px;">less-populated seats</strong> have <strong style="color:#222;background:#fff;margin:0 5px 0 0;padding:0 5px 3px;">more voting power</strong> than voters in crowded seats.</p>
+					<div style="max-width:600px;margin:0 auto;">
+						<button type="button" class="uk-button uk-button-large uk-button-danger uk-width-1-1" id="btnExplain" style="font-size:24px;line-height:1em;padding:10px;">Isn't this unfair?</button>
+					</div>
 				</div>
 			</div>
 			<div class="uk-container uk-container-small uk-text-center uk-margin-large-top">
 				<div style="max-width:600px;margin:0 auto;">
-					<div class="uk-margin">
-						<button type="button" class="uk-button uk-button-large uk-button-danger uk-width-1-1" id="btnExplain" style="font-size:24px;line-height:1em;padding:10px;">Isn't this unfair?</button>
-					</div>
-					<div id="profileChart" class="uk-child-width-1-1@s uk-child-width-1-2@m uk-grid-small" uk-grid>
+					<div class="uk-child-width-1-1@s uk-child-width-1-2@m uk-grid-small" uk-grid>
 						<div>
 							<button type="button" class="uk-button uk-button-large uk-button-secondary uk-width-1-1 btnRepeatSeat"><span uk-icon="icon:refresh"></span> Replay</button>
 						</div>
@@ -275,7 +282,7 @@
 						</div>
 					</div>
 					<div class="uk-margin-large uk-text-center">
-						<p class="uk-text-large" style="font-family:Arvo" id="btnShare">Share this with your friends</p>
+						<p class="uk-text-large" style="font-family:Arvo">Share this with your friends</p>
 						<div>
 							<a href="javascript:facebook()" onclick="facebook()" class="uk-button uk-button-large" style="color:#fff;background:#3b5998"><span uk-icon="icon:facebook;ratio:2"></span></a>
 							<a href="javascript:tweet()" onclick="tweet()" class="uk-button uk-button-large" style="color:#fff;background:#55acee"><span uk-icon="icon:twitter;ratio:2"></span></a>
