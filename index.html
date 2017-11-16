@@ -65,10 +65,6 @@
 			<div class="uk-visible@s" style="position:fixed;bottom:30px;right:50%;z-index:1">
 				<img src="img/avatar_opp5_480x480.png" width="240" height="240" alt="">
 			</div>
-			<div style="position:absolute;top:10px;right:10px;z-index:1">
-				<a href="javascript:facebook()"><span uk-icon="icon:facebook" class="uk-icon-button" style="color:#ee5370"></span></a>
-				<a href="javascript:tweet()"><span uk-icon="icon:twitter" class="uk-icon-button" style="color:#ee5370"></span></a>
-			</div>
 			<footer>Kuek Ser Kuang Keng + Malaysiakini</footer>
 		</section>
 		
@@ -219,7 +215,11 @@
 			</div>
 			<div id="shareBox" style="display:none;margin:20px auto;text-align:center;">
 				<p class="uk-text-large" style="line-height:1em;">Recruit your friends</p>
-				<div class="addthis_inline_share_toolbox" style="text-align:center"></div>
+				<div>
+					<a href="javascript:facebook()" onclick="facebook()" class="uk-button uk-button-large" style="color:#fff;background:#3b5998"><span uk-icon="icon:facebook;ratio:2"></span></a>
+					<a href="javascript:tweet()" onclick="tweet()" class="uk-button uk-button-large" style="color:#fff;background:#55acee"><span uk-icon="icon:twitter;ratio:2"></span></a>
+				</div>
+				<!--div class="addthis_inline_share_toolbox" style="text-align:center"></div-->
 			</div>
 			<div id="resultBox" style="display:none;position:absolute;top:21%;left:0;z-index:9999;width:100%;">
 				<div id="repeat" style="max-width:260px;margin:0 auto">
@@ -271,7 +271,10 @@
 				</div>
 				<div class="uk-margin uk-text-center">
 					<p class="uk-text-large" style="line-height:1em;"  id="btnShare">Share this with your friends</p>
-					<div class="addthis_inline_share_toolbox" style="text-align:center"></div>
+					<div>
+						<a href="javascript:facebook()" onclick="facebook()" class="uk-button uk-button-large" style="color:#fff;background:#3b5998"><span uk-icon="icon:facebook;ratio:2"></span></a>
+						<a href="javascript:tweet()" onclick="tweet()" class="uk-button uk-button-large" style="color:#fff;background:#55acee"><span uk-icon="icon:twitter;ratio:2"></span></a>
+					</div>
 				</div>
 				<div class="uk-card uk-card-default uk-card-small uk-margin-top uk-margin-large-bottom">
 					<div class="uk-card-body uk-text-left">
