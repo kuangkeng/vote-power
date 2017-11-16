@@ -89,6 +89,7 @@ var btnTexts = [
             panel('pageFight');
             setTimeout(function(){
                 $('#resultBox').fadeIn();
+                $('#shareBox').fadeIn();
             }, 10000);
             sendData();
         });        
@@ -103,6 +104,7 @@ var btnTexts = [
             $(window).scrollTop(0);
             panel('pageState');
             $("#resultBox").hide();
+            $("#shareBox").hide();
             $("#loserVote").html("");
             $("#leftVoteHead").removeClass("flipImg");
         });
@@ -111,6 +113,7 @@ var btnTexts = [
             $(window).scrollTop(0);
             panel('pageOpponent');
             $("#resultBox").hide();
+            $("#shareBox").hide();
             $("#loserVote").html("");
             $("#leftVoteHead").removeClass("flipImg");
         });
@@ -230,7 +233,7 @@ var btnTexts = [
       $('#resultHead').text(resultHeads[result]);
 
       var resultSummary = [
-          "You drew because your vote has very similar power to the votes in " + oppSeat + ".",
+          "You drew because your vote has equal or similar power to the votes in " + oppSeat + ".",
           "You lost because one vote in " + oppSeat + " is equavalent to " + voteWeight2 + " votes of yours.",
           "You won because your one vote is equavalent to "+ voteWeight2 + " votes in " + oppSeat + "."          
       ];
