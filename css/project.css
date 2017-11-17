@@ -83,6 +83,7 @@
 }
 
 .trigger {
+  opacity:0.1;
   width:60%;
   margin-left:40%;
   margin-bottom: 500px;
