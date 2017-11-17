@@ -923,16 +923,23 @@ function addThousandSeparator(nStr) {
 function addTable(){
   $('#table01').DataTable(
     {
-      data: dataForTable,
+      data: dataAll,
       columns: [
-        {data:'code'},
+        {data:'kod'},
         {data:'seat'},
-        {data:'voter', render: $.fn.dataTable.render.number( ',' )},
-        {data:'party'},
-        {data:'rep'},
+        {data:'y', render: $.fn.dataTable.render.number( ',' )},
+        {data:'party', className:'nowrap' },
+        {data:'name'},
         {data:'state'},
-        {data:'class'},
+        {data:'kelas', className:'nowrap'},
       ],
+      "createdRow": function ( row, data, index ) {
+        if ( data["party"].substr(0, 2) == "BN" ) {
+            $('td', row).eq(3).css('background-color','#e5e5f4');
+        } else {
+            $('td', row).eq(3).css('background-color','#ffe5e5');
+        }
+      },
       responsive: true,
       columnDefs: [
           { responsivePriority: 1, targets: 1 },
@@ -940,15 +947,13 @@ function addTable(){
           { responsivePriority: 3, targets: 3 },
           { responsivePriority: 4, targets: 5 },
           { responsivePriority: 5, targets: 0 },
-          { responsivePriority: 6, targets: 4 },
-          { responsivePriority: 7, targets: 6 },
-          { "width": "14%", "targets": -1 },
-          // { className: "center", "targets": [ 0 ] },
-          // { className: "left", "targets": [ 1 ] },
+          { responsivePriority: 6, targets: 6 },
+          { responsivePriority: 7, targets: 4 },
       ],
+      "order" : [ 2, 'desc' ],
       "paging": false,
       "scrollY": "500px",
-      
+      "info": false,
     }
   );
 }
