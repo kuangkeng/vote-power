@@ -102,6 +102,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
         compareSeat();
       }
       setTimeout(scrollstory,500);
+      addTable();
     }
 
     //Function to get country code from url
@@ -919,9 +920,38 @@ function addThousandSeparator(nStr) {
     return x1 + x2;
 }
 
-
-
-
+function addTable(){
+  $('#table01').DataTable(
+    {
+      data: dataForTable,
+      columns: [
+        {data:'code'},
+        {data:'seat'},
+        {data:'voter', render: $.fn.dataTable.render.number( ',' )},
+        {data:'party'},
+        {data:'rep'},
+        {data:'state'},
+        {data:'class'},
+      ],
+      responsive: true,
+      columnDefs: [
+          { responsivePriority: 1, targets: 1 },
+          { responsivePriority: 2, targets: 2 },
+          { responsivePriority: 3, targets: 3 },
+          { responsivePriority: 4, targets: 5 },
+          { responsivePriority: 5, targets: 0 },
+          { responsivePriority: 6, targets: 4 },
+          { responsivePriority: 7, targets: 6 },
+          { "width": "14%", "targets": -1 },
+          // { className: "center", "targets": [ 0 ] },
+          // { className: "left", "targets": [ 1 ] },
+      ],
+      "paging": false,
+      "scrollY": "500px",
+      
+    }
+  );
+}
 $(document).ready(function(){
   init();
 }); 

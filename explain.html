@@ -11,9 +11,18 @@
 		<title>Why isn't every Malaysian vote equal?</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.34/css/uikit.min.css">
 		<link rel="stylesheet" type="text/css" href="css/project.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+    	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.0/css/responsive.dataTables.min.css">
 		<style>
 			p{font-size:20px;}
 			.text-wrapper{font-size:20px!important;}
+			table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before,table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
+			  background-color:#d34127;
+			  border:0px;
+			  top:50%;
+			  margin-top:-6px;
+			  box-shadow:0 0 0;
+			}
 		</style>
 	</head>
 	<body>
@@ -119,9 +128,9 @@
 				<p>What can we do? You can choose to move to smaller constituencies like <i>Putrajaya</i> and vote there to expand your voting power or you can support initiatives to reform the electoral system like the Bersih movement.</p>
 
 				<p>Most importantly, register as a voter and vote else your voting power is zero.</p>
-				<div class="uk-margin-large-top" style="max-width:480px">
+				<div class="uk-margin-large-top" style="max-width:620px">
 					<hr style="width:50px;border-width:5px;border-color:#333;">
-					<p class="uk-text-small">Note: The number of votes in each parliamentary seat is based on the electoral roll for the first quarter of 2016 published by the Election Commission. The classification of parliamentary seats into urban, semi-rural and rural is based on the study done by research firm Politweet.org as the Election Commission does not classify each seat. <a href="https://politweet.wordpress.com/about/" target="_blank">Read the methodology here</a></p>
+					<p class="uk-text-small">Note: The number of votes in each parliamentary seat is based on the electoral roll for the first quarter of 2016 published by the Election Commission. The classification of parliamentary seats into urban, semi-rural and rural is based on the study done by research firm Politweet.org as the Election Commission does not classify each seat. <a href="https://politweet.wordpress.com/about/" target="_blank">Read the methodology here</a>.</p>
 				</div>
 			</div>
 		</section>
@@ -131,7 +140,26 @@
 				<div class="addthis_inline_share_toolbox" style="text-align:center"></div>
 			</div>
 		</section>
-		
+		<section class="uk-section uk-section-default">
+			<div class="uk-container uk-container-small" style="max-width:620px">
+			  	<div class="uk-text-large uk-margin-top">Parliamentary seat information</div>    
+			  	<div class="tableA">
+			    	<table id="table01" class="stripe hover">
+			      		<thead>
+			        		<tr>
+			          			<td class="code" id="code_head">Code</td>
+			          			<td class="seat" id="seat_head">Seat</td>
+			          			<td class="voter" id="voter_head">Voters</td>
+			          			<td class="party" id="party_head">Party</td>
+			          			<td class="rep" id="rep_head">MP</td>
+			          			<td class="state" id="state_head">State</td>
+			          			<td class="class" id="class_head">Class</td>
+			        		</tr>
+			      		</thead>
+			    	</table>
+			  </div>	
+			</div>
+		</section>		
 		<section class="uk-hidden@s uk-section uk-section-secondary uk-text-center">
 			<a href="https://static03.malaysiakini.com/undipower/" class="uk-button uk-button-text"><span uk-icon="icon:play-circle;ratio:2" class="uk-margin-small-right"></span>Play the game</a>
 		</section>
@@ -145,5 +173,7 @@
 		<script src="js/data.js"></script>
 		<script src="js/explain.js"></script>
 		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0bc2fb3a12b579"></script> 
+		<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    	<script src="https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js"></script>
 	</body>
  </html>
