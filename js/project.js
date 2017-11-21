@@ -34,21 +34,21 @@ var selectedData,
     result_share;
 
 var resultHeads = [
-    "Why a Draw?",
+    "Why a Tie?",
     "Why You Lost",
     "How You Won",
 ];
 
 var btnTexts = [
-  "Why a Draw?",
+  "Why a tie?",
   "How did I lose?",
-  "How did I win?",
+  "Why did I win?",
 ];
 
 var result_shares = [
-  "I just fought a tough battle in Undi Power. Join me!",
-  "I was defeated in Undi Power. Revenge me!",
-  "I won the battle of Undi Power! Join me"
+  "Gosh, that was a tough battle! Can you do better?",
+  "That's not even a fair fight! Revenge me!",
+  "Yes!!! I am victorious. Who's next?!"
 ];
 
     function init() {   
