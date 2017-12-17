@@ -233,9 +233,9 @@ var result_shares = [
       $('#resultHead').text(resultHeads[result]);
 
       var resultSummary = [
-          "Your seat has similar number of voters compare to your opponent's seat. Each seat elects only one Member of Parliament. It means votes in both seats carry the same weight.",
-          "Your seat has about " + voteWeight2 + " times more voters than your opponent's seat but each seat elects only one Member of Parliament. It means one vote in your opponent's seat carries the same weight as " + voteWeight2 + " of your votes.",
-          "Your opponent's seat has about " + voteWeight2 + " times more voters than your seat but each seat elects only one Member of Parliament. It means your one vote carries the same weight as " + voteWeight2 + " votes in your opponent's seat.",
+          "Your seat has a similar number of voters compared to your opponent's seat. Only one Member of Parliament is elected for each seat. It means votes in both seats carry the same weight.",
+          "Your seat has about " + voteWeight2 + " times more voters than your opponent's seat, but only one Member of Parliament is elected for each seat. It means one vote in your opponent's seat carries the same weight as " + voteWeight2 + " of your votes.",
+          "Your opponent's seat has about " + voteWeight2 + " times more voters than your seat, but only one Member of Parliament is elected for each seat. It means your single vote carries the same weight as " + voteWeight2 + " votes in your opponent's seat.",
       ];
       
       $('#result01').text(resultSummary[result]);
