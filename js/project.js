@@ -1,5 +1,3 @@
-console.log("start18");
-
 var viewportHeight = $(window).height(),
     headlineHeight = $('.headline').outerHeight( true);
 
@@ -150,7 +148,6 @@ var result_shares = [
       selectedParty = selectedData[0].party;
       selectedName = selectedData[0].name;
       selectedLevel = selectedData[0].level;
-      console.log(JSON.stringify(selectedData));
     }
 
     function compareSeat(){
@@ -168,7 +165,7 @@ var result_shares = [
       
       //Calculate percentage of difference
       perVoter = Math.round(Math.abs(difVoter)/smallNum*100);
-      console.log("percentage of difference = " + perVoter);
+      // console.log("percentage of difference = " + perVoter);
 
       //Calculate how many times bigger
       voteWeight = (bigNum/smallNum).toFixed(2);
@@ -191,18 +188,20 @@ var result_shares = [
         voteWeight2 = 1;
         $("#btnExplain").text("Tell me more");
       }
-      console.log("result = " + result);
-      console.log("voteWeight = " + voteWeight);
-      console.log("voteWeight2 = " + voteWeight2);
+      // console.log("result = " + result);
+      // console.log("voteWeight = " + voteWeight);
+      // console.log("voteWeight2 = " + voteWeight2);
       var fullVote = Math.floor(voteWeight2);
       var maxVote = Math.ceil(voteWeight2);
       var checkInt = isInt(voteWeight2);
-      console.log("checkInt = " + checkInt);
+      // console.log("checkInt = " + checkInt);
       var voteHeadLeftUrl = "img/avatar_" + voteHeadLeft + "_240x240.png";
       var voteHeadRightUrl = "img/avatar_" + voteHeadRight + "_240x240.png";
       var voteHeadRightHalfUrl = "img/avatar_" + voteHeadRight + "_half_240x240.png";
       var voteHeadWidth;
-      console.log("maxVote = " + maxVote);
+      // console.log("maxVote = " + maxVote);
+      
+      //set the width of the avatars in result page
       if (maxVote >2  && maxVote <7){
         voteHeadWidth = "33%"  
       } else if (maxVote >6){
@@ -211,7 +210,8 @@ var result_shares = [
       else {
         voteHeadWidth = (100/maxVote)+"%";
       }
-      
+
+      //append avatars to the result page
       for (i = 0; i < fullVote; i++) { 
         $("#loserVote").append('<li class="voteHead"><img src="'+ voteHeadRightUrl +'" alt=""></li>');
       }
@@ -220,9 +220,11 @@ var result_shares = [
           $("#loserVote").append('<li class="voteHead"><img src="'+ voteHeadRightHalfUrl +'" alt=""></li>');
         }
       $(".voteHead").css({"max-width":voteHeadWidth, "display":"inline-block"});  
-      if(maxVote == 1){$("#loserVoteBox").addClass("uk-flex-center");}
-        else {$("#loserVoteBox").removeClass("uk-flex-center");}
+      //align to left if the number of avatar is more than 1
+      if(maxVote == 1){}
+        else {$("#loserVote").css({"text-align":"left"});}
       $("#leftVoteHead").attr("src", voteHeadLeftUrl);
+      //flip the left avatar so it is facing right
       if(result == 1){$("#leftVoteHead").addClass("flipImg");}
 
       //Populate text for result page  
@@ -279,7 +281,7 @@ var result_shares = [
       function getRecord(dataset, tabletop) {
         //find the total users  
         var user_num = dataset.length;
-        console.log("user_num = " + user_num);
+        // console.log("user_num = " + user_num);
         //Repeat for all opponents
         for (count=0; count<opponents.length; count++){
           //select only entries that match the selected opponent
@@ -292,7 +294,7 @@ var result_shares = [
             return (n.result == "lose");
           },false);
           var win_num = dataset_opp_win.length;
-          console.log("win_num " + opponents[count].seat + " = " + win_num);
+          // console.log("win_num " + opponents[count].seat + " = " + win_num);
           $("#" + (count+1) + " .uk-label").text(win_num + " WINS");
         }
       }
@@ -320,17 +322,16 @@ $(document).ready(function(){
 }); 
 
 function facebook() {
-console.log("sharing result = " + result_shares[result]);
 FB.ui({
   method: 'share',
-  href: 'https://pages.malaysiakini.com/votepower-kk/VotePowerResult.php?result_share=' + result_shares[result], 
+  href: 'https://pages.malaysiakini.com/undipower/VotePowerResult.php?result_share=' + result_shares[result] + '&result=' + result_text + '&opp=' + idOpp, 
   }, function(response){});
 }
 
 function tweet() {
   var tweet_url = 'https://twitter.com/intent/tweet?related=malaysiakini&text=';
   tweet_url += encodeURIComponent(result_shares[result]);
-  tweet_url += '&url=http://bit.ly/2qtja4a&via=malaysiakini';
+  tweet_url += '&url=http://bit.ly/2AULhxD&via=malaysiakini';
   tweet_url += ' pic.twitter.com/u9wrwPxLQ8';
   window.open(tweet_url,'_blank');
 }

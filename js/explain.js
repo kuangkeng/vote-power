@@ -1,5 +1,3 @@
-console.log("project3!");
-
 //CODE FOR SCROLLSTORY STARTS HERE
 // check viewport dimensions and use them to set the text box margin and chart height and width
 var $scrollerWrapper = $('.scroller-wrapper'),
@@ -154,7 +152,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
           }
       });
       indexUser = indexesUser[0];
-      console.log("indexUser = " + indexUser);
+      // console.log("indexUser = " + indexUser);
       
       var indexesOpp = $.map(dataAll, function(obj, index) {
           if(obj.seat == oppSeat) {
@@ -162,7 +160,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
           }
       });
       indexOpp = indexesOpp[0];
-      console.log("indexOpp = " + indexOpp);
+      // console.log("indexOpp = " + indexOpp);
     }
 
     //Function to check if a number is integer
