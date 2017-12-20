@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#333333">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="format-detection" content="telephone=no">
+		<title>选票力</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.34/css/uikit.min.css">
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Arvo" />
+		<style type="text/css">
+			body{color:#333;font-weight:300;}
+			h2{font-family:Arvo;font-size:22px;text-transform:uppercase;}
+			.uk-section{padding:30px 0;}
+			.uk-button{font-family:Arvo;border-radius:100px!important;font-size:18px;}
+			.btnState, .btnSeat{font-family:Arvo;font-size:20px!important;}
+			#mobileStateList > li{margin-bottom:15px!important;}
+			.btnState:active, .btnSeat:active{background:#ee5370!important;}
+			hr{border-color:#354a5d;}
+			footer{position:fixed;bottom:20px;right:20px;z-index:0;color:rgba(255,255,255,1);background:none;font-size:12px;text-transform:uppercase;letter-spacing:1px;}
+			.flipImg {
+		        -moz-transform: scaleX(-1);
+		        -o-transform: scaleX(-1);
+		        -webkit-transform: scaleX(-1);
+		        transform: scaleX(-1);
+		        filter: FlipH;
+		        -ms-filter: "FlipH";
+			}
+			.opponent{cursor:pointer;}
+			.opponent:active .uk-card-media-top{background:#ee5370!important;}
+			.uk-card-badge.uk-label{background:rgba(0,0,0,0.5);border-radius:20px;}
+			.panel{display:none;}
+		</style>
+	</head>
+	<body>
+		<div class="uk-width-1-1 uk-height-1-1 uk-background-cover uk-background-fixed" style="background-image:url('https://pages.malaysiakini.com/undipower/img/bg_1920x1080.jpg');position:fixed;top:0;left:0;z-index:-1"></div>
+		
+		<section id="pageStart" class="uk-section uk-height-1-1 panel">
+			<div class="uk-container uk-container-small uk-text-center">
+				<div class="uk-text-smal uk-text-uppercase uk-text-large uk-margin-top" style="font-family:Arvo">选票力</div>
+				<h1 class="uk-article-title uk-text-bold uk-text-uppercase uk-margin-remove-top" style="font-size:38px;font-weight:900">你手中的一票在国会有多大影响力？</h1>
+				<hr>
+				<p class="uk-visible@s uk-text-large">来吧！跟其他选区的代表较量一下，比比看谁的选票对国家更有影响力。</p>
+				<button id="btnStart" type="button" class="uk-button uk-button-large uk-button-danger uk-border-rounded" style="font-size:24px">开始</button>
+			</div>
+			<div style="position:fixed;bottom:30px;left:0;z-index:1">
+				<img src="https://pages.malaysiakini.com/undipower/img/avatar_me_480x480.png" width="240" height="240" alt="">
+			</div>
+			<div style="position:fixed;bottom:30px;right:0;z-index:1">
+				<img src="https://pages.malaysiakini.com/undipower/img/avatar_opp1_480x480.png" width="240" height="240" alt="">
+			</div>
+			<div class="uk-visible@s" style="position:fixed;bottom:30px;right:10%;z-index:1">
+				<img src="https://pages.malaysiakini.com/undipower/img/avatar_opp3_480x480.png" width="240" height="240" alt="">
+			</div>
+			<div class="uk-visible@s" style="position:fixed;bottom:30px;right:20%;z-index:1">
+				<img src="https://pages.malaysiakini.com/undipower/img/avatar_opp2_480x480.png" width="240" height="240" alt="">
+			</div>
+			<div class="uk-visible@s" style="position:fixed;bottom:30px;right:30%;z-index:1">
+				<img src="https://pages.malaysiakini.com/undipower/img/avatar_opp6_480x480.png" width="240" height="240" alt="">
+			</div>
+			<div class="uk-visible@s" style="position:fixed;bottom:30px;right:38%;z-index:1">
+				<img src="https://pages.malaysiakini.com/undipower/img/avatar_opp4_480x480.png" width="240" height="240" alt="">
+			</div>
+			<div class="uk-visible@s" style="position:fixed;bottom:30px;right:50%;z-index:1">
+				<img src="https://pages.malaysiakini.com/undipower/img/avatar_opp5_480x480.png" width="240" height="240" alt="">
+			</div>
+		</section>
+		
+		<section id="pageState" class="uk-section panel">
+			<div class="uk-container uk-container-small uk-text-center" style="position:relative;z-index:1">
+				<h2>你在哪里投票？</h2>
+				<ul id="mobileStateList" class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l uk-grid-small" uk-grid="margin:0">
+					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Perlis</a></li>
+					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Kedah</a></li>
+					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Kelantan</a></li>
+					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Terengganu</a></li>
+					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Pulau Pinang</a></li>
+					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Perak</a></li>
+					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Pahang</a></li>
+					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Selangor</a></li>
+					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Kuala Lumpur</a></li>
+					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Putrajaya</a></li>
+					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Negeri Sembilan</a></li>
+					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Melaka</a></li>
+					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Johor</a></li>
+					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Labuan</a></li>
+					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Sabah</a></li>
+					<li><a class="btnState uk-button uk-button-secondary uk-button-large uk-border-rounded uk-width-1-1 uk-text-capitalize" style="font-size:16px">Sarawak</a></li>
+				</ul>
+			</div>
+			<div class="uk-visible@s" style="position:fixed;bottom:30px;left:40%;z-index:0">
+				<img src="https://pages.malaysiakini.com/undipower/img/avatar_me_480x480.png" width="240" height="240" alt="">
+			</div>
+		</section>
+		
+		<section id="pageSeat" class="uk-section panel">	
+			<div class="uk-container uk-container-small uk-text-center" style="position:relative;z-index:9999">
+				<p class="uk-text-large">选择你的国会选区*</p>
+				<ul id="mobileSeatList" class="uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-1-3@l uk-grid-small" uk-grid></ul>
+				<p class="uk-margin-top uk-text-left uk-alert">* 根据2013年全国大选的选区，而非选委会所建议，但尚未获国会通过的新划选区。</p>
+			</div>
+			<div class="uk-visible@s" style="position:fixed;bottom:30px;right:-30px;z-index:1">
+				<img src="https://pages.malaysiakini.com/undipower/img/avatar_me_480x480.png" width="240" height="240" alt="">
+			</div>
+		</section>
+		
+		<section id="pageOpponent" class="uk-section panel">
+			<div class="uk-container uk-text-center">
+				<h2>挑选你的对手</h2>
+				<div class="uk-child-width-1-2 uk-child-width-1-2@m uk-child-width-1-6@l uk-grid-small" uk-grid>
+					<div>
+						<div class="opponent uk-card uk-card-hover uk-card-small uk-margin-bottom" id="5">
+							<div class="uk-card-media-top" style="background:#333;border:10px solid #fff;border-bottom:none;">
+								<img class="img-responsive" src="https://pages.malaysiakini.com/undipower/img/avatar_opp5_240x240.png">
+							</div>
+							<div class="uk-card-body" style="background:#fff">
+								<div class="uk-card-badge uk-label">0 Wins</div>
+								<div class="oppLevel" hidden>Level 8</div>
+								<div>
+									<span uk-icon="icon:bolt"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="opponent uk-card uk-card-hover uk-card-small uk-margin-bottom" id="4">
+							<div class="uk-card-media-top" style="background:#333;border:10px solid #fff;border-bottom:none;">
+								<img class="img-responsive" src="https://pages.malaysiakini.com/undipower/img/avatar_opp4_240x240.png">
+							</div>
+							<div class="uk-card-body" style="background:#fff">
+								<div class="uk-card-badge uk-label">120 Wins</div>
+								<div class="oppLevel" hidden>Level 26</div>
+								<div>
+									<span uk-icon="icon:bolt"></span>
+									<span uk-icon="icon:bolt"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="opponent uk-card uk-card-hover uk-card-small uk-margin-bottom" id="1">
+							<div class="uk-card-media-top" style="background:#333;border:10px solid #fff;border-bottom:none;">
+								<img class="img-responsive" src="https://pages.malaysiakini.com/undipower/img/avatar_opp1_240x240.png" alt="Opponent 1">
+							</div>
+							<div class="uk-card-body" style="background:#fff">
+								<div class="uk-card-badge uk-label">550 Wins</div>
+								<div class="oppLevel" hidden>Level 51</div>
+								<div>
+									<span uk-icon="icon:bolt"></span>
+									<span uk-icon="icon:bolt"></span>
+									<span uk-icon="icon:bolt"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="opponent uk-card uk-card-hover uk-card-small uk-margin-bottom" id="2">
+							<div class="uk-card-media-top" style="background:#333;border:10px solid #fff;border-bottom:none;">
+								<img class="img-responsive" src="https://pages.malaysiakini.com/undipower/img/avatar_opp2_240x240.png" alt="Opponent 2">
+							</div>
+							<div class="uk-card-body" style="background:#fff">
+								<div class="uk-card-badge uk-label">20 Wins</div>
+								<div class="oppLevel" hidden>Level 57</div>
+								<div>
+									<span uk-icon="icon:bolt"></span>
+									<span uk-icon="icon:bolt"></span>
+									<span uk-icon="icon:bolt"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="opponent uk-card uk-card-hover uk-card-small uk-margin-bottom" id="6">
+							<div class="uk-card-media-top" style="background:#333;border:10px solid #fff;border-bottom:none;">
+								<img class="img-responsive" src="https://pages.malaysiakini.com/undipower/img/avatar_opp6_240x240.png">
+							</div>
+							<div class="uk-card-body" style="background:#fff">
+								<div class="uk-card-badge uk-label">880 Wins</div>
+								<div class="oppLevel" hidden>Level 94</div>
+								<div>
+									<span uk-icon="icon:bolt"></span>
+									<span uk-icon="icon:bolt"></span>
+									<span uk-icon="icon:bolt"></span>
+									<span uk-icon="icon:bolt"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="opponent uk-card uk-card-hover uk-card-small uk-margin-bottom" id="3">
+							<div class="uk-card-media-top" style="background:#333;border:10px solid #fff;border-bottom:none;">
+								<img class="img-responsive" src="https://pages.malaysiakini.com/undipower/img/avatar_opp3_240x240.png">
+							</div>
+							<div class="uk-card-body" style="background:#fff">
+								<div class="uk-card-badge uk-label">1110 Wins</div>
+								<div class="oppLevel" hidden>Level 100</div>
+								<div>
+									<span uk-icon="icon:bolt"></span>
+									<span uk-icon="icon:bolt"></span>
+									<span uk-icon="icon:bolt"></span>
+									<span uk-icon="icon:bolt"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section id="pageFight" class="uk-section panel" style="padding-top:15px">
+			<div class="uk-container uk-container-small uk-text-center" style="max-width:400px;margin:0 auto;">
+				<img class="uk-width-1-1" id="fightImg" src="https://pages.malaysiakini.com/undipower/img/avatar_me_480x480.png" alt="Fighting animation" style="border-radius:240px;border:10px solid #fff;">
+			</div>
+			<div id="shareBox" style="display:none;margin:20px auto;text-align:center;">
+				<p class="uk-text-large" style="font-family:Arvo">邀请你的朋友加入战局</p>
+				<div>
+					<a href="javascript:facebook()" onclick="facebook()" class="uk-button uk-button-large" style="color:#fff;background:#3b5998"><span uk-icon="icon:facebook;ratio:2"></span></a>
+					<a href="javascript:tweet()" onclick="tweet()" class="uk-button uk-button-large" style="color:#fff;background:#55acee"><span uk-icon="icon:twitter;ratio:2"></span></a>
+				</div>
+				<!--div class="addthis_inline_share_toolbox" style="text-align:center"></div-->
+			</div>
+			<div id="resultBox" style="display:none;position:absolute;top:21%;left:0;z-index:9999;width:100%;">
+				<div id="repeat" style="max-width:260px;margin:0 auto">
+					<div class="uk-margin-small-bottom">
+						<button type="button" class="uk-button uk-button-secondary uk-width-1-1 btnRepeatSeat"><span uk-icon="icon:refresh"></span> 再战一次</button>
+					</div>
+					<div class="uk-margin-small-bottom">
+						<button type="button" class="uk-button uk-button-secondary uk-width-1-1 btnRepeatOpp">换对手</button>
+					</div>
+					<div class="uk-margin-small-bottom">
+						<button type="button" class="uk-button uk-button-danger uk-width-1-1" id="btnWhy" style="font-size:18px;font-weight:bold;letter-spacing:1px;">为什么？</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section id="pageAnalysis" class="uk-section panel">
+			<div class="uk-container uk-container-small uk-text-center">
+				<h2 id="resultHead" class="uk-text-bold"></h2>
+				<p id="result01" class="uk-text-large uk-text-left"></p>
+				<div uk-grid>
+					<div class="uk-width-2-5 uk-flex uk-flex-middle uk-flex-center">
+						<img id="leftVoteHead" src="https://pages.malaysiakini.com/undipower/img/avatar_me_480x480.png" alt="">
+					</div>
+					<div class="uk-width-1-5 uk-flex uk-flex-middle uk-flex-center" style="font-size:80px;">=</div>
+					<div class="uk-width-2-5 uk-flex uk-flex-middle">
+						<ul id="loserVote"></ul>
+					</div>
+				</div>
+				<div class="uk-text-center uk-grid-collpase uk-grid uk-text-large" >
+					<div class="uk-width-2-5">
+						<p><span id="voteTextLeft">你的选区是</span><br><strong id="leftSeat"></strong><br>拥有<strong id="leftVoter"></strong>位选民*</p>
+					</div>
+					<div class="uk-width-1-5"></div>
+					<div class="uk-width-2-5">
+						<p><span id="voteTextRight">你的对手选区是</span><br><strong id="rightSeat"></strong><br>拥有<strong id="rightVoter"></strong>位选民*</p>
+					</div>
+				</div>
+
+			</div>
+			<div class="uk-section uk-section-secondary" style="background:rgba(0,0,0,0.8">
+				<div class="uk-container uk-container-small uk-text-center">
+					<p class="uk-text-large uk-margin-remove-top">当选民人数出现大的差别时，<strong style="color:#222;background:#fff;margin:0 5px 0 0;padding:0 5px 3px;">人数较少选区</strong>的选民，比人数较多选区的选民，拥有<strong style="color:#222;background:#fff;margin:0 5px 0 0;padding:0 5px 3px;">更大的投票威力。</strong></p>
+					<div style="max-width:600px;margin:0 auto;">
+						<button type="button" class="uk-button uk-button-large uk-button-danger uk-width-1-1" id="btnExplain" style="font-size:24px;line-height:1em;padding:10px;">不是每张选票都是平等的吗？</button>
+					</div>
+				</div>
+			</div>
+			<div class="uk-container uk-container-small uk-text-center uk-margin-large-top">
+				<div style="max-width:600px;margin:0 auto;">
+					<div class="uk-child-width-1-1@s uk-child-width-1-2@m uk-grid-small" uk-grid>
+						<div>
+							<button type="button" class="uk-button uk-button-large uk-button-secondary uk-width-1-1 btnRepeatSeat"><span uk-icon="icon:refresh"></span> 再战一次</button>
+						</div>
+						<div>
+							<button type="button" class="uk-button uk-button-large uk-button-secondary uk-width-1-1 btnRepeatOpp">挑战另一位对手</button>
+						</div>
+					</div>
+					<div class="uk-margin-large uk-text-center">
+						<p class="uk-text-large" style="font-family:Arvo">跟朋友分享</p>
+						<div>
+							<a href="javascript:facebook()" onclick="facebook()" class="uk-button uk-button-large" style="color:#fff;background:#3b5998"><span uk-icon="icon:facebook;ratio:2"></span></a>
+							<a href="javascript:tweet()" onclick="tweet()" class="uk-button uk-button-large" style="color:#fff;background:#55acee"><span uk-icon="icon:twitter;ratio:2"></span></a>
+						</div>
+					</div>
+					<p class="uk-light">* 每个选区的选民人数是根据选委会所公布的2016年第一季度选民册。</p>
+					<p class="uk-light">这个互动游戏是由郭史光庆、Sean Ho和Nur Nadyatul联合制作。</p>
+				</div>
+			</div>
+		</section>
+
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.34/js/uikit.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.34/js/uikit-icons.min.js"></script>
+		<!-- load counties list from a separate js file -->
+		<script src="https://pages.malaysiakini.com/undipower/js/seat-list.js"></script>
+		<script src="https://pages.malaysiakini.com/undipower/js/data.js"></script>
+		<script src="js/project.js"></script>
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0bc2fb3a12b579"></script> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.2/tabletop.min.js"></script>
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '1965894353438113',
+		      xfbml      : true,
+		      version    : 'v2.11'
+		    });
+		    FB.AppEvents.logPageView();
+		  };
+
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "https://connect.facebook.net/en_US/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		</script>
+	</body>
+</html>
