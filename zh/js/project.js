@@ -50,12 +50,12 @@ var result_shares = [
 ];
 
 var twitterPics = [
-  {win:"pic.twitter.com/434UYJ2rOB", lose:"pic.twitter.com/nKTMh1Ntec", draw:"pic.twitter.com/P3tyIGsZwY"},
-  {win:"pic.twitter.com/m0yb3dpIBT", lose:"pic.twitter.com/JgbsKeec6P", draw:"pic.twitter.com/2GQhiIsome"},
-  {win:"pic.twitter.com/aYLFR9QHCT", lose:"pic.twitter.com/pshIGNZZq9", draw:"pic.twitter.com/QtjTCTHtlz"},
-  {win:"pic.twitter.com/GGMGRuSkow", lose:"pic.twitter.com/GvUaKLNVB2", draw:"pic.twitter.com/xicERUHegt"},
-  {win:"pic.twitter.com/0J3XWtmRCi", lose:"pic.twitter.com/rL95s4JT7Q", draw:"pic.twitter.com/cTmqDwRE1w"},
-  {win:"pic.twitter.com/cFBTLkz4zS", lose:"pic.twitter.com/0fJcNJq4mh", draw:"pic.twitter.com/jhm0HTDzqi"},
+  {win:"pic.twitter.com/dMnnDBo9xu", lose:"pic.twitter.com/W1AW1vjRYg", draw:"pic.twitter.com/2fmOsql4fq"},
+  {win:"pic.twitter.com/94Xm3wzV5t", lose:"pic.twitter.com/jgXwbhyu5I", draw:"pic.twitter.com/GHemdyglRn"},
+  {win:"pic.twitter.com/lYQBEADgps", lose:"pic.twitter.com/hhgUWLZoOX", draw:"pic.twitter.com/IrGHachUw4"},
+  {win:"pic.twitter.com/XzUH660EV4", lose:"pic.twitter.com/tBxTa8CaaV", draw:"pic.twitter.com/gYQlw2u7d3"},
+  {win:"pic.twitter.com/jAolpLlClL", lose:"pic.twitter.com/kw0kb6T3Ja", draw:"pic.twitter.com/rVX8q8N7e9"},
+  {win:"pic.twitter.com/ArO51Mzw5N", lose:"pic.twitter.com/oxafvVFk35", draw:"pic.twitter.com/L6S18JBuDn"},
 ];
 
     function init() {   
