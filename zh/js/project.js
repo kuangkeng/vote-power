@@ -244,9 +244,9 @@ var twitterPics = [
       $('#resultHead').text(resultHeads[result]);
 
       var resultSummary = [
-          "你的选区和你的对手选区拥有相近的选民人数，每个选区只选出一位国会议员，这表示两个选区的选民拥有一样的选票“威力”，或者正式而言：选票比重。",
-          "你的选区比你的对手选区多出约" + voteWeight2 + "倍的选民人数，但既然每个选区只选出一位国会议员，这表示你对手选区内的一张票，其力量相等于你的" + voteWeight2 + "张选票。换言之，你的选票威力较弱。",
-          "你的对手选区比你的选区多出约" + voteWeight2 + "倍的选民人数，但既然每个选区只选出一位国会议员，这表示你的一张票，等于你的对手选区内的" + voteWeight2 + "张选票。换言之，你的选票威力更大。",
+          "你的选区和你的对手选区拥有相近的选民人数，每个选区只选出一位国会议员，这表示两个选区的选民拥有一样的选票实力，或者正式而言：选票比重。",
+          "你的选区比你的对手选区多出约" + voteWeight2 + "倍的选民人数，但既然每个选区只选出一位国会议员，这表示你对手选区内的一张票，其力量相等于你的" + voteWeight2 + "张选票。换言之，你的选票实力较弱。",
+          "你的对手选区比你的选区多出约" + voteWeight2 + "倍的选民人数，但既然每个选区只选出一位国会议员，这表示你的一张票，等于你的对手选区内的" + voteWeight2 + "张选票。换言之，你的选票实力更大。",
       ];
 
       $('#result01').text(resultSummary[result]);
@@ -304,7 +304,7 @@ var twitterPics = [
           },false);
           var win_num = dataset_opp_win.length;
           // console.log("win_num " + opponents[count].seat + " = " + win_num);
-          $("#" + (count+1) + " .uk-label").text(win_num + " WINS");
+          $("#" + (count+1) + " .uk-label").text(win_num + " 胜");
         }
       }
     }
