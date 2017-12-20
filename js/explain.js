@@ -184,10 +184,8 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
           $('.trigger').eq(item.index).animate({opacity:1},500);
           //fire the animation on text after the text boxes have fully fade in
           setTimeout(function(){
-            $('.trigger').eq(item.index).children('.background').addClass("changeBackground");
-            $('.trigger').eq(item.index).children('.font').addClass("changeFont");
-            $('.trigger').eq(item.index).children('.font3').addClass("changeFont3");
-            setTimeout(function(){$('.trigger').eq(item.index).children('.font2').addClass("changeFont2");},1000);
+            $('.trigger').eq(item.index).children('.background, .backgroundBN, .backgroundOPP').addClass("changeBackground");
+            $('.trigger').eq(item.index).children('.font, .fontBN, .fontOPP').addClass("changeFont");
           }, 500);
 
           //when reverse scroll text boxes that don't fire chart animation, need to minus the step value

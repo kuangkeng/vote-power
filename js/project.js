@@ -33,7 +33,7 @@ var selectedData,
 
 var resultHeads = [
     "Why a Tie?",
-    "Why You Lost",
+    "How You Lost",
     "How You Won",
 ];
 
@@ -47,6 +47,15 @@ var result_shares = [
   "Gosh, that was a tough battle! Can you do better?",
   "That's not even a fair fight! Revenge me!",
   "Yes!!! I am victorious. Who's next?!"
+];
+
+var twitterPics = [
+  {win:"pic.twitter.com/434UYJ2rOB", lose:"pic.twitter.com/nKTMh1Ntec", draw:"pic.twitter.com/P3tyIGsZwY"},
+  {win:"pic.twitter.com/m0yb3dpIBT", lose:"pic.twitter.com/JgbsKeec6P", draw:"pic.twitter.com/2GQhiIsome"},
+  {win:"pic.twitter.com/aYLFR9QHCT", lose:"pic.twitter.com/pshIGNZZq9", draw:"pic.twitter.com/QtjTCTHtlz"},
+  {win:"pic.twitter.com/GGMGRuSkow", lose:"pic.twitter.com/GvUaKLNVB2", draw:"pic.twitter.com/xicERUHegt"},
+  {win:"pic.twitter.com/0J3XWtmRCi", lose:"pic.twitter.com/rL95s4JT7Q", draw:"pic.twitter.com/cTmqDwRE1w"},
+  {win:"pic.twitter.com/cFBTLkz4zS", lose:"pic.twitter.com/0fJcNJq4mh", draw:"pic.twitter.com/jhm0HTDzqi"},
 ];
 
     function init() {   
@@ -329,10 +338,11 @@ FB.ui({
 }
 
 function tweet() {
+  var tweet_pic = twitterPics[idOpp-1][result_text];
   var tweet_url = 'https://twitter.com/intent/tweet?related=malaysiakini&text=';
   tweet_url += encodeURIComponent(result_shares[result]);
-  tweet_url += '&url=http://bit.ly/2AULhxD&via=malaysiakini';
-  tweet_url += ' pic.twitter.com/u9wrwPxLQ8';
+  tweet_url += '&url=http://bit.ly/2AULhxD&via=malaysiakini ';
+  tweet_url += tweet_pic;
   window.open(tweet_url,'_blank');
 }
 

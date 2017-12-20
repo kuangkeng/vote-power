@@ -85,7 +85,7 @@
 .trigger {
   opacity:0.1;
   width:60%;
-  margin-left:40%;
+  margin-left:42%;
   margin-bottom: 500px;
   text-align:left;
 }
@@ -116,9 +116,31 @@
 .background {
   display: inline-block;
   padding:0px 5px;
-  background: #e54e42;
+  background: #f06625;
   /* Old browsers */
-  background: linear-gradient(to left, transparent 50%, #E01518 50%);
+  background: linear-gradient(to left, transparent 50%, #f06625 50%);
+  background-size: 200% 100%;
+  background-position:right bottom;
+  transition: all 2s ease;
+}
+
+.backgroundBN {
+  display: inline-block;
+  padding:0px 5px;
+  background: #000099;
+  /* Old browsers */
+  background: linear-gradient(to left, transparent 50%, #000099 50%);
+  background-size: 200% 100%;
+  background-position:right bottom;
+  transition: all 2s ease;
+}
+
+.backgroundOPP {
+  display: inline-block;
+  padding:0px 5px;
+  background: #FF0000;
+  /* Old browsers */
+  background: linear-gradient(to left, transparent 50%, #FF0000 50%);
   background-size: 200% 100%;
   background-position:right bottom;
   transition: all 2s ease;
@@ -129,13 +151,32 @@
   background-position:left bottom;
 }
 
-.font, .font2, .font3 {
-  display: inline-block;
+.font {
   color: #333;
   text-decoration: none;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, #E01518, #E01518 50%, #333 50%);
+  background-image: linear-gradient(to right, #f06625, #f06625 50%, #333 50%);
+  background-size: 200% 100%;
+  background-position: 100%;
+}
+
+.fontBN {
+  color: #333;
+  text-decoration: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #000099, #000099 50%, #333 50%);
+  background-size: 200% 100%;
+  background-position: 100%;
+}
+
+.fontOPP {
+  color: #333;
+  text-decoration: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #FF0000, #FF0000 50%, #333 50%);
   background-size: 200% 100%;
   background-position: 100%;
 }
@@ -143,18 +184,4 @@
 .changeFont {
   transition: all 2s ease;
   background-position: 0%;
-}
-
-.changeFont2 {
-  transition: all 1s ease-out;
-  background-position: 0%;
-}
-
-.changeFont3 {
-  transition: all 1s ease-in;
-  background-position: 0%;
-}
-
-.noBreak {
-  display: inline-block;
 }
