@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#333333" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title>为什么马来西亚的选票不是平等的？</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.34/css/uikit.min.css">
+		<link rel="stylesheet" type="text/css" href="https://pages.malaysiakini.com/undipower/css/project.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+    	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.0/css/responsive.dataTables.min.css">
+		<style>
+			p{font-size:20px;}
+			.text-wrapper{font-size:20px!important;}
+			table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before,table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
+			  background-color:#d34127;
+			  border:0px;
+			  top:50%;
+			  margin-top:-6px;
+			  box-shadow:0 0 0;
+			}
+			.nowrap {white-space: nowrap;}
+		</style>
+	</head>
+	<body>
+		<section class="uk-visible@s uk-text-center" style="background:rgba(255,255,255,0.8);position:fixed;bottom:15px;left:15px;z-index:1;width:120px;border:1px solid rgba(0,0,0,0.1);border-radius:10px;padding:10px;">
+			<div>
+				<a href="https://pages.malaysiakini.com/undipower/zh"><img src="https://pages.malaysiakini.com/undipower/img/avatar_me_480x480.png" width="240" height="240" alt=""></a>
+			</div>
+			<div>
+				<a href="https://pages.malaysiakini.com/undipower/zh" class="uk-button uk-button-text">进行游戏</a>
+			</div>
+		</section>
+		
+		<section class="uk-hidden@s uk-section uk-section-default">
+			<div class="uk-container uk-container-small" style="max-width:620px">
+				<a href="https://pages.malaysiakini.com/undipower/zh" class="uk-button uk-button-text"><span uk-icon="icon:play-circle;ratio:2" class="uk-margin-small-right"></span>进行游戏</a>
+			</div>
+		</section>
+		
+		<section class="uk-section uk-section-default">
+			<div class="uk-container uk-container-small uk-margin-large-bottom" style="max-width:620px">
+				<h1 class="uk-article-title" style="font-size:50px;font-weight:900;">为什么马来西亚的选票不是平等的？</h1>
+				<p class="uk-article-meta uk-margin-bottom" style="font-size:18px">郭史光庆与《当今大马》联合制作，2017年12月xx日</p>
+				<p class="uk-text-lead uk-margin-large-bottom">“一人一票”是确保一个民主社会拥有平等政治权利的主要原则。简单来说，就是每一位公民在投票的时候都拥有一样的权力。</p>
+				<p>对很多人来说，这个原则听起来理所当然，但是许多政治制度，包括马来西亚的选举制度，都严重破坏了这项原则。</p>
+				<p>众所周知，在大马，每个选民只能投下一张选票，选出一位国会议员在国会里代表他们。但在目前的选举制度下，不是每一张选票都拥有相等的政治影响力。</p>
+				<p>举例说，在选民人数较少的选区，例如布城，该选区的17,925名选民投票选出一位国会议员，而在选民拥挤的选区，例如梳邦，该选区的130,211名选民，也就是布城的7倍，同样选出一名国会议员。</p>
+				<div class="uk-margin">
+					<img src="https://pages.malaysiakini.com/undipower/img/vote-power-infograhics.png" class="img-responsive" style="border:1px solid #D3D3D3;">
+				</div>
+				<p>换句话说，布城的一张选票所拥有的权力，等于梳邦的7张选票。梳邦选民在国会的代表性被缩小了，布城选民的代表性则被放大了。这个偏差被称为选区划分偏差（malapportionment），违反了一人一票的原则。</p>
+				<div class="uk-margin-large-bottom">
+					<img src="https://pages.malaysiakini.com/undipower/img/vote-power-infograhics-2.png" class="img-responsive" style="border:1px solid #D3D3D3;">
+				</div>
+				<p>让我们来看看，选区划分偏差如何影响2013年全国大选的结果。</p>
+			</div>
+		</section>
+		
+		<!-- Scroller content starts here -->
+		<section class="wrapper scroller-wrapper">
+			<div class="text-wrapper">
+								<div class="trigger" data-step="none" data-marker="0">
+					马来西亚共有<strong class="background">222</strong>国会选区，每条横线代表一个选区。
+				</div>
+				<div class="trigger" data-step="1" data-marker="1">
+					横线长度代表该选区的选民人数。
+				</div>
+				<div class="trigger" data-step="2" data-marker="2">
+					单一选区的选民人数介于最小的<strong class="background">17,925</strong>（布城）至最大的<strong class="background">146,625</strong>（雪州加埔）之间，单一选区的全国平均选民人数是<strong class="background">61,103。</strong>
+				</div>
+				<div class="trigger" data-step="3" data-marker="3">
+					<strong class="fontBN">国阵</strong>赢得了大多数<strong class="fontBN">选民人数较少</strong>的选区，国阵选区的单一选区平均选民人数是<div class="backgroundBN">48,273。</div>
+				</div>	 
+				<div class="trigger" data-step="4" data-marker="4">
+					其他选区则由<strong class="fontOPP">在野党</strong>胜出，在野党选区的单一选区平均选民人数是<strong class="backgroundOPP">79,921。</strong>
+				</div>	
+				<div class="trigger" data-step="5" data-marker="5">
+					若我们只看<strong class="font">乡区选区</strong>，在野党和国阵之间选区平均人数差距<strong class="font">依然巨大</strong>。
+				</div>	
+				<div class="trigger" data-step="6" data-marker="5">
+					若从<strong class="font">城市选区</strong>来看的话，差别就<strong class="font">更大</strong>了。
+				</div> 
+				<div class="trigger" data-step="7" data-marker="5">
+					这就是为什么国阵在2013年全国大选中只靠<strong class="background">47%</strong>的总选票就能赢得<strong class="background">60%</strong>的选区，而在野党则联盟虽然获得<strong class="background">51%</strong>的总选票，但是只赢得<strong class="background">40%</strong>的选区。
+				</div>						
+			</div>
+			<div class="chart-wrapper">
+				<div id="instruct">移动鼠标或点击每条横线查看有关选区的详细资料。</div>
+				<div id="chart-container"></div>
+				<div id="errorBox"><p>请更新此网页以观看动画图表。</p></div>
+			</div> 
+		</section>
+		<!-- Scroller content ends here -->
+		
+		<section class="uk-section uk-section-default">
+			<div class="uk-container uk-container-small" style="max-width:620px">
+				<p>根据2016年第一季的选民册，选民人数最多的国会选区是雪州的加埔（146,625人），是人数最少的选区——布城（17,925人）的8倍。</p>
+
+				<h2>如果我们把情况推到最极端，一个政党只需赢得17%的总选票就能执政中央政府。</h2>
+
+				<p>其详情如下：所有222个国会选区当中，它靠赢得112个选民人数较少的选区，进而取得执政权，而且它在每个胜出的选区只有1张的多数票，并在其余选民人数较多的110个选区里完全没有赢得任何选票。如此一来，这个政党只需凭17%的总选票就能执政中央政府。</p>
+
+				<p>你可能会问，难道就没有法律禁止这种违反政治权力平等原则的做法吗？这样的法律以前曾存在过，但是后来国会把它给废除了。</p>
+
+				<p>1957年联邦宪法阐明，最小跟最大国会选区选民人数是有具体限额的，即不得超过全国单一国会选区平均选民人数的15%，举例来说，若全国平均值是10,000人，则最大的选区人数就不能超过11,500人；而最小的选区人数最不能少于8500人。</p>
+
+				<p>这个限额在1962年修宪时提高至33.33%，之后在1973年的另一次修宪时，国会更干脆把限额废除，让选委会得以随心所欲地重划选区。</p>
+
+				<p>那我们可以做什么？你可以选择搬到人数较少的选区如布城，在那里投票来提升你的投票影响力，或者支持选举改革运动，例如净选盟。</p>
+
+				<p>更重要的是，马上注册成为选民，否则你完全没有投票权可言。</p>
+				<div class="uk-margin-large-top" style="max-width:620px">
+					<hr style="width:50px;border-width:5px;border-color:#333;">
+					<p class="uk-text-small">注：所有国会选区的选民人数源自选委会所公布的2016年第一季选民册。国会选区的城市、半城乡和乡区组别划分，是根据研究机构Politweet.org所发表的研究报告，因为选委会没有对选区进行这类的分组。<a href="https://politweet.wordpress.com/about/" target="_blank">点击阅读研究方法</a>。</p>
+				</div>
+			</div>
+			<div class="uk-container uk-container-small uk-text-center">
+				<p class="uk-text-large" style="line-height:1em;">分享</p>
+				<div class="addthis_inline_share_toolbox" style="text-align:center"></div>
+			</div>
+			<div class="uk-container uk-container-small uk-margin-large-top" style="max-width:620px">
+			  	<div class="uk-text-large">国会选区资料</div>    
+			  	<div class="seatTable uk-text-small">
+			    	<table id="table01" class="hover stripe row-border">
+			      		<thead>
+			        		<tr>
+			          			<td class="code" id="code_head">Code</td>
+			          			<td class="seat" id="seat_head">Seat</td>
+			          			<td class="voter" id="voter_head">Voters</td>
+			          			<td class="party" id="party_head">Party</td>
+			          			<td class="rep" id="rep_head">MP</td>
+			          			<td class="state" id="state_head">State</td>
+			          			<td class="class" id="class_head">Class</td>
+			        		</tr>
+			      		</thead>
+			    	</table>
+			  </div>	
+			</div>
+		</section>		
+		<section class="uk-hidden@s uk-section uk-section-secondary uk-text-center">
+			<a href="https://pages.malaysiakini.com/undipower/zh" class="uk-button uk-button-text"><span uk-icon="icon:play-circle;ratio:2" class="uk-margin-small-right"></span>进行游戏</a>
+		</section>
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.34/js/uikit.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.34/js/uikit-icons.min.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://pages.malaysiakini.com/undipower/library/scrollstory/jquery.scrollstory.js"></script>
+		<!-- load counties list from a separate js file -->
+		<script src="https://pages.malaysiakini.com/undipower/js/data.js"></script>
+		<script src="js/explain.js"></script>
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0bc2fb3a12b579"></script> 
+		<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    	<script src="https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js"></script>
+	</body>
+ </html>
