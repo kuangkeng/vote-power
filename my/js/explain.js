@@ -869,7 +869,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                 tickColor: '#ffffff',
             },
             yAxis: { 
-                title: {text: 'bilangan pengundi'},
+                title: {text: 'Bilangan pengundi'},
                 min: 0,
                 max:150000,      
             },

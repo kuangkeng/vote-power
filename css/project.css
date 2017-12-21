@@ -152,31 +152,31 @@
 }
 
 .font {
-  color: #333;
+  color: #666;
   text-decoration: none;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, #f06625, #f06625 50%, #333 50%);
+  background-image: linear-gradient(to right, #f06625, #f06625 50%, #666 50%);
   background-size: 200% 100%;
   background-position: 100%;
 }
 
 .fontBN {
-  color: #333;
+  color: #666;
   text-decoration: none;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, #000099, #000099 50%, #333 50%);
+  background-image: linear-gradient(to right, #000099, #000099 50%, #666 50%);
   background-size: 200% 100%;
   background-position: 100%;
 }
 
 .fontOPP {
-  color: #333;
+  color: #666;
   text-decoration: none;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, #FF0000, #FF0000 50%, #333 50%);
+  background-image: linear-gradient(to right, #FF0000, #FF0000 50%, #666 50%);
   background-size: 200% 100%;
   background-position: 100%;
 }

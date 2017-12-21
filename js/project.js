@@ -134,7 +134,6 @@ var twitterPics = [
 
     //Function to open index2.html and pass on the seats selected
     function openExplain(){
-      var url = "explain.html?seat=" + selectedKod + "&opp=" + oppKod;
       //to fix the issue of Safari on iOS can't open a new window in a new tab
       if($(window).width()<500){
         var win = window.open(url, '_self');  
@@ -333,7 +332,7 @@ $(document).ready(function(){
 function facebook() {
 FB.ui({
   method: 'share',
-  href: 'https://pages.malaysiakini.com/undipower/VotePowerResult.php?result_share=' + result_shares[result] + '&result=' + result_text + '&opp=' + idOpp, 
+  href: 'https://pages.malaysiakini.com/votepower-kk-08/VotePowerResult.php?result_share=' + result_shares[result] + '&result=' + result_text + '&opp=' + idOpp, 
   }, function(response){});
 }
 
