@@ -303,7 +303,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       allowOverlap: true,
                       padding: 0,
                       color: '#7e7e7e',
-                      format: 'Langkawi<br>37,632选民',
+                      format: 'Langkawi<br>37,632 pengundi',
                       align: 'left',
                       zIndex: 10,
                       style: {fontSize: '12px'},
@@ -316,7 +316,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       allowOverlap: true,
                       padding: 0,
                       color: '#7e7e7e',
-                      format: 'Bukit Bintang<br>52,753选民',
+                      format: 'Bukit Bintang<br>52,753 pengundi',
                       align: 'left',
                       zIndex: 10,
                       style: {fontSize: '12px'},
@@ -329,7 +329,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       allowOverlap: true,
                       padding: 0,
                       color: '#7e7e7e',
-                      format: 'Bandar Kuching<br>81,037选民',
+                      format: 'Bandar Kuching<br>81,037 pengundi',
                       align: 'left',
                       zIndex: 10,
                       style: {fontSize: '12px'},
@@ -344,7 +344,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       allowOverlap: true,
                       padding: 0,
                       color: '#7e7e7e',
-                      format: 'Putrajaya<br>17,925选民',
+                      format: 'Putrajaya<br>17,925 pengundi',
                       align: 'left',
                       zIndex: 10,
                       style: {fontSize: '12px'},
@@ -357,7 +357,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       allowOverlap: true,
                       padding: 0,
                       color: '#7e7e7e',
-                      format: 'Kapar<br>146,625选民',
+                      format: 'Kapar<br>146,625 pengundi',
                       align: 'left',
                       zIndex: 10,
                       style: {fontSize: '12px'},
@@ -370,7 +370,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                     width: 2,
                     zIndex: 9,
                     label: {
-                      text: '全国平均<br>61,103',
+                      text: 'Purata<br>kebangsaan<br>61,103',
                       align: 'left',
                       rotation: 0,
                       style: {
@@ -412,7 +412,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                   width: 2,
                   zIndex: 9,
                   label: {
-                    text: '国阵平均值<br>48,273',
+                    text: 'Purata BN<br>48,273',
                     align: 'left',
                     rotation: 0,
                     style: {
@@ -432,7 +432,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                   width: 2,
                   zIndex: 9,
                   label: {
-                    text: '在野党平均值<br>79,921',
+                    text: 'Purata<br>pembangkang<br>79,921',
                     align: 'left',
                     rotation: 0,
                     style: {
@@ -496,7 +496,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                     width: 2,
                     zIndex: 9,
                     label: {
-                      text: '全国平均<br>61,103',
+                      text: 'Purata<br>kebangsaan<br>61,103',
                       align: 'left',
                       rotation: 0,
                       style: {
@@ -513,7 +513,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       allowOverlap: true,
                       padding: 0,
                       color: '#7e7e7e',
-                      format: 'Langkawi<br>37,632选民',
+                      format: 'Langkawi<br>37,632 pengundi',
                       align: 'left',
                       zIndex: 10,
                       style: {fontSize: '12px'},
@@ -526,7 +526,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       allowOverlap: true,
                       padding: 0,
                       color: '#7e7e7e',
-                      format: 'Bukit Bintang<br>52,753选民',
+                      format: 'Bukit Bintang<br>52,753 pengundi',
                       align: 'left',
                       zIndex: 10,
                       style: {fontSize: '12px'},
@@ -539,7 +539,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       allowOverlap: true,
                       padding: 0,
                       color: '#7e7e7e',
-                      format: 'Bandar Kuching<br>81,037选民',
+                      format: 'Bandar Kuching<br>81,037 pengundi',
                       align: 'left',
                       zIndex: 10,
                       style: {fontSize: '12px'},
@@ -552,7 +552,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       allowOverlap: true,
                       padding: 0,
                       color: '#7e7e7e',
-                      format: 'Putrajaya<br>17,925选民',
+                      format: 'Putrajaya<br>17,925 pengundi',
                       align: 'left',
                       zIndex: 10,
                       style: {fontSize: '12px'},
@@ -565,7 +565,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       allowOverlap: true,
                       padding: 0,
                       color: '#7e7e7e',
-                      format: 'Kapar<br>146,625选民',
+                      format: 'Kapar<br>146,625 pengundi',
                       align: 'left',
                       zIndex: 10,
                       style: {fontSize: '12px'},
@@ -605,7 +605,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       allowOverlap: true,
                       padding: 0,
                       color: '#7e7e7e',
-                      format: '你的选区:<br>' + selectedSeat + '<br>' + addThousandSeparator(selectedVoter) + '选民',
+                      format: 'Kerusi anda:<br>' + selectedSeat + '<br>' + addThousandSeparator(selectedVoter) + ' pengundi',
                       align: 'left',
                       zIndex: 10,
                       style: {fontSize: '12px'},
@@ -623,7 +623,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       allowOverlap: true,
                       padding: 0,
                       color: '#7e7e7e',
-                      format: "对手选区:<br>" + oppSeat + "<br>" + addThousandSeparator(oppVoter) + "选民",
+                      format: "Kerusi lawan:<br>" + oppSeat + "<br>" + addThousandSeparator(oppVoter) + " pengundi",
                       align: 'left',
                       zIndex: 10,
                       style: {fontSize: '12px'},
@@ -636,7 +636,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                     width: 2,
                     zIndex: 9,
                     label: {
-                      text: '全国平均<br>61,103',
+                      text: 'Purata<br>kebangsaan<br>61,103',
                       align: 'left',
                       rotation: 0,
                       style: {
@@ -676,7 +676,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                   width: 2,
                   zIndex: 9,
                   label: {
-                    text: '国阵平均值<br>48,273',
+                    text: 'Purata BN<br>48,273',
                     align: 'left',
                     rotation: 0,
                     style: {
@@ -702,7 +702,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                   width: 2,
                   zIndex: 9,
                   label: {
-                    text: '在野党平均值<br>79,921',
+                    text: 'Purata<br>pembangkang<br>79,921',
                     align: 'left',
                     rotation: 0,
                     style: {
@@ -728,7 +728,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       allowOverlap: true,
                       padding: 0,
                       color: '#7e7e7e',
-                      format: '你的选区',
+                      format: 'Kerusi anda',
                       align: 'left',
                       zIndex: 10,
                       style: {fontSize: '12px'},
@@ -741,7 +741,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       allowOverlap: true,
                       padding: 0,
                       color: '#7e7e7e',
-                      format: '对手选区',
+                      format: 'Kerusi lawan',
                       align: 'left',
                       zIndex: 10,
                       style: {fontSize: '12px'},
@@ -769,7 +769,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       allowOverlap: true,
                       padding: 0,
                       color: '#7e7e7e',
-                      format: '你的选区：<br>' + selectedSeat + '<br>' + addThousandSeparator(selectedVoter) + '选民',
+                      format: 'Kerusi anda:<br>' + selectedSeat + '<br>' + addThousandSeparator(selectedVoter) + ' pengundi',
                       align: 'left',
                       zIndex: 10,
                       style: {fontSize: '12px'},
@@ -793,7 +793,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                     width: 2,
                     zIndex: 9,
                     label: {
-                      text: '全国平均<br>61,103',
+                      text: 'Purata<br>kebangsaan<br>61,103',
                       align: 'left',
                       rotation: 0,
                       style: {
@@ -810,7 +810,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       allowOverlap: true,
                       padding: 0,
                       color: '#7e7e7e',
-                      format: "对手选区：<br>" + oppSeat + "<br>" + addThousandSeparator(oppVoter) + "选民",
+                      format: "Kerusi lawan:<br>" + oppSeat + "<br>" + addThousandSeparator(oppVoter) + " pengundi",
                       align: 'left',
                       zIndex: 10,
                       style: {fontSize: '12px'},
@@ -869,7 +869,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                 tickColor: '#ffffff',
             },
             yAxis: { 
-                title: {text: '选民人数'},
+                title: {text: 'bilangan pengundi'},
                 min: 0,
                 max:150000,      
             },
@@ -877,7 +877,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
             legend: {enabled: false},
             tooltip: {
                 headerFormat:'',
-                pointFormat: '<b>{point.seat}</b><br><b>{point.y:,0f}</b>选民<br>{point.name}, {point.party}',
+                pointFormat: '<b>{point.seat}</b><br><b>{point.y:,0f}</b> pengundi<br>{point.name}, {point.party}',
             },
             plotOptions: {
                 series: {

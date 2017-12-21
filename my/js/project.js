@@ -32,21 +32,21 @@ var selectedData,
     result_share;
 
 var resultHeads = [
-    "为什么平手?",
-    "为什么你输了？",
-    "为什么你胜了？",
+    "Mengapa seri?",
+    "Mengapa anda kalah?",
+    "Mengapa anda menang?",
 ];
 
 var btnTexts = [
-  "为什么平手？",
-  "为什么我输了？",
-  "为什么我胜了？",
+  "Kenapa seri?",
+  "Kenapa kalah?",
+  "Kenapa menang?",
 ];
 
 var result_shares = [
-  "实在是一场苦战！你能做得更好吗？",
-  "这根本不公平！替我报复！",
-  "是！我胜利了。下一个对手是谁？"
+  "Tu dia! Pertempuran yang sukar! Boleh tak buat lagi bagus?",
+  "Ini tak adilkan? Balas dendam kat saya!",
+  "Yay! Saya menang. Siapa seterusnya weh?"
 ];
 
 var twitterPics = [
@@ -195,7 +195,7 @@ var twitterPics = [
         result = 0;
         result_text = "draw";
         voteWeight2 = 1;
-        $("#btnExplain").text("我要知道更多");
+        $("#btnExplain").text("Beritahu saya lagi");
       }
       // console.log("result = " + result);
       // console.log("voteWeight = " + voteWeight);
@@ -243,10 +243,13 @@ var twitterPics = [
       $('#btnWhy').text(btnTexts[result]);
       $('#resultHead').text(resultHeads[result]);
 
+
+
+
       var resultSummary = [
-          "你的选区和对手选区拥有相近的选民人数，每个选区只选出一位国会议员，这表示两个选区的选民拥有一样的选票实力，或者正式而言：选票比重。",
-          "你的选区比对手选区多出约" + voteWeight2 + "倍的选民人数，但既然每个选区只选出一位国会议员，这表示对手选区内的一张票，其力量相等于你的" + voteWeight2 + "张选票。换言之，你的选票实力较弱。",
-          "对手选区比你的选区多出约" + voteWeight2 + "倍的选民人数，但既然每个选区只选出一位国会议员，这表示你的一张票，等于对手选区内的" + voteWeight2 + "张选票。换言之，你的选票实力更大。",
+          "Kerusi anda mempunyai jumlah pengundi yang hampir sama berbanding kerusi lawan anda. Hanya satu ahli parlimen dipilih untuk setiap kerusi. Ini bermakna undi di kedua-dua kerusi setanding.",
+          "Kerusi anda " + voteWeight2 + " kali lebih banyak pengundi berbanding kerusi lawan anda tapi hanya satu ahli parlimen dipilih bagi setiap kerusi. Ini bermakna satu undi di kerusi lawan anda setanding dengan " + voteWeight2 + " undi anda",
+          "Kerusi lawan anda " + voteWeight2 + " kali lebih banyak pengundi berbanding kerusi anda tapi hanya satu ahli parlimen dipilih untuk setiap kerusi. Ini bermakna satu undi anda setanding " + voteWeight2 + " undi di kerusi lawan anda.",
       ];
 
       $('#result01').text(resultSummary[result]);
@@ -254,26 +257,26 @@ var twitterPics = [
       if(result == 2 || result == 0){
         //user avatar put on left, opp on right
         $('#leftSeat').text(selectedKod + " " + selectedSeat);
-        $('#leftVoter').text(addThousandSeparator(selectedVoter) + "位选民");
+        $('#leftVoter').text(addThousandSeparator(selectedVoter) + " pengundi");
         $('#leftName').text(selectedName);
         $('#leftParty').text(selectedParty);
         $('#rightSeat').text(oppKod + " " + oppSeat);
-        $('#rightVoter').text(addThousandSeparator(oppVoter) + "位选民");
+        $('#rightVoter').text(addThousandSeparator(oppVoter) + " pengundi");
         $('#rightName').text(oppName);
         $('#rightParty').text(oppParty);
-        $('#voteTextLeft').text("你的选区是");
-        $('#voteTextRight').text("对手选区是");
+        $('#voteTextLeft').text("Kerusi anda ialah ");
+        $('#voteTextRight').text("Kerusi lawan anda ialah ");
       } else {
         $('#leftSeat').text(oppKod + " " + oppSeat);
-        $('#leftVoter').text(addThousandSeparator(oppVoter) + "位选民");
+        $('#leftVoter').text(addThousandSeparator(oppVoter) + " pengundi");
         $('#leftName').text(oppName);
         $('#leftParty').text(oppParty);
         $('#rightSeat').text(selectedKod + " " + selectedSeat);
-        $('#rightVoter').text(addThousandSeparator(selectedVoter) + "位选民");
+        $('#rightVoter').text(addThousandSeparator(selectedVoter) + " pengundi");
         $('#rightName').text(selectedName);
         $('#rightParty').text(selectedParty);
-        $('#voteTextLeft').text("对手选区是");
-        $('#voteTextRight').text("你的选区是");
+        $('#voteTextLeft').text("Kerusi lawan anda ialah ");
+        $('#voteTextRight').text("Kerusi anda ialah ");
       }
     }
 
@@ -304,7 +307,7 @@ var twitterPics = [
           },false);
           var win_num = dataset_opp_win.length;
           // console.log("win_num " + opponents[count].seat + " = " + win_num);
-          $("#" + (count+1) + " .uk-label").text(win_num + " 胜");
+          $("#" + (count+1) + " .uk-label").text(win_num + " kemenangan");
         }
       }
     }
