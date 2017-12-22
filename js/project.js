@@ -231,7 +231,9 @@ var twitterPics = [
       $(".voteHead").css({"max-width":voteHeadWidth, "display":"inline-block"});  
       //align to left if the number of avatar is more than 1
       if(maxVote == 1){}
-        else {$("#loserVote").css({"text-align":"left"});}
+        else {
+          $("#loserVote").css({"text-align":"left"});
+        }
       $("#leftVoteHead").attr("src", voteHeadLeftUrl);
       //flip the left avatar so it is facing right
       if(result == 1){$("#leftVoteHead").addClass("flipImg");}
