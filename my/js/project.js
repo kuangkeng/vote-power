@@ -361,6 +361,7 @@ function sendData() {
           "entry.1987551221": result_text,
           "entry.1639422024": json.ip,
           "entry.1860643513": document.referrer,
+          "entry.1122129992": "MY",
         }
       }); 
     }

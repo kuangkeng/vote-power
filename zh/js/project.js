@@ -339,9 +339,9 @@ FB.ui({
 
 function tweet() {
   var tweet_pic = twitterPics[idOpp-1][result_text];
-  var tweet_url = 'https://twitter.com/intent/tweet?related=malaysiakini&text=';
+  var tweet_url = 'https://twitter.com/intent/tweet?related=mkini_cn&text=';
   tweet_url += encodeURIComponent(result_shares[result]);
-  tweet_url += '&url=http://bit.ly/2AULhxD&via=malaysiakini ';
+  tweet_url += '&url=http://bit.ly/2AULhxD&via=mkini_cn ';
   tweet_url += tweet_pic;
   window.open(tweet_url,'_blank');
 }
@@ -358,6 +358,7 @@ function sendData() {
           "entry.1987551221": result_text,
           "entry.1639422024": json.ip,
           "entry.1860643513": document.referrer,
+          "entry.1122129992": "ZH",
         }
       }); 
     }
