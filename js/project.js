@@ -246,9 +246,9 @@ var twitterPics = [
       $('#resultHead').text(resultHeads[result]);
 
       var resultSummary = [
-          "Your seat has a similar number of voters compared to your opponent's seat. Only one Member of Parliament is elected for each seat. It means votes in both seats carry the same weight.",
-          "Your seat has about " + voteWeight2 + " times more voters than your opponent's seat, but only one Member of Parliament is elected for each seat. It means one vote in your opponent's seat carries the same weight as " + voteWeight2 + " of your votes.",
-          "Your opponent's seat has about " + voteWeight2 + " times more voters than your seat, but only one Member of Parliament is elected for each seat. It means your single vote carries the same weight as " + voteWeight2 + " votes in your opponent's seat.",
+          "Your seat has a similar number of voters compared to your opponent's seat. Only one Member of Parliament is elected for each seat. <strong>It means votes in both seats carry the same weight.</strong>",
+          "Your seat has about " + voteWeight2 + " times more voters than your opponent's seat, but only one Member of Parliament is elected for each seat. <strong>It means one vote in your opponent's seat carries the same weight as " + voteWeight2 + " of your votes.</strong>",
+          "Your opponent's seat has about " + voteWeight2 + " times more voters than your seat, but only one Member of Parliament is elected for each seat. <strong>It means your single vote carries the same weight as " + voteWeight2 + " votes in your opponent's seat.</strong>",
       ];
       
       $('#result01').text(resultSummary[result]);

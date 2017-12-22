@@ -247,9 +247,9 @@ var twitterPics = [
 
 
       var resultSummary = [
-          "Kerusi anda mempunyai jumlah pengundi yang hampir sama berbanding kerusi lawan anda. Hanya satu ahli parlimen dipilih untuk setiap kerusi. Ini bermakna undi di kedua-dua kerusi setanding.",
-          "Kerusi anda " + voteWeight2 + " kali lebih banyak pengundi berbanding kerusi lawan anda tapi hanya satu ahli parlimen dipilih bagi setiap kerusi. Ini bermakna satu undi di kerusi lawan anda setanding dengan " + voteWeight2 + " undi anda",
-          "Kerusi lawan anda " + voteWeight2 + " kali lebih banyak pengundi berbanding kerusi anda tapi hanya satu ahli parlimen dipilih untuk setiap kerusi. Ini bermakna satu undi anda setanding " + voteWeight2 + " undi di kerusi lawan anda.",
+          "Kerusi anda mempunyai jumlah pengundi yang hampir sama berbanding kerusi lawan anda. Hanya satu ahli parlimen dipilih untuk setiap kerusi. <strong>Ini bermakna undi di kedua-dua kerusi setanding.</strong>",
+          "Kerusi anda " + voteWeight2 + " kali lebih banyak pengundi berbanding kerusi lawan anda tapi hanya satu ahli parlimen dipilih bagi setiap kerusi. <strong>Ini bermakna satu undi di kerusi lawan anda setanding dengan " + voteWeight2 + " undi anda.</strong>",
+          "Kerusi lawan anda " + voteWeight2 + " kali lebih banyak pengundi berbanding kerusi anda tapi hanya satu ahli parlimen dipilih untuk setiap kerusi. <strong>Ini bermakna satu undi anda setanding " + voteWeight2 + " undi di kerusi lawan anda.</strong>",
       ];
 
       $('#result01').text(resultSummary[result]);
