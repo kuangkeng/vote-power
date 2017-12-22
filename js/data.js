@@ -1,10 +1,10 @@
 var averageBN = 48273,
     averageOPP = 79921,
     averageNat = 61103,
-    colorBN = "#000099",
-    colorOPP = "#FF0000",
-    colorUser = "#FFE100",
-    colorOpponent = "#00B358";
+    colorBN = "#304FFE",
+    colorOPP = "#ff1744",
+    colorUser = "#FFEA00",
+    colorOpponent = "#1DE9B6";
 
 var dataAll = [
     {kod:"P125", seat:"Putrajaya", name:"Tengku Adnan Tengku Mansor", party:"BN-UMNO", y:17925, color:colorBN, level:100, state:"Putrajaya", kelas:"Urban"},

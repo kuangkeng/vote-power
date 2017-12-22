@@ -931,9 +931,9 @@ function addTable(){
       ],
       "createdRow": function ( row, data, index ) {
         if ( data["party"].substr(0, 2) == "BN" ) {
-            $('td', row).eq(3).css('background-color','#e5e5f4');
+            $('td', row).eq(3).css('color:#fff;background-color','#304FFE');
         } else {
-            $('td', row).eq(3).css('background-color','#ffe5e5');
+            $('td', row).eq(3).css('color:#fff;background-color','#ff1744');
         }
       },
       responsive: true,

@@ -84,8 +84,8 @@
 
 .trigger {
   opacity:0.1;
-  width:60%;
-  margin-left:42%;
+  width:56%;
+  margin-left:44%;
   margin-bottom: 500px;
   text-align:left;
 }
@@ -116,9 +116,9 @@
 .background {
   display: inline-block;
   padding:0px 5px;
-  background: #f06625;
+  background: #212121;
   /* Old browsers */
-  background: linear-gradient(to left, transparent 50%, #f06625 50%);
+  background: linear-gradient(to left, transparent 50%, #212121 50%);
   background-size: 200% 100%;
   background-position:right bottom;
   transition: all 2s ease;
@@ -127,9 +127,9 @@
 .backgroundBN {
   display: inline-block;
   padding:0px 5px;
-  background: #000099;
+  background: #304FFE;
   /* Old browsers */
-  background: linear-gradient(to left, transparent 50%, #000099 50%);
+  background: linear-gradient(to left, transparent 50%, #304FFE 50%);
   background-size: 200% 100%;
   background-position:right bottom;
   transition: all 2s ease;
@@ -138,9 +138,9 @@
 .backgroundOPP {
   display: inline-block;
   padding:0px 5px;
-  background: #FF0000;
+  background: #ff1744;
   /* Old browsers */
-  background: linear-gradient(to left, transparent 50%, #FF0000 50%);
+  background: linear-gradient(to left, transparent 50%, #ff1744 50%);
   background-size: 200% 100%;
   background-position:right bottom;
   transition: all 2s ease;
@@ -156,7 +156,7 @@
   text-decoration: none;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, #f06625, #f06625 50%, #666 50%);
+  background-image: linear-gradient(to right, #000, #000 50%, #666 50%);
   background-size: 200% 100%;
   background-position: 100%;
 }
@@ -166,7 +166,7 @@
   text-decoration: none;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, #000099, #000099 50%, #666 50%);
+  background-image: linear-gradient(to right, #304FFE, #304FFE 50%, #666 50%);
   background-size: 200% 100%;
   background-position: 100%;
 }
@@ -176,7 +176,7 @@
   text-decoration: none;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, #FF0000, #FF0000 50%, #666 50%);
+  background-image: linear-gradient(to right, #ff1744, #ff1744 50%, #666 50%);
   background-size: 200% 100%;
   background-position: 100%;
 }

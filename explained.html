@@ -24,21 +24,28 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/css/uikit.min.css">
 		<link rel="stylesheet" type="text/css" href="css/project.css">
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
-    	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.0/css/responsive.dataTables.min.css">
+			<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.0/css/responsive.dataTables.min.css">
 		<style>
 			p{font-size:20px;}
 			.text-wrapper{font-size:20px!important;}
 			table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before,table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
-			  background-color:#d34127;
-			  border:0px;
-			  top:50%;
-			  margin-top:-6px;
-			  box-shadow:0 0 0;
+				background-color:#d34127;
+				border:0px;
+				top:50%;
+				margin-top:-6px;
+				box-shadow:0 0 0;
 			}
 			.nowrap {white-space: nowrap;}
+			.icon-man{opacity:0.7;margin-bottom:5px;width:12px!important;}
 		</style>
 	</head>
 	<body>
+		<section class="uk-visible@s" style="position:fixed;top:0;right:0;z-index:999;">
+			<a href="https://www.malaysiakini.com/"><img src="https://static01.malaysiakini.com/img/mk-app-icon.svg" width="80" height="80" alt="Malaysiakini"></a>
+		</section>
+		<section class="uk-hidden@s" style="position:absolute;top:81px;right:0;z-index:999;">
+			<a href="https://www.malaysiakini.com/"><img src="https://static01.malaysiakini.com/img/mk-app-icon.svg" width="80" height="80" alt="Malaysiakini"></a>
+		</section>
 		<section class="uk-visible@s uk-text-center" style="background:rgba(255,255,255,0.8);position:fixed;bottom:15px;left:15px;z-index:1;width:120px;border:1px solid rgba(0,0,0,0.1);border-radius:10px;padding:10px;">
 			<div>
 				<a href="https://pages.malaysiakini.com/undipower/"><img src="img/avatar_me_480x480.png" width="240" height="240" alt=""></a>
@@ -48,29 +55,248 @@
 			</div>
 		</section>
 		
-		<section class="uk-hidden@s uk-section uk-section-default">
+		<section class="uk-hidden@s uk-section uk-section-default" style="padding-top:20px;padding-bottom:20px;border-bottom:1px dashed #212121">
 			<div class="uk-container uk-container-small" style="max-width:620px">
-				<a href="https://pages.malaysiakini.com/undipower/" class="uk-button uk-button-text"><span uk-icon="icon:play-circle;ratio:2" class="uk-margin-small-right"></span>Play the game</a>
+				<a href="https://pages.malaysiakini.com/undipower/" class="uk-button uk-button-text"><span uk-icon="icon:play-circle;ratio:2" class="uk-margin-small-right" style="color:#00E676"></span>Have you played the game yet?</a>
 			</div>
 		</section>
 		
-		<section class="uk-section uk-section-default">
-			<div class="uk-container uk-container-small uk-margin-large-bottom" style="max-width:620px">
-				<h1 class="uk-article-title" style="font-size:50px;font-weight:900;">Why isn't every vote equal in Malaysia?</h1>
+		<section class="uk-section uk-section-default" style="background:#f5f5f5">
+			<div class="uk-container uk-container-small" style="max-width:620px">
+				<h1 class="uk-article-title" style="font-size:48px;font-weight:900;line-height:1em;">Why isn't every vote equal in Malaysia?</h1>
 				<p class="uk-article-meta uk-margin-bottom" style="font-size:18px">Created by Kuek Ser Kuang Keng &amp; Malaysiakini on 1 Dec 2017</p>
 				<p class="uk-text-lead uk-margin-large-bottom">“One person, one vote” is a key principle to ensure political equality in a democratic society. In layman's terms, it means every citizen has the same power when it comes to voting.</p>
 				<p>To many, it sounds pretty reasonable and intuitive but the implementation of this principle has been heavily manipulated in many political systems including Malaysia's.</p>
 				<p>We know that each Malaysian voter can only cast one vote to elect one Member of Parliament (MP) to represent him or her in Parliament. However, not every vote carries the same weight under the current electoral system.</p>
 				<p>For example, in a thinly-populated constituency like <i>Putrajaya</i>, the 17,925 voters there elect one MP, while in a overcrowded constituency like <i>Subang</i>, the 130,211 voters there - seven times the number of voters in <i>Putrajaya</i> - also elect one MP.</p>
-				<div class="uk-margin">
-					<img src="img/vote-power-infograhics.png" class="img-responsive" style="border:1px solid #D3D3D3;">
-				</div>
-				<p>In other words, one vote in <i>Putrajaya</i> has the same weight as seven votes in <i>Subang</i>. Voters in <i>Subang</i> are under-represented, while voters in <i>Putrajaya</i> are over-represented. This malpractice is called malapportionment, a violation of the “one person, one vote” principle.</p>
-				<div class="uk-margin-large-bottom">
-					<img src="img/vote-power-infograhics-2.png" class="img-responsive" style="border:1px solid #D3D3D3;">
-				</div>
-				<p>Let's see how malapportionment affected the results of the 2013 general election</p>
 			</div>
+		</section>
+		<section class="uk-section uk-section-default">
+			<div class="uk-container uk-container-small" style="max-width:620px">
+				<!--div class="uk-margin uk-text-uppercase uk-text-small uk-text-center">
+					Illustration
+				</div-->
+				<div class="uk-child-width-1-2 uk-grid-small uk-text-center" uk-grid>
+					<div>
+						<div class="uk-text-center">
+							<img src="img/mp.svg" width="60" alt="" class="icon-mp">
+							<!--span uk-icon="icon:user;ratio:5" style="color:#212121"></span-->
+						</div>
+						<div class="uk-text-small uk-margin-bottom uk-border-rounded uk-text-uppercase" style="color:#fff;background:#212121;padding:5px 10px;">Putrajaya MP</div>
+						<div>
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+						</div>
+						<div class="uk-margin-top"><span class="uk-text-large">17,925</span> voters</div>
+					</div>
+					<div>
+						<div class="uk-text-center">
+							<img src="img/mp.svg" width="60" alt="" class="icon-mp">
+						</div>
+						<div class="uk-text-small uk-margin-bottom uk-border-rounded uk-text-uppercase" style="color:#fff;background:#212121;padding:5px 10px;">Subang MP</div>
+						<div>
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+							<img src="img/man.svg" width="12" alt="" class="icon-man">
+						</div>
+						<div class="uk-margin-top"><span class="uk-text-large">130,211</span> voters</div>
+					</div>
+				</div>
+			</div>
+			<!--img src="img/vote-power-infograhics.png" class="img-responsive" style="border:1px solid #D3D3D3;"-->
+		</section>
+		<section class="uk-section uk-section-default" style="background:#f5f5f5">
+			<div class="uk-container uk-container-small" style="max-width:620px">
+				<p>In other words, one vote in <i>Putrajaya</i> has the same weight as seven votes in <i>Subang</i>. Voters in <i>Subang</i> are under-represented, while voters in <i>Putrajaya</i> are over-represented. This malpractice is called malapportionment, a violation of the “one person, one vote” principle.</p>
+			</div>
+		</section>
+		<section class="uk-section uk-section-default">
+			<div class="uk-container uk-container-small" style="max-width:620px">
+				<div class="uk-grid-collapse uk-text-center" uk-grid>
+					<div class="uk-width-1-5">
+						<div>
+							<img src="img/ballot-putrajaya.svg" class="uk-width-1-1" alt="One vote">
+						</div>
+					</div>
+					<div class="uk-width-1-5">
+						<span style="font-size:50px;color:#212121">=</span>
+					</div>
+					<div class="uk-width-3-5">
+						<div>
+							<img src="img/ballot-subang.svg" width="70" alt="One vote">
+							<img src="img/ballot-subang.svg" width="70" alt="One vote">
+							<img src="img/ballot-subang.svg" width="70" alt="One vote">
+							<img src="img/ballot-subang.svg" width="70" alt="One vote">
+							<img src="img/ballot-subang.svg" width="70" alt="One vote">
+							<img src="img/ballot-subang.svg" width="70" alt="One vote">
+							<img src="img/ballot-subang.svg" width="70" alt="One vote">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="uk-section uk-section-default" style="background:#f5f5f5">
+			<div class="uk-container uk-container-small" style="max-width:620px">
+				<p class="uk-text-large">Let's see how malapportionment affected the results of the 2013 general election</p>
+			</div>
+		</section>
+		<section class="uk-section uk-section-default">
+			<p class="uk-text-center uk-text-small uk-text-uppercase"><span uk-icon="icon:arrow-down;ratio:3" style="color:#1DE9B6"></span> Keep scrolling down <span uk-icon="icon:arrow-down;ratio:3" style="color:#1DE9B6"></span></p>
 		</section>
 		
 		<!-- Scroller content starts here -->
@@ -98,7 +324,7 @@
 					It is <strong class="font">even&nbsp;bigger</strong> among <strong class="font">urban&nbsp;seats</strong>.
 				</div> 
 				<div class="trigger" data-step="7" data-marker="5">
-					This is part of the reason why BN retained power in the 2013 general election by winning <strong class="background">60%</strong> of seats with a mere <strong class="background">47%</strong> of the total vote, while the opposition coalition won <strong class="background">40%</strong> of seats with <strong class="background">51%</strong> of votes.
+					This is part of the reason why BN retained power in the 2013 general election by winning <strong class="backgroundBN">60% of seats</strong> with a mere <strong class="fontBN">47% of votes</strong>, while the opposition coalition won <strong class="backgroundOPP">40% of seats</strong> with <strong class="fontOPP">51% of votes</strong>.
 				</div>							
 			</div>
 			<div class="chart-wrapper">
@@ -109,11 +335,11 @@
 		</section>
 		<!-- Scroller content ends here -->
 		
-		<section class="uk-section uk-section-default">
+		<section class="uk-section uk-section-default" style="background:#f5f5f5">
 			<div class="uk-container uk-container-small" style="max-width:620px">
 				<p>According to the 2016 first quarter voter list, the number of voters in the largest parliamentary seat, Kapar in Selangor (146,625), is over eight times the number of voters in Putrajaya (17,925), the smallest parliamentary seat.</p>
 
-				<h2>In an extreme case, a party could capture federal power by winning just 17% of the total vote. How?</h2>
+				<h2>In an extreme case, a party could capture federal power by winning just <strong>17% of the total vote</strong>. How?</h2>
 				<p>Out of 222 parliamentary seats in total, it wins 112 seats that have smaller voter numbers to form the federal government. Additionally, it only wins each seat by a one-vote majority. It loses all the votes in the other 110 larger seats. The total number of votes it secures in such situation is only 17% of the total vote.</p>
 
 				<p>You might ask if there are laws that prohibit such violations of political equality. There used to be, but they were removed by Parliament.</p>
@@ -121,39 +347,43 @@
 				<p>In the 1957 constitution, the number of voters in the smallest and largest seats were not allowed to exceed 15 percent of the national average. It means that if the national average number of voters in a parliamentary seat was 10,000, the largest parliamentary seat would have a maximum of 11,500 voters; whereas the smallest parliamentary seat would have a minimum of 8,500 voters.</p>
 
 				<p>This number was increased to 33.33% in the Constitution (Amendment) Act 1962. It was then totally removed in 1973 through another constitutional amendment, giving the Election Commission carte blanche to redraw constituency boundaries.</p>
+				<h2>What can we do?</h2>
+				<p style="color:#212121">You can choose to move to smaller constituencies like <i>Putrajaya</i> and vote there to maximise your voting power, or you can support initiatives to reform the electoral system like the <i>Bersih</i> movement.</p>
 
-				<p>What can we do? You can choose to move to smaller constituencies like <i>Putrajaya</i> and vote there to maximise your voting power, or you can support initiatives to reform the electoral system like the Bersih movement.</p>
-
-				<p>Most importantly, register as a voter and vote - else you will have no voting power at all.</p>
+				<p class="uk-text-large" style="color:#212121">Most importantly, register as a voter and vote - else you will have no voting power at all.</p>
 				<div class="uk-margin-large-top" style="max-width:620px">
 					<hr style="width:50px;border-width:5px;border-color:#333;">
 					<p class="uk-text-small">Note: The number of votes in each parliamentary seat is based on the electoral roll for the first quarter of 2016 published by the Election Commission. The classification of parliamentary seats into urban, semi-rural and rural is based on the study done by research firm Politweet.org, as the Election Commission does not classify each seat. <a href="https://politweet.wordpress.com/about/" target="_blank">Read more about the methodology here</a>.</p>
 				</div>
 			</div>
+		</section>
+		<section class="uk-section uk-section-default">
 			<div class="uk-container uk-container-small uk-text-center">
 				<p class="uk-text-large" style="line-height:1em;">Share this</p>
 				<div class="addthis_inline_share_toolbox" style="text-align:center"></div>
 			</div>
+		</section>
+		<section class="uk-section uk-section-default" style="background:#f5f5f5">
 			<div class="uk-container uk-container-small uk-margin-large-top" style="max-width:620px">
-			  	<div class="uk-text-large">Parliamentary seat information</div>    
-			  	<div class="seatTable uk-text-small">
-			    	<table id="table01" class="hover stripe row-border">
-			      		<thead>
-			        		<tr>
-			          			<td class="code" id="code_head">Code</td>
-			          			<td class="seat" id="seat_head">Seat</td>
-			          			<td class="voter" id="voter_head">Voters</td>
-			          			<td class="party" id="party_head">Party</td>
-			          			<td class="rep" id="rep_head">MP</td>
-			          			<td class="state" id="state_head">State</td>
-			          			<td class="class" id="class_head">Class</td>
-			        		</tr>
-			      		</thead>
-			    	</table>
-			  </div>	
+				<h2 class="uk-text-center">Parliamentary Seats</h2>
+				<div class="seatTable uk-overflow-auto">
+					<table id="table01" class="uk-table uk-table-striped uk-table-small uk-table-justify uk-text-small">
+						<thead>
+							<tr>
+								<td class="code" id="code_head">Code</td>
+								<td class="seat" id="seat_head">Seat</td>
+								<td class="voter" id="voter_head">Voters</td>
+								<td class="party" id="party_head">Party</td>
+								<td class="rep" id="rep_head">MP</td>
+								<td class="state" id="state_head">State</td>
+								<td class="class" id="class_head">Class</td>
+							</tr>
+						</thead>
+					</table>
+				</div>
 			</div>
 		</section>		
-		<section class="uk-hidden@s uk-section uk-section-secondary uk-text-center">
+		<section class="uk-hidden@s uk-section uk-section-secondary uk-text-center" style="background:#1DE9B6">
 			<a href="https://pages.malaysiakini.com/undipower/" class="uk-button uk-button-text"><span uk-icon="icon:play-circle;ratio:2" class="uk-margin-small-right"></span>Play the game</a>
 		</section>
 		
@@ -167,6 +397,6 @@
 		<script src="js/explain.js"></script>
 		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0bc2fb3a12b579"></script> 
 		<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-    	<script src="https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js"></script>
+			<script src="https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js"></script>
 	</body>
  </html>

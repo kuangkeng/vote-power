@@ -317,7 +317,7 @@
         height: '1px',
         top: offsetToPx(this.options.triggerOffset) + 'px',
         left: '0px',
-        backgroundColor: '#ff0000',
+        backgroundColor: '#ff1744',
         '-webkit-transform': 'translateZ(0)',
         '-webkit-backface-visibility': 'hidden',
         zIndex: 1000
