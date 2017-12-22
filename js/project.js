@@ -134,6 +134,7 @@ var twitterPics = [
 
     //Function to open index2.html and pass on the seats selected
     function openExplain(){
+      var url = "explain.html?seat=" + selectedKod + "&opp=" + oppKod;
       //to fix the issue of Safari on iOS can't open a new window in a new tab
       if($(window).width()<500){
         var win = window.open(url, '_self');  
