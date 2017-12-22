@@ -257,26 +257,18 @@ var twitterPics = [
       if(result == 2 || result == 0){
         //user avatar put on left, opp on right
         $('#leftSeat').text(selectedKod + " " + selectedSeat);
-        $('#leftVoter').text(addThousandSeparator(selectedVoter) + " pengundi");
-        $('#leftName').text(selectedName);
-        $('#leftParty').text(selectedParty);
+        $('#leftVoter').text(addThousandSeparator(selectedVoter) + " undi");
         $('#rightSeat').text(oppKod + " " + oppSeat);
-        $('#rightVoter').text(addThousandSeparator(oppVoter) + " pengundi");
-        $('#rightName').text(oppName);
-        $('#rightParty').text(oppParty);
-        $('#voteTextLeft').text("Kerusi anda ialah ");
-        $('#voteTextRight').text("Kerusi lawan anda ialah ");
+        $('#rightVoter').text(addThousandSeparator(oppVoter) + " undi");
+        $('#voteTextLeft').text("Kerusi anda");
+        $('#voteTextRight').text("Kerusi lawan anda");
       } else {
         $('#leftSeat').text(oppKod + " " + oppSeat);
-        $('#leftVoter').text(addThousandSeparator(oppVoter) + " pengundi");
-        $('#leftName').text(oppName);
-        $('#leftParty').text(oppParty);
+        $('#leftVoter').text(addThousandSeparator(oppVoter) + " undi");
         $('#rightSeat').text(selectedKod + " " + selectedSeat);
-        $('#rightVoter').text(addThousandSeparator(selectedVoter) + " pengundi");
-        $('#rightName').text(selectedName);
-        $('#rightParty').text(selectedParty);
-        $('#voteTextLeft').text("Kerusi lawan anda ialah ");
-        $('#voteTextRight').text("Kerusi anda ialah ");
+        $('#rightVoter').text(addThousandSeparator(selectedVoter) + " undi");
+        $('#voteTextLeft').text("Kerusi lawan anda");
+        $('#voteTextRight').text("Kerusi anda");
       }
     }
 

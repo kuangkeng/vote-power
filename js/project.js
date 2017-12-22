@@ -251,31 +251,34 @@ var twitterPics = [
           "Your opponent's seat has about " + voteWeight2 + " times more voters than your seat, but only one Member of Parliament is elected for each seat. <strong>It means your single vote carries the same weight as " + voteWeight2 + " votes in your opponent's seat.</strong>",
       ];
       
-      $('#result01').text(resultSummary[result]);
+      $('#result01').html(resultSummary[result]);
 
       if(result == 2 || result == 0){
         //user avatar put on left, opp on right
         $('#leftSeat').text(selectedKod + " " + selectedSeat);
         $('#leftVoter').text(addThousandSeparator(selectedVoter) + " voters");
-        $('#leftName').text(selectedName);
-        $('#leftParty').text(selectedParty);
         $('#rightSeat').text(oppKod + " " + oppSeat);
         $('#rightVoter').text(addThousandSeparator(oppVoter) + " voters");
-        $('#rightName').text(oppName);
-        $('#rightParty').text(oppParty);
         $('#voteTextLeft').text("Your seat is");
-        $('#voteTextRight').text("Your opponent's seat is");
+        $('#voteTextRight').text("Opponent's seat is");
       } else {
         $('#leftSeat').text(oppKod + " " + oppSeat);
         $('#leftVoter').text(addThousandSeparator(oppVoter) + " voters");
-        $('#leftName').text(oppName);
-        $('#leftParty').text(oppParty);
         $('#rightSeat').text(selectedKod + " " + selectedSeat);
         $('#rightVoter').text(addThousandSeparator(selectedVoter) + " voters");
-        $('#rightName').text(selectedName);
-        $('#rightParty').text(selectedParty);
-        $('#voteTextLeft').text("Your opponent's seat is");
+        $('#voteTextLeft').text("Opponent's seat is");
         $('#voteTextRight').text("Your seat is");
+      }
+
+      //change seat details column width on mobile
+      if($(window).width()<500){
+        $("#resultCol").removeClass("uk-grid-collapse uk-grid uk-text-center");
+        $("#resultColLeft").removeClass("uk-width-2-5");
+        $("#resultColCenter").removeClass("uk-width-1-5");
+        $("#resultColRight").removeClass("uk-width-2-5");
+        $("#resultColLeft, #resultColRight").css({"width":"45%", "display":"inline-block"});  
+        $("#resultColCenter").css({"width":"6%", "display":"inline-block"});  
+        $("#loserVote").css({"padding-left":"0px"});
       }
     }
 

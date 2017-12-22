@@ -71,7 +71,7 @@ var dataAll = [
     {kod:"P156", seat:"Kota Tinggi", name:"Noor Ehsanuddin Mohd Harun Narrashid", party:"BN-UMNO", y:42962, color:colorBN, level:81, state:"Johor", kelas:"Rural"},
     {kod:"P007", seat:"Padang Terap", name:"Mahdzir Khalid", party:"BN-UMNO", y:43022, color:colorBN, level:81, state:"Kedah", kelas:"Rural"},
     {kod:"P087", seat:"Kuala Krau", name:"Ismail Mohamed Said", party:"BN-UMNO", y:43026, color:colorBN, level:81, state:"Pahang", kelas:"Rural"},
-    {kod:"P198", seat:"Puncak Borneo (previously Mambong)", name:"James Dawos Mamit", party:"BN-PBB", y:43243, color:colorBN, level:81, state:"Sarawak", kelas:"Rural"},
+    {kod:"P198", seat:"Mambong", name:"James Dawos Mamit", party:"BN-PBB", y:43243, color:colorBN, level:81, state:"Sarawak", kelas:"Rural"},
     {kod:"P148", seat:"Ayer Hitam", name:"Wee Ka Siong", party:"BN-MCA", y:43398, color:colorBN, level:81, state:"Johor", kelas:"Rural"},
     {kod:"P003", seat:"Arau", name:"Shahidan Kassim", party:"BN-UMNO", y:44094, color:colorBN, level:80, state:"Perlis", kelas:"Rural"},
     {kod:"P180", seat:"Keningau", name:"Joseph Pairin Kitingan", party:"BN-PBS", y:44284, color:colorBN, level:80, state:"Sabah", kelas:"Rural"},
@@ -262,5 +262,5 @@ var seatByState = [
   ["Segamat","Sekijang","Labis","Pagoh","Ledang","Bakri","Muar","Parit Sulong","Ayer Hitam","Sri Gading","Batu Pahat","Simpang Renggam","Kluang","Sembrong","Mersing","Tenggara","Kota Tinggi","Pengerang","Tebrau","Pasir Gudang","Johor Bahru","Pulai","Gelang Patah","Kulai","Pontian","Tanjong Piai"],
   ["Labuan"],
   ["Kudat","Kota Marudu","Kota Belud","Tuaran","Sepanggar","Kota Kinabalu","Putatan","Penampang","Papar","Kimanis","Beaufort","Sipitang","Ranau","Keningau","Tenom","Pensiangan","Beluran","Libaran","Batu Sapi","Sandakan","Kinabatangan","Silam","Semporna","Tawau","Kalabakan"],
-  ["Mas Gading","Santubong","Petra Jaya","Bandar Kuching","Stampin","Kota Samarahan","Puncak Borneo (previously Mambong)","Serian","Batang Sadong","Batang Lupar","Sri Aman","Lubok Antu","Betong","Saratok","Tanjong Manis","Igan","Sarikei","Julau","Kanowit","Lanang","Sibu","Mukah","Selangau","Kapit","Hulu Rajang","Bintulu","Sibuti","Miri","Baram","Limbang","Lawas"],
+  ["Mas Gading","Santubong","Petra Jaya","Bandar Kuching","Stampin","Kota Samarahan","Mambong","Serian","Batang Sadong","Batang Lupar","Sri Aman","Lubok Antu","Betong","Saratok","Tanjong Manis","Igan","Sarikei","Julau","Kanowit","Lanang","Sibu","Mukah","Selangau","Kapit","Hulu Rajang","Bintulu","Sibuti","Miri","Baram","Limbang","Lawas"],
 ];
