@@ -26,14 +26,18 @@
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
 			<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.0/css/responsive.dataTables.min.css">
 		<style>
-			p{font-size:20px;}
-			.text-wrapper{font-size:20px!important;}
+			p {font-size:20px;}
+			/*styling for table*/
+			#table01 tbody td {border-bottom: 1px solid #ddd;}
 			table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before,table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
-				background-color:#d34127;
+				background-color:#333;
 				border:0px;
 				top:50%;
 				margin-top:-6px;
 				box-shadow:0 0 0;
+			}
+			table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
+				background-color:#333;
 			}
 			.nowrap {white-space: nowrap;}
 			.icon-man{opacity:0.7;margin-bottom:5px;width:12px!important;}
@@ -324,7 +328,7 @@
 					It is <strong class="font">even&nbsp;bigger</strong> among <strong class="font">urban&nbsp;seats</strong>.
 				</div> 
 				<div class="trigger" data-step="7" data-marker="5">
-					This is part of the reason why BN retained power in the 2013 general election by winning <strong class="backgroundBN">60% of seats</strong> with a mere <strong class="fontBN">47% of votes</strong>, while the opposition coalition won <strong class="backgroundOPP">40% of seats</strong> with <strong class="fontOPP">51% of votes</strong>.
+					This is part of the reason why BN retained power in the 2013 general election by winning <strong class="backgroundBN">60%&nbsp;of&nbsp;seats</strong> with a mere <strong class="fontBN">47%&nbsp;of&nbsp;votes</strong>, while the opposition coalition won <strong class="backgroundOPP">40%&nbsp;of&nbsp;seats</strong> with <strong class="fontOPP">51%&nbsp;of&nbsp;votes</strong>.
 				</div>							
 			</div>
 			<div class="chart-wrapper">

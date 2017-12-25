@@ -9,7 +9,7 @@ var viewportHeight = $(window).height(),
     bottomSpace = 0, //use this to set the bottom margin of the chart 
     chartWidth = $('.wrapper').width()-22,
     chartMargin = 0 - (chartWidth/2), //use this to center align the chart when it's position is set as fixed
-    chartHeight = Math.floor(viewportHeight*0.95),
+    chartHeight = Math.floor(viewportHeight*0.8),
     headlineHeight = $('.headline').outerHeight( true);
 
 $chartWrapper.css({'width':chartWidth, 'margin-left':chartMargin, 'height':chartHeight, 'bottom':bottomSpace});
@@ -305,7 +305,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Langkawi<br>37,632 pengundi',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -318,7 +318,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Bukit Bintang<br>52,753 pengundi',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -331,7 +331,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Bandar Kuching<br>81,037 pengundi',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -346,7 +346,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Putrajaya<br>17,925 pengundi',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -359,7 +359,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Kapar<br>146,625 pengundi',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -368,7 +368,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                     color: '#a8a8a8',
                     dashStyle: 'shortdash',
                     width: 2,
-                    zIndex: 9,
+                    zIndex: 4,
                     label: {
                       text: 'Purata<br>kebangsaan<br>61,103',
                       align: 'left',
@@ -410,7 +410,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                   color: '#a8a8a8',
                   dashStyle: 'shortdash',
                   width: 2,
-                  zIndex: 9,
+                  zIndex: 4,
                   label: {
                     text: 'Purata BN<br>48,273',
                     align: 'left',
@@ -430,7 +430,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                   color: '#a8a8a8',
                   dashStyle: 'shortdash',
                   width: 2,
-                  zIndex: 9,
+                  zIndex: 4,
                   label: {
                     text: 'Purata<br>pembangkang<br>79,921',
                     align: 'left',
@@ -494,7 +494,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                     color: '#a8a8a8',
                     dashStyle: 'shortdash',
                     width: 2,
-                    zIndex: 9,
+                    zIndex: 4,
                     label: {
                       text: 'Purata<br>kebangsaan<br>61,103',
                       align: 'left',
@@ -515,7 +515,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Langkawi<br>37,632 pengundi',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -528,7 +528,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Bukit Bintang<br>52,753 pengundi',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -541,7 +541,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Bandar Kuching<br>81,037 pengundi',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -554,7 +554,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Putrajaya<br>17,925 pengundi',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -567,7 +567,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Kapar<br>146,625 pengundi',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -607,7 +607,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Kerusi anda:<br>' + selectedSeat + '<br>' + addThousandSeparator(selectedVoter) + ' pengundi',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -625,7 +625,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: "Kerusi lawan:<br>" + oppSeat + "<br>" + addThousandSeparator(oppVoter) + " pengundi",
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -634,7 +634,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                     color: '#a8a8a8',
                     dashStyle: 'shortdash',
                     width: 2,
-                    zIndex: 9,
+                    zIndex: 4,
                     label: {
                       text: 'Purata<br>kebangsaan<br>61,103',
                       align: 'left',
@@ -674,7 +674,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                   color: '#a8a8a8',
                   dashStyle: 'shortdash',
                   width: 2,
-                  zIndex: 9,
+                  zIndex: 4,
                   label: {
                     text: 'Purata BN<br>48,273',
                     align: 'left',
@@ -700,7 +700,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                   color: '#a8a8a8',
                   dashStyle: 'shortdash',
                   width: 2,
-                  zIndex: 9,
+                  zIndex: 4,
                   label: {
                     text: 'Purata<br>pembangkang<br>79,921',
                     align: 'left',
@@ -730,7 +730,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Kerusi anda',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -743,7 +743,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Kerusi lawan',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -771,7 +771,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Kerusi anda:<br>' + selectedSeat + '<br>' + addThousandSeparator(selectedVoter) + ' pengundi',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -791,7 +791,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                     color: '#a8a8a8',
                     dashStyle: 'shortdash',
                     width: 2,
-                    zIndex: 9,
+                    zIndex: 4,
                     label: {
                       text: 'Purata<br>kebangsaan<br>61,103',
                       align: 'left',
@@ -812,7 +812,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: "Kerusi lawan:<br>" + oppSeat + "<br>" + addThousandSeparator(oppVoter) + " pengundi",
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -927,22 +927,24 @@ function addTable(){
         {data:'party', className:'nowrap' },
         {data:'name'},
         {data:'state'},
-        {data:'kelas', className:'nowrap'},
+        {data:'kelasBM', className:'nowrap'},
       ],
       "createdRow": function ( row, data, index ) {
         if ( data["party"].substr(0, 2) == "BN" ) {
-            $('td', row).eq(3).css('background-color','#e5e5f4');
+            $('td', row).css('color','#fff');
+            $('td', row).css('background','#304FFE');
         } else {
-            $('td', row).eq(3).css('background-color','#ffe5e5');
+            $('td', row).css('color','#fff');
+            $('td', row).css('background','#ff1744');
         }
       },
       responsive: true,
       columnDefs: [
-          { responsivePriority: 1, targets: 1 },
-          { responsivePriority: 2, targets: 2 },
-          { responsivePriority: 3, targets: 3 },
-          { responsivePriority: 4, targets: 5 },
-          { responsivePriority: 5, targets: 0 },
+          { responsivePriority: 1, targets: 0 },
+          { responsivePriority: 2, targets: 1 },
+          { responsivePriority: 3, targets: 2 },
+          { responsivePriority: 4, targets: 3 },
+          { responsivePriority: 5, targets: 5 },
           { responsivePriority: 6, targets: 6 },
           { responsivePriority: 7, targets: 4 },
       ],

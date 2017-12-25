@@ -308,8 +308,10 @@ var twitterPics = [
             return (n.result == "lose");
           },false);
           var win_num = dataset_opp_win.length;
-          // console.log("win_num " + opponents[count].seat + " = " + win_num);
+          var win_pct = Math.round((dataset_opp_win.length/dataset_opp.length)*100);
+          // console.log("win_pct " + opponents[count].seat + " = " + win_pct);
           $("#" + (count+1) + " .uk-label").text(win_num + " WINS");
+          $("#" + (count+1) + " .oppWinRate").text("Difficulty: " + win_pct + "%");
         }
       }
     }

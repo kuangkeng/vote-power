@@ -9,7 +9,7 @@ var viewportHeight = $(window).height(),
     bottomSpace = 0, //use this to set the bottom margin of the chart 
     chartWidth = $('.wrapper').width()-22,
     chartMargin = 0 - (chartWidth/2), //use this to center align the chart when it's position is set as fixed
-    chartHeight = Math.floor(viewportHeight*0.95),
+    chartHeight = Math.floor(viewportHeight*0.8),
     headlineHeight = $('.headline').outerHeight( true);
 
 $chartWrapper.css({'width':chartWidth, 'margin-left':chartMargin, 'height':chartHeight, 'bottom':bottomSpace});
@@ -305,7 +305,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Langkawi<br>37,632 voters',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -318,7 +318,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Bukit Bintang<br>52,753 voters',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -331,7 +331,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Bandar Kuching<br>81,037 voters',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -346,7 +346,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Putrajaya<br>17,925 voters',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -359,7 +359,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Kapar<br>146,625 voters',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -368,7 +368,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                     color: '#a8a8a8',
                     dashStyle: 'shortdash',
                     width: 2,
-                    zIndex: 9,
+                    zIndex: 4,
                     label: {
                       text: 'National<br>average<br>61,103',
                       align: 'left',
@@ -410,7 +410,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                   color: '#a8a8a8',
                   dashStyle: 'shortdash',
                   width: 2,
-                  zIndex: 9,
+                  zIndex: 4,
                   label: {
                     text: 'BN<br>average<br>48,273',
                     align: 'left',
@@ -430,7 +430,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                   color: '#a8a8a8',
                   dashStyle: 'shortdash',
                   width: 2,
-                  zIndex: 9,
+                  zIndex: 4,
                   label: {
                     text: 'OPP<br>average<br>79,921',
                     align: 'left',
@@ -494,7 +494,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                     color: '#a8a8a8',
                     dashStyle: 'shortdash',
                     width: 2,
-                    zIndex: 9,
+                    zIndex: 4,
                     label: {
                       text: 'National<br>average<br>61,103',
                       align: 'left',
@@ -515,7 +515,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Langkawi<br>37,632 voters',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -528,7 +528,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Bukit Bintang<br>52,753 voters',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -541,7 +541,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Bandar Kuching<br>81,037 voters',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -554,7 +554,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Putrajaya<br>17,925 voters',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -567,7 +567,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Kapar<br>146,625 voters',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -607,7 +607,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Your seat:<br>' + selectedSeat + '<br>' + addThousandSeparator(selectedVoter) + ' voters',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -625,7 +625,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: "Opponent's seat:<br>" + oppSeat + "<br>" + addThousandSeparator(oppVoter) + " voters",
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -634,7 +634,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                     color: '#a8a8a8',
                     dashStyle: 'shortdash',
                     width: 2,
-                    zIndex: 9,
+                    zIndex: 4,
                     label: {
                       text: 'National<br>average<br>61,103',
                       align: 'left',
@@ -674,7 +674,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                   color: '#a8a8a8',
                   dashStyle: 'shortdash',
                   width: 2,
-                  zIndex: 9,
+                  zIndex: 4,
                   label: {
                     text: 'BN<br>average<br>48,273',
                     align: 'left',
@@ -700,7 +700,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                   color: '#a8a8a8',
                   dashStyle: 'shortdash',
                   width: 2,
-                  zIndex: 9,
+                  zIndex: 4,
                   label: {
                     text: 'OPP<br>average<br>79,921',
                     align: 'left',
@@ -730,7 +730,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'You',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -743,7 +743,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Opponent',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -771,7 +771,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: 'Your seat:<br>' + selectedSeat + '<br>' + addThousandSeparator(selectedVoter) + ' voters',
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -791,7 +791,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                     color: '#a8a8a8',
                     dashStyle: 'shortdash',
                     width: 2,
-                    zIndex: 9,
+                    zIndex: 4,
                     label: {
                       text: 'National<br>average<br>61,103',
                       align: 'left',
@@ -812,7 +812,7 @@ dataUrban2 = JSON.parse(JSON.stringify(dataUrban));
                       color: '#7e7e7e',
                       format: "Opponent's seat:<br>" + oppSeat + "<br>" + addThousandSeparator(oppVoter) + " voters",
                       align: 'left',
-                      zIndex: 10,
+                      zIndex: 5,
                       style: {fontSize: '12px'},
                     }
                 });
@@ -940,11 +940,11 @@ function addTable(){
       },
       responsive: true,
       columnDefs: [
-          { responsivePriority: 1, targets: 1 },
-          { responsivePriority: 2, targets: 2 },
-          { responsivePriority: 3, targets: 3 },
-          { responsivePriority: 4, targets: 5 },
-          { responsivePriority: 5, targets: 0 },
+          { responsivePriority: 1, targets: 0 },
+          { responsivePriority: 2, targets: 1 },
+          { responsivePriority: 3, targets: 2 },
+          { responsivePriority: 4, targets: 3 },
+          { responsivePriority: 5, targets: 5 },
           { responsivePriority: 6, targets: 6 },
           { responsivePriority: 7, targets: 4 },
       ],

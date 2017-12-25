@@ -22,20 +22,25 @@
 		<meta property="article:published_time" content="2017-12-25T12:00:00+08:00">
 		<link rel="canonical" href="https://pages.malaysiakini.com/undipower/my/">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.34/css/uikit.min.css">
-		<link rel="stylesheet" type="text/css" href="https://pages.malaysiakini.com/undipower/css/project.css">
+		<link rel="stylesheet" type="text/css" href="/css/project.css">
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.0/css/responsive.dataTables.min.css">
 		<style>
 			p{font-size:20px;}
-			.text-wrapper{font-size:20px!important;}
+			/*styling for table*/
+			#table01 tbody td {border-bottom: 1px solid #ddd;}
 			table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before,table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
-				background-color:#d34127;
+				background-color:#333;
 				border:0px;
 				top:50%;
 				margin-top:-6px;
 				box-shadow:0 0 0;
 			}
+			table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
+				background-color:#333;
+			}
 			.nowrap {white-space: nowrap;}
+			.icon-man{opacity:0.7;margin-bottom:5px;width:12px!important;}
 		</style>
 	</head>
 	<body>
@@ -306,7 +311,7 @@
 					Bilangan pengundi setiap kerusi adalah dari <strong class="background">17,925</strong> (Putrajaya) hingga <strong class="background">146,625</strong> (Kapar di Selangor). Purata bilangan pengundi setiap kerusi ialah <strong class="background">61,103.</strong>
 				</div>
 				<div class="trigger" data-step="3" data-marker="3">
-					<strong class="fontBN">BN</strong> menang kebanyakan kerusi dengan <strong class="fontBN">bilangan&nbsp;pengundi&nbsp;yang&nbsp;rendah</strong>. Purata bilangan pengundi di kerusi BN ialah <div class="backgroundBN">48,273.</div>
+					<strong class="fontBN">BN</strong> menang kebanyakan kerusi dengan bilangan pengundi yang <strong class="fontBN">rendah</strong>. Purata bilangan pengundi di kerusi BN ialah <div class="backgroundBN">48,273.</div>
 				</div>	 
 				<div class="trigger" data-step="4" data-marker="4">
 					Selebihnya dimenangi <strong class="fontOPP">pembangkang</strong>. Purata bilangan pengundi di kerusi pembangkang ialah <strong class="backgroundOPP">79,921.</strong>
@@ -366,13 +371,13 @@
 					<table id="table01" class="uk-table uk-table-striped uk-table-small uk-table-justify uk-text-small">
 						<thead>
 							<tr>
-								<td class="code" id="code_head">Code</td>
-								<td class="seat" id="seat_head">Seat</td>
-								<td class="voter" id="voter_head">Voters</td>
-								<td class="party" id="party_head">Party</td>
+								<td class="code" id="code_head">Kod</td>
+								<td class="seat" id="seat_head">Kerusi</td>
+								<td class="voter" id="voter_head">Pengundi</td>
+								<td class="party" id="party_head">Parti</td>
 								<td class="rep" id="rep_head">MP</td>
-								<td class="state" id="state_head">State</td>
-								<td class="class" id="class_head">Class</td>
+								<td class="state" id="state_head">Negeri</td>
+								<td class="class" id="class_head">Kategori</td>
 							</tr>
 						</thead>
 					</table>
@@ -387,9 +392,9 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.34/js/uikit.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.34/js/uikit-icons.min.js"></script>
 		<script src="https://code.highcharts.com/highcharts.js"></script>
-		<script src="https://pages.malaysiakini.com/undipower/library/scrollstory/jquery.scrollstory.js"></script>
+		<script src="/library/scrollstory/jquery.scrollstory.js"></script>
 		<!-- load counties list from a separate js file -->
-		<script src="https://pages.malaysiakini.com/undipower/js/data.js"></script>
+		<script src="/js/data.js"></script>
 		<script src="js/explain.js"></script>
 		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0bc2fb3a12b579"></script> 
 		<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
