@@ -243,9 +243,6 @@ var twitterPics = [
       $('#btnWhy').text(btnTexts[result]);
       $('#resultHead').text(resultHeads[result]);
 
-
-
-
       var resultSummary = [
           "Kerusi anda mempunyai jumlah pengundi yang hampir sama berbanding kerusi lawan anda. Hanya satu ahli parlimen dipilih untuk setiap kerusi. <strong>Ini bermakna undi di kedua-dua kerusi setanding.</strong>",
           "Kerusi anda " + voteWeight2 + " kali lebih banyak pengundi berbanding kerusi lawan anda tapi hanya satu ahli parlimen dipilih bagi setiap kerusi. <strong>Ini bermakna satu undi di kerusi lawan anda setanding dengan " + voteWeight2 + " undi anda.</strong>",
@@ -269,6 +266,17 @@ var twitterPics = [
         $('#rightVoter').text(addThousandSeparator(selectedVoter) + " undi");
         $('#voteTextLeft').text("Kerusi lawan anda");
         $('#voteTextRight').text("Kerusi anda");
+      }
+
+      //change seat details column width on mobile
+      if($(window).width()<500){
+        $("#resultCol").removeClass("uk-grid-collapse uk-grid uk-text-center");
+        $("#resultColLeft").removeClass("uk-width-2-5");
+        $("#resultColCenter").removeClass("uk-width-1-5");
+        $("#resultColRight").removeClass("uk-width-2-5");
+        $("#resultColLeft, #resultColRight").css({"width":"45%", "display":"inline-block"});  
+        $("#resultColCenter").css({"width":"6%", "display":"inline-block"});  
+        $("#loserVote").css({"padding-left":"0px"});
       }
     }
 

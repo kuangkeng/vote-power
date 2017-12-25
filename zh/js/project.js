@@ -255,25 +255,28 @@ var twitterPics = [
         //user avatar put on left, opp on right
         $('#leftSeat').text(selectedKod + " " + selectedSeat);
         $('#leftVoter').text(addThousandSeparator(selectedVoter) + "位选民");
-        $('#leftName').text(selectedName);
-        $('#leftParty').text(selectedParty);
         $('#rightSeat').text(oppKod + " " + oppSeat);
         $('#rightVoter').text(addThousandSeparator(oppVoter) + "位选民");
-        $('#rightName').text(oppName);
-        $('#rightParty').text(oppParty);
         $('#voteTextLeft').text("你的选区是");
         $('#voteTextRight').text("对手选区是");
       } else {
         $('#leftSeat').text(oppKod + " " + oppSeat);
         $('#leftVoter').text(addThousandSeparator(oppVoter) + "位选民");
-        $('#leftName').text(oppName);
-        $('#leftParty').text(oppParty);
         $('#rightSeat').text(selectedKod + " " + selectedSeat);
         $('#rightVoter').text(addThousandSeparator(selectedVoter) + "位选民");
-        $('#rightName').text(selectedName);
-        $('#rightParty').text(selectedParty);
         $('#voteTextLeft').text("对手选区是");
         $('#voteTextRight').text("你的选区是");
+      }
+
+      //change seat details column width on mobile
+      if($(window).width()<500){
+        $("#resultCol").removeClass("uk-grid-collapse uk-grid uk-text-center");
+        $("#resultColLeft").removeClass("uk-width-2-5");
+        $("#resultColCenter").removeClass("uk-width-1-5");
+        $("#resultColRight").removeClass("uk-width-2-5");
+        $("#resultColLeft, #resultColRight").css({"width":"45%", "display":"inline-block"});  
+        $("#resultColCenter").css({"width":"6%", "display":"inline-block"});  
+        $("#loserVote").css({"padding-left":"0px"});
       }
     }
 
