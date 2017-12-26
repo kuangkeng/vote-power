@@ -305,14 +305,13 @@ var twitterPics = [
           var dataset_opp_win = jQuery.grep(dataset_opp, function (n, i) {
             return (n.result == "lose");
           },false);
-          var dataset_opp_lose = jQuery.grep(dataset_opp, function (n, i) {
-            return (n.result == "win");
-          },false);
+          // var dataset_opp_lose = jQuery.grep(dataset_opp, function (n, i) {
+          //   return (n.result == "win");
+          // },false);
           var win_num = dataset_opp_win.length;
-          var win_pct = Math.round((win_num/(win_num + dataset_opp_lose.length))*100);
+          // var win_pct = Math.round((win_num/(win_num + dataset_opp_lose.length))*100);
           // console.log("win_pct " + opponents[count].seat + " = " + win_pct);
           $("#" + (count+1) + " .uk-label").text(win_num + " WINS");
-          $("#" + (count+1) + " .oppWinRate").text("Difficulty: " + win_pct + "%");
         }
       }
     }
