@@ -249,7 +249,7 @@ var twitterPics = [
           "Kerusi lawan anda " + voteWeight2 + " kali lebih banyak pengundi berbanding kerusi anda tapi hanya satu ahli parlimen dipilih untuk setiap kerusi. <strong>Ini bermakna satu undi anda setanding " + voteWeight2 + " undi di kerusi lawan anda.</strong>",
       ];
 
-      $('#result01').text(resultSummary[result]);
+      $('#result01').html(resultSummary[result]);
 
       if(result == 2 || result == 0){
         //user avatar put on left, opp on right
