@@ -344,7 +344,7 @@ function tweet() {
   var tweet_pic = twitterPics[idOpp-1][result_text];
   var tweet_url = 'https://twitter.com/intent/tweet?related=mkini_bm&text=';
   tweet_url += encodeURIComponent(result_shares[result]);
-  tweet_url += '&url=http://bit.ly/2AULhxD&via=mkini_bm ';
+  tweet_url += '&url=http://bit.ly/2yVjxHl&via=mkini_bm ';
   tweet_url += tweet_pic;
   window.open(tweet_url,'_blank');
 }
