@@ -45,6 +45,12 @@
 			.opponent:active .uk-card-media-top{background:#ee5370!important;}
 			.uk-card-badge.uk-label{background:rgba(0,0,0,0.5);border-radius:20px;}
 			.panel{display:none;}
+			@media only screen and (max-width: 768px) {
+			  .trigger {width:90%;}
+			  .text-wrapper {font-size: 16px !important;}
+			  #instruct {font-size:12px;}
+			  #result01.uk-text-large {font-size:16px!important;}
+			}
 		</style>
 		<!-- Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -225,13 +231,13 @@
 			<div id="resultBox" style="display:none;position:absolute;top:21%;left:0;z-index:9999;width:100%;">
 				<div id="repeat" style="max-width:260px;margin:0 auto">
 					<div class="uk-margin-small-bottom">
-						<button type="button" class="uk-button uk-button-secondary uk-width-1-1 btnRepeatSeat"><span uk-icon="icon:refresh"></span> 再战一次</button>
+						<button type="button" class="uk-button uk-button-secondary uk-width-1-1 btnRepeatSeat" style="padding-left:0;padding-right:0;"><span uk-icon="icon:refresh"></span> 再战一次</button>
 					</div>
 					<div class="uk-margin-small-bottom">
-						<button type="button" class="uk-button uk-button-secondary uk-width-1-1 btnRepeatOpp">换对手</button>
+						<button type="button" class="uk-button uk-button-secondary uk-width-1-1 btnRepeatOpp" style="padding-left:0;padding-right:0;">换对手</button>
 					</div>
 					<div class="uk-margin-small-bottom">
-						<button type="button" class="uk-button uk-button-danger uk-width-1-1" id="btnWhy" style="font-size:18px;font-weight:bold;letter-spacing:1px;">为什么？</button>
+						<button type="button" class="uk-button uk-button-danger uk-width-1-1" id="btnWhy" style="font-size:18px;font-weight:bold;letter-spacing:1px;padding-left:0;padding-right:0;">为什么？</button>
 					</div>
 				</div>
 			</div>
@@ -240,7 +246,7 @@
 		<section id="pageAnalysis" class="uk-section panel">
 			<div class="uk-container uk-container-small uk-text-center">
 				<h2 id="resultHead" class="uk-text-bold"></h2>
-				<p id="result01"></p>
+				<p id="result01" class="uk-text-large"></p>
 				<div uk-grid>
 					<div class="uk-width-2-5 uk-flex uk-flex-middle uk-flex-center">
 						<img id="leftVoteHead" src="https://pages.malaysiakini.com/undipower/img/avatar_me_480x480.png" alt="">
@@ -265,7 +271,7 @@
 				<div class="uk-container uk-container-small uk-text-center">
 					<p class="uk-text-large uk-margin-remove-top">当选民人数有大落差，<strong class="uk-text-nowrap" style="color:#222;background:#fff;margin:0 5px 0 0;padding:0 5px 3px;">人数较少选区</strong>的选民，比人数较多选区的选民，拥有<strong class="uk-text-nowrap" style="color:#222;background:#fff;margin:0 5px 0 0;padding:0 5px 3px;">更大的投票实力。</strong></p>
 					<div style="max-width:600px;margin:0 auto;">
-						<button type="button" class="uk-button uk-button-large uk-button-danger uk-width-1-1" id="btnExplain">不是每张选票都是平等的吗？</button>
+						<button type="button" class="uk-button uk-button-large uk-button-danger uk-width-1-1" id="btnExplain" style="padding-left:0;padding-right:0;">不是每张选票都是平等的吗？</button>
 					</div>
 				</div>
 			</div>
