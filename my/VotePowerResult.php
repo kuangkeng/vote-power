@@ -2,7 +2,7 @@
      $result_share = $_GET['result_share'];
      $result = $_GET['result'];
      $opp = $_GET['opp'];
-     $image = "https://pages.malaysiakini.com/undipower-10/my/img/fb_opp" . $opp . "_you_" . $result . ".jpg";
+     $image = "https://pages.malaysiakini.com/undipower/my/img/fb_opp" . $opp . "_you_" . $result . ".jpg";
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +21,6 @@
 
 <!-- both url is the url where your story page is hosted -->
 <?php
-include('https://pages.malaysiakini.com/undipower-10/my/');
+include('https://pages.malaysiakini.com/undipower/my/');
 ?>
-<script>window.location.href = 'https://pages.malaysiakini.com/undipower-10/my/';</script>
+<script>window.location.href = 'https://pages.malaysiakini.com/undipower/my/';</script>
