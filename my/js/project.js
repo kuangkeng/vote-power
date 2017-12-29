@@ -336,7 +336,7 @@ $(document).ready(function(){
 function facebook() {
 FB.ui({
   method: 'share',
-  href: 'https://pages.malaysiakini.com/undipower/my/VotePowerResult.php?result_share=' + result_shares[result] + '&result=' + result_text + '&opp=' + idOpp, 
+  href: 'https://pages.malaysiakini.com/undipower/my/result_pages/result_' + result_text + '_' + idOpp + '.html',  
   }, function(response){});
 }
 
