@@ -279,12 +279,12 @@ var twitterPics = [
         $("#loserVote").css({"padding-left":"0px"});
       }
     }
-
+    var oldTotal = [1438,1324,4364,0,0,6077];
     function showOppWin(){
       //Retrieve previous users data from google spreadsheet and convert them into arrays.
       //Use Tabletop function to convert google spreadsheet into json (documentation: https://github.com/jsoma/tabletop)
       //The google spreadsheet has to be published first
-      var spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1zonJ5ASmJGbY1ZvJ6rL4_plCO99o6OqZ3fgwJtRZGM4/pubhtml';
+      var spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1UOFhrujEwkPSPyAJ56AztA8VS-RcDD4iMK4coNG8h-Y/pubhtml';
       Tabletop.init( { key: spreadsheet_url,
                       callback: getRecord,
                       simpleSheet: true } )
@@ -305,7 +305,7 @@ var twitterPics = [
           var dataset_opp_win = jQuery.grep(dataset_opp, function (n, i) {
             return (n.result == "lose");
           },false);
-          var win_num = dataset_opp_win.length;
+          var win_num = dataset_opp_win.length + oldTotal[count];
           // console.log("win_num " + opponents[count].seat + " = " + win_num);
           $("#" + (count+1) + " .uk-label").text(win_num + " kemenangan");
         }
@@ -354,7 +354,7 @@ function sendData() {
     function(json) {
       $.ajax({
         type: 'POST',
-        url: 'https://docs.google.com/forms/d/e/1FAIpQLSfkDwjYHmZZxtfTVtjoSvDlbvsc8VGphLeeiboKAHBjeb-ZmA/formResponse',
+        url: 'https://docs.google.com/forms/d/e/1FAIpQLSe1UXWS2Bd-VDi8Rq5eo1CvrajJ_W0s3dcBjTJwftA6WhLIlg/formResponse',
         data: { 
           "entry.927637414": selectedSeat,
           "entry.2041801391": oppSeat,
